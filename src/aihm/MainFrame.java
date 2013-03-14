@@ -38,22 +38,28 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        splitPane.setBorder(null);
+
         leftPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         leftPane.setLayout(new java.awt.GridBagLayout());
 
-        jToggleButton1.setText("jToggleButton1");
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Zero.png"))); // NOI18N
+        jToggleButton1.setToolTipText("");
+        jToggleButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/ZeroSelected.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         leftPane.add(jToggleButton1, gridBagConstraints);
 
-        jToggleButton2.setText("jToggleButton2");
+        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/One.png"))); // NOI18N
+        jToggleButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/OneSelected.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 5);
         leftPane.add(jToggleButton2, gridBagConstraints);
 
-        jToggleButton3.setText("jToggleButton3");
+        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Two.png"))); // NOI18N
+        jToggleButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/TwoSelected.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
