@@ -67,7 +67,7 @@ public class MainFrame extends javax.swing.JFrame {
         button2 = new javax.swing.JToggleButton();
         rightPanel = new javax.swing.JPanel();
         jSlider1 = new javax.swing.JSlider();
-        jPanel1 = new javax.swing.JPanel();
+        jDraw = new aihm.JDrawPanel();
         infoPanel = new javax.swing.JPanel();
         buttonLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -179,24 +179,20 @@ public class MainFrame extends javax.swing.JFrame {
 
         jSlider1.setBackground(new java.awt.Color(255, 255, 255));
         jSlider1.setOrientation(javax.swing.JSlider.VERTICAL);
+        jSlider1.setValue(0);
         jSlider1.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
             public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
                 jSlider1MouseWheelMoved(evt);
             }
         });
+        jSlider1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSlider1StateChanged(evt);
+            }
+        });
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 303, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        jDraw.setBackground(new java.awt.Color(255, 255, 255));
+        jDraw.setLayout(null);
 
         javax.swing.GroupLayout rightPanelLayout = new javax.swing.GroupLayout(rightPanel);
         rightPanel.setLayout(rightPanelLayout);
@@ -204,8 +200,8 @@ public class MainFrame extends javax.swing.JFrame {
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jDraw, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -214,7 +210,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jDraw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -315,14 +311,19 @@ public class MainFrame extends javax.swing.JFrame {
         this.jSlider1.setValue(this.jSlider1.getValue() - evt.getUnitsToScroll());
     }//GEN-LAST:event_jSlider1MouseWheelMoved
 
+    private void jSlider1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlider1StateChanged
+        this.jDraw.setPosX(this.jSlider1.getValue());
+        this.jDraw.repaint();
+    }//GEN-LAST:event_jSlider1StateChanged
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton button0;
     private javax.swing.JToggleButton button1;
     private javax.swing.JToggleButton button2;
     private javax.swing.JLabel buttonLabel;
     private javax.swing.JPanel infoPanel;
+    private aihm.JDrawPanel jDraw;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JSlider jSlider1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JPanel leftButtonsPanel;
