@@ -28,10 +28,12 @@ public class MainFrame extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         splitPane = new javax.swing.JSplitPane();
-        leftPane = new javax.swing.JPanel();
+        leftPanel = new javax.swing.JPanel();
+        leftButtonsPanel = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
+        buttonLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mainMenu = new javax.swing.JMenu();
         menuFileQuit = new javax.swing.JMenuItem();
@@ -40,33 +42,55 @@ public class MainFrame extends javax.swing.JFrame {
 
         splitPane.setBorder(null);
 
-        leftPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        leftPane.setLayout(new java.awt.GridBagLayout());
+        leftPanel.setLayout(new java.awt.BorderLayout());
+
+        leftButtonsPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        leftButtonsPanel.setLayout(new java.awt.GridBagLayout());
 
         jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Zero.png"))); // NOI18N
         jToggleButton1.setToolTipText("");
         jToggleButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/ZeroSelected.png"))); // NOI18N
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        leftPane.add(jToggleButton1, gridBagConstraints);
+        leftButtonsPanel.add(jToggleButton1, gridBagConstraints);
 
         jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/One.png"))); // NOI18N
         jToggleButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/OneSelected.png"))); // NOI18N
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 5);
-        leftPane.add(jToggleButton2, gridBagConstraints);
+        leftButtonsPanel.add(jToggleButton2, gridBagConstraints);
 
         jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Two.png"))); // NOI18N
         jToggleButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/TwoSelected.png"))); // NOI18N
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        leftPane.add(jToggleButton3, gridBagConstraints);
+        leftButtonsPanel.add(jToggleButton3, gridBagConstraints);
 
-        splitPane.setLeftComponent(leftPane);
+        leftPanel.add(leftButtonsPanel, java.awt.BorderLayout.CENTER);
+
+        buttonLabel.setText("jLabel1");
+        leftPanel.add(buttonLabel, java.awt.BorderLayout.PAGE_END);
+
+        splitPane.setLeftComponent(leftPanel);
 
         mainMenu.setText("Fichier");
 
@@ -101,12 +125,41 @@ public class MainFrame extends javax.swing.JFrame {
         Runtime.getRuntime().exit(0);
     }//GEN-LAST:event_menuFileQuitActionPerformed
 
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        if(this.jToggleButton1.isSelected()){
+            this.buttonLabel.setText("Bouton 0 sélectionné.");
+        }
+        else{
+            this.buttonLabel.setText("Bouton 0 désélectionné.");
+        }
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+        if(this.jToggleButton2.isSelected()){
+            this.buttonLabel.setText("Bouton 1 sélectionné.");
+        }
+        else{
+            this.buttonLabel.setText("Bouton 1 désélectionné.");
+        }
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
+
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        if(this.jToggleButton3.isSelected()){
+            this.buttonLabel.setText("Bouton 2 sélectionné.");
+        }
+        else{
+            this.buttonLabel.setText("Bouton 2 désélectionné.");
+        }
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel buttonLabel;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JPanel leftPane;
+    private javax.swing.JPanel leftButtonsPanel;
+    private javax.swing.JPanel leftPanel;
     private javax.swing.JMenu mainMenu;
     private javax.swing.JMenuItem menuFileQuit;
     private javax.swing.JSplitPane splitPane;
