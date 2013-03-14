@@ -77,6 +77,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         mainPanel.setLayout(new java.awt.BorderLayout());
 
+        jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
 
         utilsButton0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Zero.png"))); // NOI18N
