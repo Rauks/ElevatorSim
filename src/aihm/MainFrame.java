@@ -34,9 +34,7 @@ public class MainFrame extends javax.swing.JFrame {
             this.buttonLabel.setText("Bouton 2 désélectionné.");
         }
     }
-    
-    /**
-    /**
+
     /**
      * Creates new form MainFrame
      */
