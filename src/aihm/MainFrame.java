@@ -27,12 +27,14 @@ public class MainFrame extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        mainPanel = new javax.swing.JPanel();
         splitPane = new javax.swing.JSplitPane();
-        leftPanel = new javax.swing.JPanel();
         leftButtonsPanel = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
+        rightPanel = new javax.swing.JPanel();
+        infoPanel = new javax.swing.JPanel();
         buttonLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mainMenu = new javax.swing.JMenu();
@@ -40,9 +42,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        splitPane.setBorder(null);
+        mainPanel.setLayout(new java.awt.BorderLayout());
 
-        leftPanel.setLayout(new java.awt.BorderLayout());
+        splitPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         leftButtonsPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         leftButtonsPanel.setLayout(new java.awt.GridBagLayout());
@@ -85,12 +87,51 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         leftButtonsPanel.add(jToggleButton3, gridBagConstraints);
 
-        leftPanel.add(leftButtonsPanel, java.awt.BorderLayout.CENTER);
+        splitPane.setLeftComponent(leftButtonsPanel);
+
+        javax.swing.GroupLayout rightPanelLayout = new javax.swing.GroupLayout(rightPanel);
+        rightPanel.setLayout(rightPanelLayout);
+        rightPanelLayout.setHorizontalGroup(
+            rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 339, Short.MAX_VALUE)
+        );
+        rightPanelLayout.setVerticalGroup(
+            rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 263, Short.MAX_VALUE)
+        );
+
+        splitPane.setRightComponent(rightPanel);
+
+        mainPanel.add(splitPane, java.awt.BorderLayout.CENTER);
+
+        infoPanel.setBackground(new java.awt.Color(204, 204, 204));
 
         buttonLabel.setText("jLabel1");
-        leftPanel.add(buttonLabel, java.awt.BorderLayout.PAGE_END);
+        buttonLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        buttonLabel.setDoubleBuffered(true);
+        buttonLabel.setName(""); // NOI18N
 
-        splitPane.setLeftComponent(leftPanel);
+        javax.swing.GroupLayout infoPanelLayout = new javax.swing.GroupLayout(infoPanel);
+        infoPanel.setLayout(infoPanelLayout);
+        infoPanelLayout.setHorizontalGroup(
+            infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 413, Short.MAX_VALUE)
+            .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(infoPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(buttonLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        infoPanelLayout.setVerticalGroup(
+            infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 14, Short.MAX_VALUE)
+            .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infoPanelLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(buttonLabel)))
+        );
+
+        mainPanel.add(infoPanel, java.awt.BorderLayout.PAGE_END);
 
         mainMenu.setText("Fichier");
 
@@ -111,11 +152,11 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -154,14 +195,16 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel buttonLabel;
+    private javax.swing.JPanel infoPanel;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JPanel leftButtonsPanel;
-    private javax.swing.JPanel leftPanel;
     private javax.swing.JMenu mainMenu;
+    private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuItem menuFileQuit;
+    private javax.swing.JPanel rightPanel;
     private javax.swing.JSplitPane splitPane;
     // End of variables declaration//GEN-END:variables
 }
