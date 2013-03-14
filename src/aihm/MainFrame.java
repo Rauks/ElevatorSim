@@ -9,7 +9,34 @@ package aihm;
  * @author Karl
  */
 public class MainFrame extends javax.swing.JFrame {
-
+    
+    private void action0(){
+        if(this.button0.isSelected()){
+            this.buttonLabel.setText("Bouton 0 sélectionné.");
+        }
+        else{
+            this.buttonLabel.setText("Bouton 0 désélectionné.");
+        }
+    }
+    private void action1(){
+        if(this.button1.isSelected()){
+            this.buttonLabel.setText("Bouton 1 sélectionné.");
+        }
+        else{
+            this.buttonLabel.setText("Bouton 1 désélectionné.");
+        }
+    }
+    private void action2(){
+        if(this.button2.isSelected()){
+            this.buttonLabel.setText("Bouton 2 sélectionné.");
+        }
+        else{
+            this.buttonLabel.setText("Bouton 2 désélectionné.");
+        }
+    }
+    
+    /**
+    /**
     /**
      * Creates new form MainFrame
      */
@@ -26,14 +53,21 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         mainPanel = new javax.swing.JPanel();
+        jToolBar1 = new javax.swing.JToolBar();
+        utilsButton0 = new javax.swing.JToggleButton();
+        utilsButton1 = new javax.swing.JToggleButton();
+        utilsButton2 = new javax.swing.JToggleButton();
         splitPane = new javax.swing.JSplitPane();
         leftButtonsPanel = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        button0 = new javax.swing.JToggleButton();
+        button1 = new javax.swing.JToggleButton();
+        button2 = new javax.swing.JToggleButton();
         rightPanel = new javax.swing.JPanel();
+        jSlider1 = new javax.swing.JSlider();
+        jPanel1 = new javax.swing.JPanel();
         infoPanel = new javax.swing.JPanel();
         buttonLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -44,60 +78,145 @@ public class MainFrame extends javax.swing.JFrame {
 
         mainPanel.setLayout(new java.awt.BorderLayout());
 
+        jToolBar1.setRollover(true);
+
+        utilsButton0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Zero.png"))); // NOI18N
+        utilsButton0.setFocusable(false);
+        utilsButton0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        utilsButton0.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/ZeroSelected.png"))); // NOI18N
+        utilsButton0.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, button0, org.jdesktop.beansbinding.ELProperty.create("${selected}"), utilsButton0, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        utilsButton0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                utilsButton0ActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(utilsButton0);
+
+        utilsButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/One.png"))); // NOI18N
+        utilsButton1.setFocusable(false);
+        utilsButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        utilsButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/OneSelected.png"))); // NOI18N
+        utilsButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, button1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), utilsButton1, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        utilsButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                utilsButton1ActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(utilsButton1);
+
+        utilsButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Two.png"))); // NOI18N
+        utilsButton2.setFocusable(false);
+        utilsButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        utilsButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/TwoSelected.png"))); // NOI18N
+        utilsButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, button2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), utilsButton2, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        utilsButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                utilsButton2ActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(utilsButton2);
+
+        mainPanel.add(jToolBar1, java.awt.BorderLayout.PAGE_START);
+
         splitPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         leftButtonsPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         leftButtonsPanel.setLayout(new java.awt.GridBagLayout());
 
-        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Zero.png"))); // NOI18N
-        jToggleButton1.setToolTipText("");
-        jToggleButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/ZeroSelected.png"))); // NOI18N
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        button0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Zero.png"))); // NOI18N
+        button0.setToolTipText("");
+        button0.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/ZeroSelected.png"))); // NOI18N
+        button0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                button0ActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        leftButtonsPanel.add(jToggleButton1, gridBagConstraints);
+        leftButtonsPanel.add(button0, gridBagConstraints);
 
-        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/One.png"))); // NOI18N
-        jToggleButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/OneSelected.png"))); // NOI18N
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        button1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/One.png"))); // NOI18N
+        button1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/OneSelected.png"))); // NOI18N
+        button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                button1ActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 5);
-        leftButtonsPanel.add(jToggleButton2, gridBagConstraints);
+        leftButtonsPanel.add(button1, gridBagConstraints);
 
-        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Two.png"))); // NOI18N
-        jToggleButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/TwoSelected.png"))); // NOI18N
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        button2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Two.png"))); // NOI18N
+        button2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/TwoSelected.png"))); // NOI18N
+        button2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                button2ActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        leftButtonsPanel.add(jToggleButton3, gridBagConstraints);
+        leftButtonsPanel.add(button2, gridBagConstraints);
 
         splitPane.setLeftComponent(leftButtonsPanel);
+
+        rightPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        jSlider1.setBackground(new java.awt.Color(255, 255, 255));
+        jSlider1.setOrientation(javax.swing.JSlider.VERTICAL);
+        jSlider1.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
+            public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
+                jSlider1MouseWheelMoved(evt);
+            }
+        });
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 303, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout rightPanelLayout = new javax.swing.GroupLayout(rightPanel);
         rightPanel.setLayout(rightPanelLayout);
         rightPanelLayout.setHorizontalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 339, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         rightPanelLayout.setVerticalGroup(
             rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 263, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         splitPane.setRightComponent(rightPanel);
@@ -106,7 +225,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         infoPanel.setBackground(new java.awt.Color(204, 204, 204));
 
-        buttonLabel.setText("jLabel1");
+        buttonLabel.setText(" ");
         buttonLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         buttonLabel.setDoubleBuffered(true);
         buttonLabel.setName(""); // NOI18N
@@ -159,6 +278,8 @@ public class MainFrame extends javax.swing.JFrame {
             .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        bindingGroup.bind();
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -166,45 +287,53 @@ public class MainFrame extends javax.swing.JFrame {
         Runtime.getRuntime().exit(0);
     }//GEN-LAST:event_menuFileQuitActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        if(this.jToggleButton1.isSelected()){
-            this.buttonLabel.setText("Bouton 0 sélectionné.");
-        }
-        else{
-            this.buttonLabel.setText("Bouton 0 désélectionné.");
-        }
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    private void button0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button0ActionPerformed
+        this.action0();
+    }//GEN-LAST:event_button0ActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        if(this.jToggleButton2.isSelected()){
-            this.buttonLabel.setText("Bouton 1 sélectionné.");
-        }
-        else{
-            this.buttonLabel.setText("Bouton 1 désélectionné.");
-        }
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        this.action1();
+    }//GEN-LAST:event_button1ActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        if(this.jToggleButton3.isSelected()){
-            this.buttonLabel.setText("Bouton 2 sélectionné.");
-        }
-        else{
-            this.buttonLabel.setText("Bouton 2 désélectionné.");
-        }
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        this.action2();
+    }//GEN-LAST:event_button2ActionPerformed
+
+    private void utilsButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utilsButton0ActionPerformed
+        this.action0();
+    }//GEN-LAST:event_utilsButton0ActionPerformed
+
+    private void utilsButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utilsButton1ActionPerformed
+        this.action1();
+    }//GEN-LAST:event_utilsButton1ActionPerformed
+
+    private void utilsButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utilsButton2ActionPerformed
+        this.action2();
+    }//GEN-LAST:event_utilsButton2ActionPerformed
+
+    private void jSlider1MouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_jSlider1MouseWheelMoved
+        this.jSlider1.setValue(this.jSlider1.getValue() - evt.getUnitsToScroll());
+    }//GEN-LAST:event_jSlider1MouseWheelMoved
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton button0;
+    private javax.swing.JToggleButton button1;
+    private javax.swing.JToggleButton button2;
     private javax.swing.JLabel buttonLabel;
     private javax.swing.JPanel infoPanel;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSlider jSlider1;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JPanel leftButtonsPanel;
     private javax.swing.JMenu mainMenu;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuItem menuFileQuit;
     private javax.swing.JPanel rightPanel;
     private javax.swing.JSplitPane splitPane;
+    private javax.swing.JToggleButton utilsButton0;
+    private javax.swing.JToggleButton utilsButton1;
+    private javax.swing.JToggleButton utilsButton2;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
