@@ -42,6 +42,7 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
+        this.jDraw.setPosX(this.jSlider1.getValue());
     }
 
     /**

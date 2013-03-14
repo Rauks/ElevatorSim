@@ -17,7 +17,7 @@ public class JDrawPanel extends JPanel{
     
     public JDrawPanel(){
         super();
-        this.posX = 50;
+        this.posX = 0;
     }
 
     public int getPosX() {
