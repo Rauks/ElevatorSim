@@ -25,24 +25,237 @@ public class LiftFrame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
+
+        jPanel1 = new javax.swing.JPanel();
+        jToolBar1 = new javax.swing.JToolBar();
+        mainButton0 = new javax.swing.JButton();
+        mainButton1 = new javax.swing.JButton();
+        mainButton2 = new javax.swing.JButton();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        splitLift = new javax.swing.JPanel();
+        labelLift = new javax.swing.JLabel();
+        contentLift = new javax.swing.JPanel();
+        lift = new aihm.JDrawPanel();
+        panelLiftButtons = new javax.swing.JPanel();
+        floor2 = new javax.swing.JPanel();
+        liftButton2 = new javax.swing.JButton();
+        floor1 = new javax.swing.JPanel();
+        liftButton1 = new javax.swing.JButton();
+        floor0 = new javax.swing.JPanel();
+        liftButton0 = new javax.swing.JButton();
+        splitCab = new javax.swing.JPanel();
+        labelCab = new javax.swing.JLabel();
+        panelCabButtons = new javax.swing.JPanel();
+        cabButton0 = new javax.swing.JButton();
+        cabButton1 = new javax.swing.JButton();
+        cabButton2 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        fileQuit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simulation d'ascenseur");
-        setPreferredSize(new java.awt.Dimension(400, 500));
+
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jToolBar1.setFloatable(false);
+        jToolBar1.setRollover(true);
+
+        mainButton0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Zero.png"))); // NOI18N
+        mainButton0.setFocusable(false);
+        mainButton0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton0.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/ZeroSelected.png"))); // NOI18N
+        mainButton0.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(mainButton0);
+
+        mainButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/One.png"))); // NOI18N
+        mainButton1.setFocusable(false);
+        mainButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/OneSelected.png"))); // NOI18N
+        mainButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(mainButton1);
+
+        mainButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Two.png"))); // NOI18N
+        mainButton2.setFocusable(false);
+        mainButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton2.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/TwoSelected.png"))); // NOI18N
+        mainButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(mainButton2);
+
+        jPanel1.add(jToolBar1, java.awt.BorderLayout.PAGE_START);
+
+        jSplitPane1.setBorder(null);
+        jSplitPane1.setDividerLocation(200);
+        jSplitPane1.setDividerSize(1);
+        jSplitPane1.setToolTipText("");
+
+        splitLift.setBackground(new java.awt.Color(255, 255, 255));
+        splitLift.setLayout(new java.awt.BorderLayout());
+
+        labelLift.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLift.setText("Ascenseur");
+        splitLift.add(labelLift, java.awt.BorderLayout.PAGE_START);
+
+        contentLift.setBackground(new java.awt.Color(255, 255, 255));
+
+        lift.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout liftLayout = new javax.swing.GroupLayout(lift);
+        lift.setLayout(liftLayout);
+        liftLayout.setHorizontalGroup(
+            liftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 102, Short.MAX_VALUE)
+        );
+        liftLayout.setVerticalGroup(
+            liftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        panelLiftButtons.setBackground(new java.awt.Color(255, 255, 255));
+        panelLiftButtons.setLayout(new java.awt.GridLayout(3, 1));
+
+        floor2.setBackground(new java.awt.Color(255, 255, 255));
+        floor2.setLayout(new javax.swing.BoxLayout(floor2, javax.swing.BoxLayout.LINE_AXIS));
+
+        liftButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Call.png"))); // NOI18N
+        liftButton2.setFocusable(false);
+        liftButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/CallSelected.png"))); // NOI18N
+        liftButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        floor2.add(liftButton2);
+
+        panelLiftButtons.add(floor2);
+
+        floor1.setBackground(new java.awt.Color(255, 255, 255));
+        floor1.setLayout(new javax.swing.BoxLayout(floor1, javax.swing.BoxLayout.LINE_AXIS));
+
+        liftButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Call.png"))); // NOI18N
+        liftButton1.setFocusable(false);
+        liftButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        liftButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/CallSelected.png"))); // NOI18N
+        liftButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        floor1.add(liftButton1);
+
+        panelLiftButtons.add(floor1);
+
+        floor0.setBackground(new java.awt.Color(255, 255, 255));
+        floor0.setLayout(new javax.swing.BoxLayout(floor0, javax.swing.BoxLayout.LINE_AXIS));
+
+        liftButton0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Call.png"))); // NOI18N
+        liftButton0.setFocusable(false);
+        liftButton0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        liftButton0.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/CallSelected.png"))); // NOI18N
+        liftButton0.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        floor0.add(liftButton0);
+
+        panelLiftButtons.add(floor0);
+
+        javax.swing.GroupLayout contentLiftLayout = new javax.swing.GroupLayout(contentLift);
+        contentLift.setLayout(contentLiftLayout);
+        contentLiftLayout.setHorizontalGroup(
+            contentLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contentLiftLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panelLiftButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        contentLiftLayout.setVerticalGroup(
+            contentLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contentLiftLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(contentLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lift, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelLiftButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        splitLift.add(contentLift, java.awt.BorderLayout.CENTER);
+
+        jSplitPane1.setLeftComponent(splitLift);
+
+        splitCab.setBackground(new java.awt.Color(255, 255, 255));
+        splitCab.setLayout(new java.awt.BorderLayout());
+
+        labelCab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelCab.setText("Cabine");
+        splitCab.add(labelCab, java.awt.BorderLayout.PAGE_START);
+
+        panelCabButtons.setBackground(new java.awt.Color(255, 255, 255));
+        java.awt.GridBagLayout panelCabButtonsLayout = new java.awt.GridBagLayout();
+        panelCabButtonsLayout.columnWidths = new int[] {0};
+        panelCabButtonsLayout.rowHeights = new int[] {0, 5, 0, 5, 0};
+        panelCabButtons.setLayout(panelCabButtonsLayout);
+
+        cabButton0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Zero.png"))); // NOI18N
+        cabButton0.setFocusable(false);
+        cabButton0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        cabButton0.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/ZeroSelected.png"))); // NOI18N
+        cabButton0.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        panelCabButtons.add(cabButton0, gridBagConstraints);
+
+        cabButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/One.png"))); // NOI18N
+        cabButton1.setFocusable(false);
+        cabButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        cabButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/OneSelected.png"))); // NOI18N
+        cabButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        panelCabButtons.add(cabButton1, gridBagConstraints);
+
+        cabButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Two.png"))); // NOI18N
+        cabButton2.setFocusable(false);
+        cabButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        cabButton2.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/TwoSelected.png"))); // NOI18N
+        cabButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        panelCabButtons.add(cabButton2, gridBagConstraints);
+
+        splitCab.add(panelCabButtons, java.awt.BorderLayout.CENTER);
+
+        jSplitPane1.setRightComponent(splitCab);
+
+        jPanel1.add(jSplitPane1, java.awt.BorderLayout.CENTER);
+
+        jMenu1.setText("Fichier");
+
+        fileQuit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        fileQuit.setText("Quitter");
+        fileQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fileQuitActionPerformed(evt);
+            }
+        });
+        jMenu1.add(fileQuit);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void fileQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileQuitActionPerformed
+        Runtime.getRuntime().exit(0);
+    }//GEN-LAST:event_fileQuitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +292,31 @@ public class LiftFrame extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cabButton0;
+    private javax.swing.JButton cabButton1;
+    private javax.swing.JButton cabButton2;
+    private javax.swing.JPanel contentLift;
+    private javax.swing.JMenuItem fileQuit;
+    private javax.swing.JPanel floor0;
+    private javax.swing.JPanel floor1;
+    private javax.swing.JPanel floor2;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JLabel labelCab;
+    private javax.swing.JLabel labelLift;
+    private aihm.JDrawPanel lift;
+    private javax.swing.JButton liftButton0;
+    private javax.swing.JButton liftButton1;
+    private javax.swing.JButton liftButton2;
+    private javax.swing.JButton mainButton0;
+    private javax.swing.JButton mainButton1;
+    private javax.swing.JButton mainButton2;
+    private javax.swing.JPanel panelCabButtons;
+    private javax.swing.JPanel panelLiftButtons;
+    private javax.swing.JPanel splitCab;
+    private javax.swing.JPanel splitLift;
     // End of variables declaration//GEN-END:variables
 }
