@@ -16,15 +16,18 @@ import java.util.logging.Logger;
  */
 public class Lift {
     public enum Moves{UP, DOWN, STANDBY}
-    
+    public enum States{CLOSED, OPENED, OPENING, CLOSING}
+            
     private int nbFloors = 0;
     private Queue<Floor> floorRequests;
     private Floor currentFloor;
+    private States state;
     
     public Lift(int nbFloors){
         this.nbFloors = nbFloors;
         this.floorRequests = new LinkedList<>();
         this.currentFloor = new Floor(0);
+        this.state = States.CLOSED;
     }
     
     private void checkFloorIndex(int index) throws LiftException{
@@ -45,23 +48,26 @@ public class Lift {
         }
     }
     
-    public boolean isRequested(int index) throws LiftException{
+    public boolean isFloorInRequest(int index) throws LiftException{
         this.checkFloorIndex(index);
         return this.floorRequests.contains(new Floor(index));
     }
     
-    public boolean hasRequests(){
+    private boolean hasRequests(){
         return !this.floorRequests.isEmpty();
     }
 
-    public int getNextFloor(){
+    private int getNextFloor(){
         if(this.hasRequests()){
             return this.floorRequests.peek().getValue();
         }
         return this.currentFloor.getValue();
     }
     
-    public Moves getRequestedMove(){
+    public Moves getRequestedMove() throws LiftException{
+        if(this.state != States.CLOSED){
+            throw new LiftException("Doors must be in CLOSED state to change the current floor");
+        }
         if(!this.hasRequests()){
             return Moves.STANDBY;
         }
@@ -79,6 +85,9 @@ public class Lift {
     }
     
     public void setCurrentFloor(int index) throws LiftException{
+        if(this.state != States.CLOSED){
+            throw new LiftException("Doors must be in CLOSED state to change the current floor");
+        }
         this.checkFloorIndex(index);
         this.floorRequests.remove(new Floor(index));
         this.currentFloor = new Floor(index);
@@ -90,5 +99,38 @@ public class Lift {
     
     public int getNbFloors(){
         return this.nbFloors;
+    }
+    
+    public void requestDoorsOpening() throws LiftException{
+        if(this.state != States.CLOSED && this.state != States.CLOSING){
+            throw new LiftException("Doors must be in CLOSED or CLOSING state before to request them to OPENING");
+        }
+        this.floorRequests.remove(new Floor(this.getCurrentFloor()));
+        this.state = States.OPENING;
+    }
+    
+    public void requestDoorsClosing() throws LiftException{
+        if(this.state != States.OPENED && this.state != States.OPENING){
+            throw new LiftException("Doors must be in OPENED or OPENING state before to request them to CLOSING");
+        }
+        this.state = States.CLOSING;
+    }
+    
+    public void setDoorsOpened() throws LiftException{
+        if(this.state != States.OPENING){
+            throw new LiftException("Doors must be in OPENING state before to set them to OPENED");
+        }
+        this.state = States.OPENED;
+    }
+    
+    public void setDoorsClosed() throws LiftException{
+        if(this.state != States.CLOSING){
+            throw new LiftException("Doors must be in CLOSING state before to set them to CLOSED");
+        }
+        this.state = States.CLOSED;
+    }
+    
+    public States getState(){
+        return this.state;
     }
 }

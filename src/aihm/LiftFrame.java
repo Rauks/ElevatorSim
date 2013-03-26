@@ -28,37 +28,68 @@ public class LiftFrame extends javax.swing.JFrame {
         this.model = model;
         initComponents();
 
-        Timer timer = new Timer(100, new ActionListener(){
+        Timer timer = new Timer(20, new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent evt){
-                if(model.hasRequests()){
-                    //Current floor announce
-                    try {
-                        int floorPX = (100 / (model.getNbFloors() - 1));
-                        int liftPosX = lift.getPosX();
-                        if(liftPosX % floorPX == 0){
-                            int floor = liftPosX / floorPX;
-                            model.setCurrentFloor(floor);
-                            setFloorButtonUnselected(floor);
-                        }
-                    } catch (LiftException ex) {
-                        Logger.getLogger(LiftFrame.class.getName()).log(Level.SEVERE, null, ex);
+                try {
+                    switch(model.getState()){
+                        case OPENED :
+                            model.requestDoorsClosing();
+                            break;
+                        case CLOSED :
+                            //Current floor announce
+                            int floorPX = (100 / (model.getNbFloors() - 1));
+                            int liftPosX = lift.getPosX();
+                            if(liftPosX % floorPX == 0){ //A floor is reached
+                                int floor = liftPosX / floorPX;
+                                
+                                //Is current floor in requests ?
+                                if(model.isFloorInRequest(floor)){
+                                    model.setCurrentFloor(floor);
+                                    setFloorButtonUnselected(floor);
+                                    model.requestDoorsOpening();
+                                }
+                                else{
+                                    model.setCurrentFloor(floor);
+                                }
+                            }
+                            
+                            //Move if doors are closed
+                            if(model.getState() == Lift.States.CLOSED){
+                                switch(model.getRequestedMove()){
+                                    case STANDBY :
+                                        break;
+                                    case UP :
+                                        lift.incrPosX();
+                                        break;
+                                    case DOWN :
+                                        lift.decrPosX();
+                                        break;
+                                }
+                            }
+                                
+                            //Floor announce in cab
+                            cabState.setText(String.valueOf(model.getCurrentFloor()));
+                                
+                            break;
+                        case OPENING :
+                            lift.incrDoorsOverture();
+                            if(lift.getDoorsOverture() == LiftPanel.MAX_DOORS_OPENING){
+                                model.setDoorsOpened();
+                            }
+                            break;
+                        case CLOSING :
+                            lift.decrDoorsOverture();
+                            if(lift.getDoorsOverture() == 0){
+                                model.setDoorsClosed();
+                            }
+                            break;
                     }
-                    //Moves
-                    switch(model.getRequestedMove()){
-                        case STANDBY :
-                            break;
-                        case UP :
-                            lift.incrPosX();
-                            break;
-                        case DOWN :
-                            lift.decrPosX();
-                            break;
-                    }
-                    //Floor in cab
-                    cabState.setText(String.valueOf(model.getCurrentFloor()));
+                    
+                    lift.repaint();
+                } catch (LiftException ex) {
+                    Logger.getLogger(LiftFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                lift.repaint();
             }
         });
         timer.start();
