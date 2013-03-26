@@ -6,22 +6,35 @@ package aihm;
 
 import aihm.model.Lift;
 import aihm.model.LiftException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Timer;
 
 /**
  *
  * @author Karl
  */
 public class LiftFrame extends javax.swing.JFrame {
-    private Lift model;
+    private final Lift model;
     
     /**
      * Creates new form LiftFrame
      */
-    public LiftFrame(Lift model) {
+    public LiftFrame(final Lift model) {
         this.model = model;
         initComponents();
+
+        Timer timer = new Timer(100, new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent evt){
+                if(model.hasRequests()){
+                    
+                }
+            }
+        });
+        timer.start();
     }
     
     public void requestFloor(int index){

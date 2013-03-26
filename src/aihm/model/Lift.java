@@ -5,8 +5,8 @@
 package aihm.model;
 
 import aihm.LiftFrame;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,12 +16,12 @@ import java.util.logging.Logger;
  */
 public class Lift {
     private int nbFloors = 0;
-    private Set<Floor> floorRequests;
+    private Queue<Floor> floorRequests;
     private Floor currentFloor;
     
     public Lift(int nbFloors){
         this.nbFloors = nbFloors;
-        this.floorRequests = new HashSet<>();
+        this.floorRequests = new LinkedList<>();
         this.currentFloor = new Floor(0);
     }
     
@@ -47,6 +47,22 @@ public class Lift {
     
     public boolean hasRequests(){
         return !this.floorRequests.isEmpty();
+    }
+
+    public int getNextFloor() throws LiftException{
+        if(!this.hasRequests()){
+            throw new LiftException("No floor request");
+        }
+        //Simple version, dequeue
+        return this.floorRequests.peek().getValue();
+    }
+    
+    public void gotoNextFloor() throws LiftException{
+        if(!this.hasRequests()){
+            throw new LiftException("No floor request");
+        }
+        int nextIndex = this.floorRequests.poll().getValue();
+        this.setCurrentFloor(nextIndex);
     }
     
     public void setCurrentFloor(int index) throws LiftException{
