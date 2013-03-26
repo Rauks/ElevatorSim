@@ -32,8 +32,13 @@ public class LiftFrame extends javax.swing.JFrame {
                 if(model.hasRequests()){
                     //Current floor announce
                     try {
-                        int floor = lift.getPosX() / (100 / (model.getNbFloors() - 1));
-                        model.setCurrentFloor(floor);
+                        int floorPX = (100 / (model.getNbFloors() - 1));
+                        int liftPosX = lift.getPosX();
+                        if(liftPosX % floorPX == 0){
+                            int floor = liftPosX / floorPX;
+                            model.setCurrentFloor(floor);
+                            setFloorButtonUnselected(floor);
+                        }
                     } catch (LiftException ex) {
                         Logger.getLogger(LiftFrame.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -65,10 +70,24 @@ public class LiftFrame extends javax.swing.JFrame {
         }
     }
     
-    public void setSourceButtonSelected(java.awt.event.ActionEvent evt){
+    private void setSourceButtonSelected(java.awt.event.ActionEvent evt){
         ((javax.swing.JButton) evt.getSource()).setSelected(true);
     }
-
+    
+    private void setFloorButtonUnselected(int index){
+        switch(index){
+            case 0 :
+                this.mainButton0.setSelected(false);
+                break;
+            case 1 :
+                this.mainButton0.setSelected(false);
+                break;
+            case 2 : 
+                this.mainButton0.setSelected(false);
+                break;
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
