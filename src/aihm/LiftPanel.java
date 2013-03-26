@@ -22,7 +22,7 @@ public class LiftPanel extends JPanel{
     public LiftPanel(){
         super();
         this.posX = 0;
-        this.doorsOpening = 0;
+        this.doorsOpening;
     }
 
     public int getPosX() {
@@ -77,28 +77,35 @@ public class LiftPanel extends JPanel{
         //Calculus for placing draws
         int width = this.getWidth() - 1;
         int height = this.getHeight() - 1;
-        int calcPos = (int)((float)(2 * height/3) * (1 - (float)this.posX/((float) LiftPanel.MAX_POS_X)));
-        int doorPadding = 3;
-        int doorWidth = (width - 22) / 2 - (doorPadding + doorPadding/2);
-        int doorHeight = height/3 - 2 - 2 * doorPadding;
         
         //Cab
-        g.drawRect(10, calcPos, width - 20, height/3);
+        int cabY = (int)((float)(2 * height/3) * (1 - (float)this.posX/((float) LiftPanel.MAX_POS_X)));
+        
+        g.setColor(Color.BLACK);
+        g.drawRect(10, cabY, width - 20, height/3);
         
         //Vertical guide
+        g.setColor(Color.BLACK);
         g.drawLine(5, 0, 5, height);
         g.drawLine(width - 5, 0, width - 5, height);
         
         //Cab doors
+        int doorPadding = 3;
+        float doorOpeningPercent = (float) this.doorsOpening / ((float) LiftPanel.MAX_DOORS_OPENING);
+        int doorWidth = (width - 22) / 2 - (doorPadding + doorPadding/2);
+        int doorWidthWithOpening = (int)((float)(doorWidth * doorOpeningPercent));
+        int doorHeight = height/3 - 2 - 2 * doorPadding;
         int leftDoorX = 11 + doorPadding;
-        int rightDoorx = 12 + (width - 22) / 2 + (doorPadding/2);
-        int doorY = calcPos + 1 + doorPadding;
+        int leftDoorXWithOpening = leftDoorX;
+        int rightDoorX = 12 + (width - 22) / 2 + (doorPadding/2);
+        int rightDoorXWithOpening = rightDoorX + doorWidth - doorWidthWithOpening;
+        int doorY = cabY + 1 + doorPadding;
         
         g.setColor(Color.LIGHT_GRAY);
-        g.fillRect(leftDoorX, doorY, doorWidth, doorHeight);
-        g.fillRect(rightDoorx, doorY, doorWidth, doorHeight);
+        g.fillRect(leftDoorXWithOpening, doorY, doorWidthWithOpening, doorHeight);
+        g.fillRect(rightDoorXWithOpening, doorY, doorWidthWithOpening, doorHeight);
         g.setColor(Color.BLACK);
-        g.drawRect(leftDoorX, doorY, doorWidth, doorHeight);
-        g.drawRect(rightDoorx, doorY, doorWidth, doorHeight);
+        g.drawRect(leftDoorXWithOpening, doorY, doorWidthWithOpening, doorHeight);
+        g.drawRect(rightDoorXWithOpening, doorY, doorWidthWithOpening, doorHeight);
     }
 }
