@@ -51,12 +51,11 @@ public class Lift {
         return !this.floorRequests.isEmpty();
     }
 
-    public int getNextFloor() throws LiftException{
-        if(!this.hasRequests()){
-            throw new LiftException("No floor request");
+    public int getNextFloor(){
+        if(this.hasRequests()){
+            return this.floorRequests.peek().getValue();
         }
-        //Simple version, dequeue
-        return this.floorRequests.peek().getValue();
+        return this.currentFloor.getValue();
     }
     
     public Moves getRequestedMove(){
@@ -64,29 +63,16 @@ public class Lift {
             return Moves.STANDBY;
         }
         int currentIndex = this.getCurrentFloor();
-        int nextIndex = 0;
-        try {
-            nextIndex = this.getNextFloor();
-        } catch (LiftException ex) {
-            Logger.getLogger(Lift.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        int nextIndex = this.getNextFloor();
         if(currentIndex == nextIndex){
             return Moves.STANDBY;
         }
-        else if(currentIndex > nextIndex){
-            return Moves.DOWN;
-        }
-        else{
+        else if(currentIndex < nextIndex){
             return Moves.UP;
         }
-    }
-    
-    public void gotoNextFloor() throws LiftException{
-        if(!this.hasRequests()){
-            throw new LiftException("No floor request");
+        else{
+            return Moves.DOWN;
         }
-        int nextIndex = this.floorRequests.poll().getValue();
-        this.setCurrentFloor(nextIndex);
     }
     
     public void setCurrentFloor(int index) throws LiftException{
@@ -97,5 +83,9 @@ public class Lift {
     
     public int getCurrentFloor(){
         return this.currentFloor.getValue();
+    }
+    
+    public int getNbFloors(){
+        return this.nbFloors;
     }
 }

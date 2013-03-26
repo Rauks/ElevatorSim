@@ -17,7 +17,7 @@ import javax.swing.Timer;
  * @author Karl
  */
 public class LiftFrame extends javax.swing.JFrame {
-    private final Lift model;
+    private Lift model;
     
     /**
      * Creates new form LiftFrame
@@ -30,18 +30,28 @@ public class LiftFrame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent evt){
                 if(model.hasRequests()){
-                    cabState.setText(String.valueOf(model.getCurrentFloor()));
+                    //Current floor announce
+                    try {
+                        int floor = lift.getPosX() / (100 / (model.getNbFloors() - 1));
+                        model.setCurrentFloor(floor);
+                    } catch (LiftException ex) {
+                        Logger.getLogger(LiftFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    //Moves
                     switch(model.getRequestedMove()){
                         case STANDBY :
                             break;
                         case UP :
-                            
+                            lift.incrPosX();
                             break;
                         case DOWN :
-                            
+                            lift.decrPosX();
                             break;
                     }
+                    //Floor in cab
+                    cabState.setText(String.valueOf(model.getCurrentFloor()));
                 }
+                lift.repaint();
             }
         });
         timer.start();
