@@ -35,6 +35,14 @@ public class LiftPanel extends JPanel{
         this.posX = posX;
     }
     
+    public void incrPosX(){
+        this.setPosX(this.getPosX() + 1);
+    }
+    
+    public void decrPosX(){
+        this.setPosX(this.getPosX() - 1);
+    }
+    
     @Override 
     public void paintComponent(Graphics g) {
         //background
