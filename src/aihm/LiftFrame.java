@@ -30,7 +30,17 @@ public class LiftFrame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent evt){
                 if(model.hasRequests()){
-                    
+                    cabState.setText(String.valueOf(model.getCurrentFloor()));
+                    switch(model.getRequestedMove()){
+                        case STANDBY :
+                            break;
+                        case UP :
+                            
+                            break;
+                        case DOWN :
+                            
+                            break;
+                    }
                 }
             }
         });

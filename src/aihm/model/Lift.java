@@ -15,6 +15,8 @@ import java.util.logging.Logger;
  * @author Karl
  */
 public class Lift {
+    public enum Moves{UP, DOWN, STANDBY}
+    
     private int nbFloors = 0;
     private Queue<Floor> floorRequests;
     private Floor currentFloor;
@@ -55,6 +57,28 @@ public class Lift {
         }
         //Simple version, dequeue
         return this.floorRequests.peek().getValue();
+    }
+    
+    public Moves getRequestedMove(){
+        if(!this.hasRequests()){
+            return Moves.STANDBY;
+        }
+        int currentIndex = this.getCurrentFloor();
+        int nextIndex = 0;
+        try {
+            nextIndex = this.getNextFloor();
+        } catch (LiftException ex) {
+            Logger.getLogger(Lift.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(currentIndex == nextIndex){
+            return Moves.STANDBY;
+        }
+        else if(currentIndex > nextIndex){
+            return Moves.DOWN;
+        }
+        else{
+            return Moves.UP;
+        }
     }
     
     public void gotoNextFloor() throws LiftException{
