@@ -14,11 +14,12 @@ import java.util.Set;
 public class Lift {
     private int nbFloors = 0;
     private Set<Floor> floorRequests;
-    
+    private Floor currentFloor;
     
     public Lift(int nbFloors){
         this.nbFloors = nbFloors;
         this.floorRequests = new HashSet<>();
+        this.currentFloor = new Floor(0);
     }
     
     public void requestFloor(int index) throws LiftException{
@@ -35,7 +36,12 @@ public class Lift {
         return this.floorRequests.contains(new Floor(index));
     }
     
-    public void onFloor(int index){
+    public void setCurrentFloor(int index){
         this.floorRequests.remove(new Floor(index));
+        this.currentFloor = new Floor(index);
+    }
+    
+    public int getCurrentFloor(){
+        return this.currentFloor.getValue();
     }
 }
