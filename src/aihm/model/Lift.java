@@ -4,7 +4,6 @@
  */
 package aihm.model;
 
-import aihm.model.LiftException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +13,7 @@ import java.util.Set;
  */
 public class Lift {
     private int nbFloors = 0;
-    private Set<Integer> floorRequests;
+    private Set<Floor> floorRequests;
     
     
     public Lift(int nbFloors){
@@ -29,10 +28,14 @@ public class Lift {
         if(index > this.nbFloors - 1){
             throw new LiftException("Floor out of bound");
         }
-        this.floorRequests.add(new Integer(index));
+        this.floorRequests.add(new Floor(index));
     }
     
     public boolean isRequested(int index){
-        
+        return this.floorRequests.contains(new Floor(index));
+    }
+    
+    public void onFloor(int index){
+        this.floorRequests.remove(new Floor(index));
     }
 }
