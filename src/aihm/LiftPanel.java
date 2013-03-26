@@ -4,7 +4,6 @@
  */
 package aihm;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -12,10 +11,12 @@ import javax.swing.JPanel;
  *
  * @author Karl
  */
-public class JDrawPanel extends JPanel{
+public class LiftPanel extends JPanel{
+    public static int MAX_X = 100;
+    
     private int posX;
     
-    public JDrawPanel(){
+    public LiftPanel(){
         super();
         this.posX = 0;
     }
@@ -25,8 +26,8 @@ public class JDrawPanel extends JPanel{
     }
 
     public void setPosX(int posX) {
-        if(posX > 100){
-            posX = 100;
+        if(posX > LiftPanel.MAX_X){
+            posX = LiftPanel.MAX_X;
         }
         else if(posX < 0){
             posX = 0;
@@ -42,7 +43,7 @@ public class JDrawPanel extends JPanel{
         //custom paint
         int width = this.getWidth() - 1;
         int height = this.getHeight() - 1;
-        int calcPos = (int)((float)(2 * height/3) * (1 - (float)this.posX/100.));
+        int calcPos = (int)((float)(2 * height/3) * (1 - (float)this.posX/((float) LiftPanel.MAX_X)));
         g.drawRect(10, calcPos, width - 20, height/3);
         g.drawString(String.valueOf(this.posX) + " %", width/2 - 10, calcPos + height/6 + 5);
         g.drawLine(5, 0, 5, height);

@@ -37,7 +37,7 @@ public class LiftFrame extends javax.swing.JFrame {
         splitLift = new javax.swing.JPanel();
         labelLift = new javax.swing.JLabel();
         contentLift = new javax.swing.JPanel();
-        lift = new aihm.JDrawPanel();
+        lift = new aihm.LiftPanel();
         panelLiftButtons = new javax.swing.JPanel();
         floor2 = new javax.swing.JPanel();
         liftButton2 = new javax.swing.JButton();
@@ -342,7 +342,7 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JPanel floor2;
     private javax.swing.JLabel labelCab;
     private javax.swing.JLabel labelLift;
-    private aihm.JDrawPanel lift;
+    private aihm.LiftPanel lift;
     private javax.swing.JButton liftButton0;
     private javax.swing.JButton liftButton1;
     private javax.swing.JButton liftButton2;
