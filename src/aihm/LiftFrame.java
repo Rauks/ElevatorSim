@@ -90,6 +90,7 @@ public class LiftFrame extends javax.swing.JFrame {
         split.setBorder(null);
         split.setDividerLocation(200);
         split.setDividerSize(1);
+        split.setToolTipText("");
 
         splitLift.setBackground(new java.awt.Color(255, 255, 255));
         splitLift.setLayout(new java.awt.BorderLayout());
