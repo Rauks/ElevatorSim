@@ -40,8 +40,8 @@ public class JDrawPanel extends JPanel{
         super.paintComponent(g);
         
         //custom paint
-        int width = this.getWidth();
-        int height = this.getHeight();
+        int width = this.getWidth() - 1;
+        int height = this.getHeight() - 1;
         int calcPos = (int)((float)(2 * height/3) * (1 - (float)this.posX/100.));
         g.drawRect(10, calcPos, width - 20, height/3);
         g.drawString(String.valueOf(this.posX) + " %", width/2 - 10, calcPos + height/6 + 5);
