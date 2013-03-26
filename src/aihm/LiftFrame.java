@@ -73,6 +73,11 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mainButton0.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/ZeroSelected.png"))); // NOI18N
         mainButton0.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mainButton0ActionPerformed(evt);
+            }
+        });
         mainBar.add(mainButton0);
 
         mainButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/One.png"))); // NOI18N
@@ -80,6 +85,11 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mainButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/OneSelected.png"))); // NOI18N
         mainButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mainButton1ActionPerformed(evt);
+            }
+        });
         mainBar.add(mainButton1);
 
         mainButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Two.png"))); // NOI18N
@@ -87,6 +97,11 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mainButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/TwoSelected.png"))); // NOI18N
         mainButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mainButton2ActionPerformed(evt);
+            }
+        });
         mainBar.add(mainButton2);
 
         content.add(mainBar, java.awt.BorderLayout.PAGE_START);
@@ -132,6 +147,11 @@ public class LiftFrame extends javax.swing.JFrame {
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton2, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
 
+        liftButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                liftButton2ActionPerformed(evt);
+            }
+        });
         floor2.add(liftButton2);
 
         panelLiftButtons.add(floor2);
@@ -148,6 +168,11 @@ public class LiftFrame extends javax.swing.JFrame {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton1, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
 
+        liftButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                liftButton1ActionPerformed(evt);
+            }
+        });
         floor1.add(liftButton1);
 
         panelLiftButtons.add(floor1);
@@ -164,6 +189,11 @@ public class LiftFrame extends javax.swing.JFrame {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton0, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton0, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
 
+        liftButton0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                liftButton0ActionPerformed(evt);
+            }
+        });
         floor0.add(liftButton0);
 
         panelLiftButtons.add(floor0);
@@ -215,6 +245,11 @@ public class LiftFrame extends javax.swing.JFrame {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton0, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton0, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
 
+        cabButton0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cabButton0ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
@@ -229,6 +264,11 @@ public class LiftFrame extends javax.swing.JFrame {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton1, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
 
+        cabButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cabButton1ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -243,6 +283,11 @@ public class LiftFrame extends javax.swing.JFrame {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton2, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
 
+        cabButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cabButton2ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -298,6 +343,42 @@ public class LiftFrame extends javax.swing.JFrame {
     private void MenuFileQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuFileQuitActionPerformed
         Runtime.getRuntime().exit(0);
     }//GEN-LAST:event_MenuFileQuitActionPerformed
+
+    private void mainButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton0ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mainButton0ActionPerformed
+
+    private void mainButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mainButton1ActionPerformed
+
+    private void mainButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mainButton2ActionPerformed
+
+    private void liftButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_liftButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_liftButton2ActionPerformed
+
+    private void liftButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_liftButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_liftButton1ActionPerformed
+
+    private void liftButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_liftButton0ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_liftButton0ActionPerformed
+
+    private void cabButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cabButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cabButton2ActionPerformed
+
+    private void cabButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cabButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cabButton1ActionPerformed
+
+    private void cabButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cabButton0ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cabButton0ActionPerformed
 
     /**
      * @param args the command line arguments
