@@ -19,7 +19,7 @@ public class App {
         SwingUtilities.invokeLater(new Runnable(){
             @Override
             public void run(){
-                    MainFrame gui = new MainFrame();
+                    TrainingFrame gui = new TrainingFrame();
                     gui.pack();
                     gui.setVisible(true);
             }
