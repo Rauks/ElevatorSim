@@ -22,7 +22,7 @@ public class LiftPanel extends JPanel{
     public LiftPanel(){
         super();
         this.posX = 0;
-        this.doorsOpening;
+        this.doorsOpening = 0;
     }
 
     public int getPosX() {
