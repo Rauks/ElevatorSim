@@ -45,6 +45,10 @@ public class Lift {
         return this.floorRequests.contains(new Floor(index));
     }
     
+    public boolean hasRequests(){
+        return !this.floorRequests.isEmpty();
+    }
+    
     public void setCurrentFloor(int index) throws LiftException{
         this.checkFloorIndex(index);
         this.floorRequests.remove(new Floor(index));
