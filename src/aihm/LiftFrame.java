@@ -26,13 +26,14 @@ public class LiftFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
-        jPanel1 = new javax.swing.JPanel();
-        jToolBar1 = new javax.swing.JToolBar();
+        content = new javax.swing.JPanel();
+        mainBar = new javax.swing.JToolBar();
         mainButton0 = new javax.swing.JButton();
         mainButton1 = new javax.swing.JButton();
         mainButton2 = new javax.swing.JButton();
-        jSplitPane1 = new javax.swing.JSplitPane();
+        split = new javax.swing.JSplitPane();
         splitLift = new javax.swing.JPanel();
         labelLift = new javax.swing.JLabel();
         contentLift = new javax.swing.JPanel();
@@ -50,45 +51,45 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton0 = new javax.swing.JButton();
         cabButton1 = new javax.swing.JButton();
         cabButton2 = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        fileQuit = new javax.swing.JMenuItem();
+        cabState = new javax.swing.JLabel();
+        menu = new javax.swing.JMenuBar();
+        menuFile = new javax.swing.JMenu();
+        MenuFileQuit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simulation d'ascenseur");
 
-        jPanel1.setLayout(new java.awt.BorderLayout());
+        content.setLayout(new java.awt.BorderLayout());
 
-        jToolBar1.setFloatable(false);
-        jToolBar1.setRollover(true);
+        mainBar.setFloatable(false);
+        mainBar.setRollover(true);
 
         mainButton0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Zero.png"))); // NOI18N
         mainButton0.setFocusable(false);
         mainButton0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mainButton0.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/ZeroSelected.png"))); // NOI18N
         mainButton0.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(mainButton0);
+        mainBar.add(mainButton0);
 
         mainButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/One.png"))); // NOI18N
         mainButton1.setFocusable(false);
         mainButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mainButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/OneSelected.png"))); // NOI18N
         mainButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(mainButton1);
+        mainBar.add(mainButton1);
 
         mainButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Two.png"))); // NOI18N
         mainButton2.setFocusable(false);
         mainButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton2.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/TwoSelected.png"))); // NOI18N
+        mainButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/TwoSelected.png"))); // NOI18N
         mainButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(mainButton2);
+        mainBar.add(mainButton2);
 
-        jPanel1.add(jToolBar1, java.awt.BorderLayout.PAGE_START);
+        content.add(mainBar, java.awt.BorderLayout.PAGE_START);
 
-        jSplitPane1.setBorder(null);
-        jSplitPane1.setDividerLocation(200);
-        jSplitPane1.setDividerSize(1);
-        jSplitPane1.setToolTipText("");
+        split.setBorder(null);
+        split.setDividerLocation(200);
+        split.setDividerSize(1);
 
         splitLift.setBackground(new java.awt.Color(255, 255, 255));
         splitLift.setLayout(new java.awt.BorderLayout());
@@ -122,6 +123,10 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton2.setFocusable(false);
         liftButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/CallSelected.png"))); // NOI18N
         liftButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton2, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         floor2.add(liftButton2);
 
         panelLiftButtons.add(floor2);
@@ -134,6 +139,10 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         liftButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/CallSelected.png"))); // NOI18N
         liftButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton1, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         floor1.add(liftButton1);
 
         panelLiftButtons.add(floor1);
@@ -146,6 +155,10 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         liftButton0.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/CallSelected.png"))); // NOI18N
         liftButton0.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton0, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton0, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         floor0.add(liftButton0);
 
         panelLiftButtons.add(floor0);
@@ -173,7 +186,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         splitLift.add(contentLift, java.awt.BorderLayout.CENTER);
 
-        jSplitPane1.setLeftComponent(splitLift);
+        split.setLeftComponent(splitLift);
 
         splitCab.setBackground(new java.awt.Color(255, 255, 255));
         splitCab.setLayout(new java.awt.BorderLayout());
@@ -185,7 +198,7 @@ public class LiftFrame extends javax.swing.JFrame {
         panelCabButtons.setBackground(new java.awt.Color(255, 255, 255));
         java.awt.GridBagLayout panelCabButtonsLayout = new java.awt.GridBagLayout();
         panelCabButtonsLayout.columnWidths = new int[] {0};
-        panelCabButtonsLayout.rowHeights = new int[] {0, 5, 0, 5, 0};
+        panelCabButtonsLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0};
         panelCabButtons.setLayout(panelCabButtonsLayout);
 
         cabButton0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Zero.png"))); // NOI18N
@@ -193,9 +206,13 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         cabButton0.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/ZeroSelected.png"))); // NOI18N
         cabButton0.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton0, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton0, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridy = 6;
         panelCabButtons.add(cabButton0, gridBagConstraints);
 
         cabButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/One.png"))); // NOI18N
@@ -203,59 +220,79 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         cabButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/OneSelected.png"))); // NOI18N
         cabButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton1, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 4;
         panelCabButtons.add(cabButton1, gridBagConstraints);
 
         cabButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Two.png"))); // NOI18N
         cabButton2.setFocusable(false);
         cabButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        cabButton2.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/TwoSelected.png"))); // NOI18N
+        cabButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/TwoSelected.png"))); // NOI18N
         cabButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton2, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 2;
         panelCabButtons.add(cabButton2, gridBagConstraints);
+
+        cabState.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cabState.setText("0");
+        cabState.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 6;
+        gridBagConstraints.ipady = 6;
+        panelCabButtons.add(cabState, gridBagConstraints);
 
         splitCab.add(panelCabButtons, java.awt.BorderLayout.CENTER);
 
-        jSplitPane1.setRightComponent(splitCab);
+        split.setRightComponent(splitCab);
 
-        jPanel1.add(jSplitPane1, java.awt.BorderLayout.CENTER);
+        content.add(split, java.awt.BorderLayout.CENTER);
 
-        jMenu1.setText("Fichier");
+        menuFile.setText("Fichier");
 
-        fileQuit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
-        fileQuit.setText("Quitter");
-        fileQuit.addActionListener(new java.awt.event.ActionListener() {
+        MenuFileQuit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        MenuFileQuit.setText("Quitter");
+        MenuFileQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fileQuitActionPerformed(evt);
+                MenuFileQuitActionPerformed(evt);
             }
         });
-        jMenu1.add(fileQuit);
+        menuFile.add(MenuFileQuit);
 
-        jMenuBar1.add(jMenu1);
+        menu.add(menuFile);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(content, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void fileQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileQuitActionPerformed
+    private void MenuFileQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuFileQuitActionPerformed
         Runtime.getRuntime().exit(0);
-    }//GEN-LAST:event_fileQuitActionPerformed
+    }//GEN-LAST:event_MenuFileQuitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -292,31 +329,33 @@ public class LiftFrame extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem MenuFileQuit;
     private javax.swing.JButton cabButton0;
     private javax.swing.JButton cabButton1;
     private javax.swing.JButton cabButton2;
+    private javax.swing.JLabel cabState;
+    private javax.swing.JPanel content;
     private javax.swing.JPanel contentLift;
-    private javax.swing.JMenuItem fileQuit;
     private javax.swing.JPanel floor0;
     private javax.swing.JPanel floor1;
     private javax.swing.JPanel floor2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel labelCab;
     private javax.swing.JLabel labelLift;
     private aihm.JDrawPanel lift;
     private javax.swing.JButton liftButton0;
     private javax.swing.JButton liftButton1;
     private javax.swing.JButton liftButton2;
+    private javax.swing.JToolBar mainBar;
     private javax.swing.JButton mainButton0;
     private javax.swing.JButton mainButton1;
     private javax.swing.JButton mainButton2;
+    private javax.swing.JMenuBar menu;
+    private javax.swing.JMenu menuFile;
     private javax.swing.JPanel panelCabButtons;
     private javax.swing.JPanel panelLiftButtons;
+    private javax.swing.JSplitPane split;
     private javax.swing.JPanel splitCab;
     private javax.swing.JPanel splitLift;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
