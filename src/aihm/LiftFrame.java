@@ -143,6 +143,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simulation d'ascenseur");
+        setResizable(false);
 
         content.setLayout(new java.awt.BorderLayout());
 
@@ -150,6 +151,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.setRollover(true);
 
         mainButton0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Zero.png"))); // NOI18N
+        mainButton0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton0.setFocusable(false);
         mainButton0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mainButton0.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/ZeroSelected.png"))); // NOI18N
@@ -162,6 +164,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton0);
 
         mainButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/One.png"))); // NOI18N
+        mainButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton1.setFocusable(false);
         mainButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mainButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/OneSelected.png"))); // NOI18N
@@ -174,6 +177,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton1);
 
         mainButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Two.png"))); // NOI18N
+        mainButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton2.setFocusable(false);
         mainButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mainButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/TwoSelected.png"))); // NOI18N
@@ -188,12 +192,13 @@ public class LiftFrame extends javax.swing.JFrame {
         content.add(mainBar, java.awt.BorderLayout.PAGE_START);
 
         split.setBorder(null);
-        split.setDividerLocation(200);
+        split.setDividerLocation(250);
         split.setDividerSize(1);
 
         splitLift.setBackground(new java.awt.Color(255, 255, 255));
         splitLift.setLayout(new java.awt.BorderLayout());
 
+        labelLift.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelLift.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelLift.setText("Ascenseur");
         splitLift.add(labelLift, java.awt.BorderLayout.PAGE_START);
@@ -206,11 +211,11 @@ public class LiftFrame extends javax.swing.JFrame {
         lift.setLayout(liftLayout);
         liftLayout.setHorizontalGroup(
             liftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 102, Short.MAX_VALUE)
+            .addGap(0, 166, Short.MAX_VALUE)
         );
         liftLayout.setVerticalGroup(
             liftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 471, Short.MAX_VALUE)
         );
 
         panelLiftButtons.setBackground(new java.awt.Color(255, 255, 255));
@@ -220,6 +225,7 @@ public class LiftFrame extends javax.swing.JFrame {
         floor2.setLayout(new javax.swing.BoxLayout(floor2, javax.swing.BoxLayout.LINE_AXIS));
 
         liftButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Call.png"))); // NOI18N
+        liftButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton2.setFocusable(false);
         liftButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/CallSelected.png"))); // NOI18N
         liftButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -240,6 +246,7 @@ public class LiftFrame extends javax.swing.JFrame {
         floor1.setLayout(new javax.swing.BoxLayout(floor1, javax.swing.BoxLayout.LINE_AXIS));
 
         liftButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Call.png"))); // NOI18N
+        liftButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton1.setFocusable(false);
         liftButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         liftButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/CallSelected.png"))); // NOI18N
@@ -261,6 +268,7 @@ public class LiftFrame extends javax.swing.JFrame {
         floor0.setLayout(new javax.swing.BoxLayout(floor0, javax.swing.BoxLayout.LINE_AXIS));
 
         liftButton0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Call.png"))); // NOI18N
+        liftButton0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton0.setFocusable(false);
         liftButton0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         liftButton0.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/CallSelected.png"))); // NOI18N
@@ -285,8 +293,8 @@ public class LiftFrame extends javax.swing.JFrame {
             .addGroup(contentLiftLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(panelLiftButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelLiftButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
                 .addContainerGap())
         );
         contentLiftLayout.setVerticalGroup(
@@ -295,7 +303,7 @@ public class LiftFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(contentLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lift, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelLiftButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE))
+                    .addComponent(panelLiftButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -306,6 +314,7 @@ public class LiftFrame extends javax.swing.JFrame {
         splitCab.setBackground(new java.awt.Color(255, 255, 255));
         splitCab.setLayout(new java.awt.BorderLayout());
 
+        labelCab.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelCab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelCab.setText("Cabine");
         splitCab.add(labelCab, java.awt.BorderLayout.PAGE_START);
@@ -317,6 +326,7 @@ public class LiftFrame extends javax.swing.JFrame {
         panelCabButtons.setLayout(panelCabButtonsLayout);
 
         cabButton0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Zero.png"))); // NOI18N
+        cabButton0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton0.setFocusable(false);
         cabButton0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         cabButton0.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/ZeroSelected.png"))); // NOI18N
@@ -336,6 +346,7 @@ public class LiftFrame extends javax.swing.JFrame {
         panelCabButtons.add(cabButton0, gridBagConstraints);
 
         cabButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/One.png"))); // NOI18N
+        cabButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton1.setFocusable(false);
         cabButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         cabButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/OneSelected.png"))); // NOI18N
@@ -355,6 +366,7 @@ public class LiftFrame extends javax.swing.JFrame {
         panelCabButtons.add(cabButton1, gridBagConstraints);
 
         cabButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Two.png"))); // NOI18N
+        cabButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton2.setFocusable(false);
         cabButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         cabButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/TwoSelected.png"))); // NOI18N
