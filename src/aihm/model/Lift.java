@@ -39,7 +39,10 @@ public class Lift {
     public void requestFloor(int index) throws LiftException{
         Logger.getLogger(LiftFrame.class.getName()).log(Level.INFO, "Request floor : {0}", index);
         this.checkFloorIndex(index);
-        this.floorRequests.add(new Floor(index));
+        Floor request = new Floor(index);
+        if(!this.floorRequests.contains(request)){
+            this.floorRequests.add(new Floor(index));
+        }
     }
     
     public boolean isRequested(int index) throws LiftException{
