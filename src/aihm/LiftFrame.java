@@ -4,16 +4,20 @@
  */
 package aihm;
 
+import aihm.model.Lift;
+
 /**
  *
  * @author Karl
  */
 public class LiftFrame extends javax.swing.JFrame {
-
+    private Lift model;
+    
     /**
      * Creates new form LiftFrame
      */
-    public LiftFrame() {
+    public LiftFrame(Lift model) {
+        this.model = model;
         initComponents();
     }
 
@@ -322,10 +326,13 @@ public class LiftFrame extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        final Lift liftModel = new Lift(3);
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new LiftFrame().setVisible(true);
+                new LiftFrame(liftModel).setVisible(true);
             }
         });
     }
