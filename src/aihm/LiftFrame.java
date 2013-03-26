@@ -8,6 +8,8 @@ import aihm.model.Lift;
 import aihm.model.LiftException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Timer;
@@ -75,16 +77,28 @@ public class LiftFrame extends javax.swing.JFrame {
     }
     
     private void setFloorButtonUnselected(int index){
+        /*
         switch(index){
             case 0 :
                 this.mainButton0.setSelected(false);
                 break;
             case 1 :
-                this.mainButton0.setSelected(false);
+                this.mainButton1.setSelected(false);
                 break;
             case 2 : 
-                this.mainButton0.setSelected(false);
+                this.mainButton2.setSelected(false);
                 break;
+        }
+        */
+        
+        //Better (in case of adding new floors and new buttons)
+        //Uses reflexives calls on mainButtonX where X is the floor number.
+        try {
+            Field f = this.getClass().getDeclaredField("mainButton" + index);
+            f.setAccessible(true);
+            f.get(this).getClass().getMethod("setSelected", new Class[]{boolean.class}).invoke(f.get(this), false);
+        } catch (NoSuchFieldException | NoSuchMethodException| SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+            Logger.getLogger(LiftFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
