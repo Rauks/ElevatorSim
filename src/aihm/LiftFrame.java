@@ -5,6 +5,9 @@
 package aihm;
 
 import aihm.model.Lift;
+import aihm.model.LiftException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,6 +22,18 @@ public class LiftFrame extends javax.swing.JFrame {
     public LiftFrame(Lift model) {
         this.model = model;
         initComponents();
+    }
+    
+    public void requestFloor(int index){
+        try {
+            this.model.requestFloor(index);
+        } catch (LiftException ex) {
+            Logger.getLogger(LiftFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void setSourceButtonSelected(java.awt.event.ActionEvent evt){
+        ((javax.swing.JButton) evt.getSource()).setSelected(true);
     }
 
     /**
@@ -109,7 +124,6 @@ public class LiftFrame extends javax.swing.JFrame {
         split.setBorder(null);
         split.setDividerLocation(200);
         split.setDividerSize(1);
-        split.setToolTipText("");
 
         splitLift.setBackground(new java.awt.Color(255, 255, 255));
         splitLift.setLayout(new java.awt.BorderLayout());
@@ -345,39 +359,48 @@ public class LiftFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuFileQuitActionPerformed
 
     private void mainButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton0ActionPerformed
-        // TODO add your handling code here:
+        this.setSourceButtonSelected(evt);
+        this.requestFloor(0);
     }//GEN-LAST:event_mainButton0ActionPerformed
 
     private void mainButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton1ActionPerformed
-        // TODO add your handling code here:
+        this.setSourceButtonSelected(evt);
+        this.requestFloor(1);
     }//GEN-LAST:event_mainButton1ActionPerformed
 
     private void mainButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton2ActionPerformed
-        // TODO add your handling code here:
+        this.setSourceButtonSelected(evt);
+        this.requestFloor(2);
     }//GEN-LAST:event_mainButton2ActionPerformed
 
     private void liftButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_liftButton2ActionPerformed
-        // TODO add your handling code here:
+        this.setSourceButtonSelected(evt);
+        this.requestFloor(2);
     }//GEN-LAST:event_liftButton2ActionPerformed
 
     private void liftButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_liftButton1ActionPerformed
-        // TODO add your handling code here:
+        this.setSourceButtonSelected(evt);
+        this.requestFloor(1);
     }//GEN-LAST:event_liftButton1ActionPerformed
 
     private void liftButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_liftButton0ActionPerformed
-        // TODO add your handling code here:
+        this.setSourceButtonSelected(evt);
+        this.requestFloor(0);
     }//GEN-LAST:event_liftButton0ActionPerformed
 
     private void cabButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cabButton2ActionPerformed
-        // TODO add your handling code here:
+        this.setSourceButtonSelected(evt);
+        this.requestFloor(2);
     }//GEN-LAST:event_cabButton2ActionPerformed
 
     private void cabButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cabButton1ActionPerformed
-        // TODO add your handling code here:
+        this.setSourceButtonSelected(evt);
+        this.requestFloor(1);
     }//GEN-LAST:event_cabButton1ActionPerformed
 
     private void cabButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cabButton0ActionPerformed
-        // TODO add your handling code here:
+        this.setSourceButtonSelected(evt);
+        this.requestFloor(0);
     }//GEN-LAST:event_cabButton0ActionPerformed
 
     /**

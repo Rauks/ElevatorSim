@@ -132,7 +132,6 @@
             </Property>
             <Property name="dividerLocation" type="int" value="200"/>
             <Property name="dividerSize" type="int" value="1"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
