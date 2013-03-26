@@ -8,7 +8,7 @@ package aihm;
  *
  * @author Karl
  */
-public class MainFrame extends javax.swing.JFrame {
+public class TrainingFrame extends javax.swing.JFrame {
     
     private void action0(){
         if(this.button0.isSelected()){
@@ -38,7 +38,7 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
-    public MainFrame() {
+    public TrainingFrame() {
         initComponents();
         this.jDraw.setPosX(this.jSlider1.getValue());
     }
