@@ -13,22 +13,25 @@ import javax.swing.JPanel;
  * @author Karl
  */
 public class LiftPanel extends JPanel{
-    public static int MAX_X = 100;
+    public static int MAX_POS_X = 100;
+    public static int MAX_DOORS_OPENING = 100;
     
     private int posX;
+    private int doorsOpening;
     
     public LiftPanel(){
         super();
         this.posX = 0;
+        this.doorsOpening = 0;
     }
 
     public int getPosX() {
-        return posX;
+        return this.posX;
     }
 
     public void setPosX(int posX) {
-        if(posX > LiftPanel.MAX_X){
-            posX = LiftPanel.MAX_X;
+        if(posX > LiftPanel.MAX_POS_X){
+            posX = LiftPanel.MAX_POS_X;
         }
         else if(posX < 0){
             posX = 0;
@@ -44,6 +47,28 @@ public class LiftPanel extends JPanel{
         this.setPosX(this.getPosX() - 1);
     }
     
+    public int getDoorsOpening() {
+        return this.doorsOpening;
+    }
+
+    public void setDoorsOpening(int open) {
+        if(open > LiftPanel.MAX_DOORS_OPENING){
+            open = LiftPanel.MAX_DOORS_OPENING;
+        }
+        else if(open < 0){
+            open = 0;
+        }
+        this.doorsOpening = open;
+    }
+    
+    public void incrDoorsOpening(){
+        this.setDoorsOpening(this.getDoorsOpening() + 1);
+    }
+    
+    public void decrDoorsOpening(){
+        this.setDoorsOpening(this.getDoorsOpening() - 1);
+    }
+    
     @Override 
     public void paintComponent(Graphics g) {
         //Background
@@ -52,8 +77,10 @@ public class LiftPanel extends JPanel{
         //Calculus for placing draws
         int width = this.getWidth() - 1;
         int height = this.getHeight() - 1;
-        int calcPos = (int)((float)(2 * height/3) * (1 - (float)this.posX/((float) LiftPanel.MAX_X)));
-        int doorPadding = 2;
+        int calcPos = (int)((float)(2 * height/3) * (1 - (float)this.posX/((float) LiftPanel.MAX_POS_X)));
+        int doorPadding = 3;
+        int doorWidth = (width - 22) / 2 - (doorPadding + doorPadding/2);
+        int doorHeight = height/3 - 2 - 2 * doorPadding;
         
         //Cab
         g.drawRect(10, calcPos, width - 20, height/3);
@@ -63,22 +90,15 @@ public class LiftPanel extends JPanel{
         g.drawLine(width - 5, 0, width - 5, height);
         
         //Cab doors
+        int leftDoorX = 11 + doorPadding;
+        int rightDoorx = 12 + (width - 22) / 2 + (doorPadding/2);
+        int doorY = calcPos + 1 + doorPadding;
+        
         g.setColor(Color.LIGHT_GRAY);
-        g.drawRoundRect(
-                11 + doorPadding,                                   //X
-                calcPos + 1 + doorPadding,                          //Y
-                (width - 22) / 2 - (doorPadding + doorPadding/2),   //Witdh
-                height/3 - 2 - 2 * doorPadding,                     //Height
-                5,                                                  //RoundX
-                5                                                   //RoundY
-            );
-        g.drawRoundRect(
-                12 + (width - 22) / 2 + (doorPadding/2), 
-                calcPos + 1 + doorPadding, 
-                (width - 22) / 2 - (doorPadding + doorPadding/2), 
-                height/3 - 2 - 2 * doorPadding, 
-                5, 
-                5
-            );
+        g.fillRect(leftDoorX, doorY, doorWidth, doorHeight);
+        g.fillRect(rightDoorx, doorY, doorWidth, doorHeight);
+        g.setColor(Color.BLACK);
+        g.drawRect(leftDoorX, doorY, doorWidth, doorHeight);
+        g.drawRect(rightDoorx, doorY, doorWidth, doorHeight);
     }
 }
