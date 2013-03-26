@@ -19,10 +19,6 @@ public class Floor {
         return value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
-    }
-
     @Override
     public int hashCode() {
         return this.value;
