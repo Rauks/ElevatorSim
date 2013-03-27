@@ -41,6 +41,7 @@ public class AudioPlayer extends Thread{
             DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class, this.audioFormat);
             this.sourceDataLine = (SourceDataLine)AudioSystem.getLine(dataLineInfo);
             this.audioInputStream.mark(audioUrl.openConnection().getContentLength());
+            this.sourceDataLine.open(audioFormat);
         } catch (LineUnavailableException | UnsupportedAudioFileException | IOException ex) {
             Logger.getLogger(AudioPlayer.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -50,14 +51,18 @@ public class AudioPlayer extends Thread{
         this.loop = loop;
     }
     
-    public AudioPlayer volume(float gain){
-        return this;
+    public void volume(float gain){
+        if (this.sourceDataLine.isControlSupported(FloatControl.Type.MASTER_GAIN)) {
+            FloatControl volume = (FloatControl) this.sourceDataLine.getControl(FloatControl.Type.MASTER_GAIN);
+            float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
+            volume.setValue(dB);
+
+        }
     }
     
     @Override
     public void run(){
         try{
-            this.sourceDataLine.open(audioFormat);
             this.sourceDataLine.start();
 
             int cnt;
@@ -75,8 +80,7 @@ public class AudioPlayer extends Thread{
                 this.audioInputStream.reset();
             }
             this.sourceDataLine.drain();
-            this.sourceDataLine.close();
-        } catch (LineUnavailableException | IOException ex) {
+        } catch (IOException ex) {
             Logger.getLogger(AudioPlayer.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
