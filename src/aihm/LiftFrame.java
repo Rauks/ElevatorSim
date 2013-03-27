@@ -590,6 +590,7 @@ public class LiftFrame extends javax.swing.JFrame {
         menuFile.setText("Fichier");
 
         MenuFileQuit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        MenuFileQuit.setMnemonic('Q');
         MenuFileQuit.setText("Quitter");
         MenuFileQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -604,6 +605,7 @@ public class LiftFrame extends javax.swing.JFrame {
         menuOptions.setText("Options");
 
         optionsSoundMusic.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+        optionsSoundMusic.setMnemonic('M');
         optionsSoundMusic.setSelected(true);
         optionsSoundMusic.setText("Musique");
         optionsSoundMusic.addActionListener(new java.awt.event.ActionListener() {
@@ -614,6 +616,7 @@ public class LiftFrame extends javax.swing.JFrame {
         menuOptions.add(optionsSoundMusic);
 
         optionsSoundDing.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
+        optionsSoundDing.setMnemonic('B');
         optionsSoundDing.setSelected(true);
         optionsSoundDing.setText("Bruitages");
         optionsSoundDing.addActionListener(new java.awt.event.ActionListener() {
