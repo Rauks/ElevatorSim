@@ -4,6 +4,7 @@
  */
 package aihm;
 
+import aihm.ui.LiftPanel;
 import aihm.model.Lift;
 import aihm.model.LiftException;
 import java.awt.GraphicsConfiguration;
@@ -191,7 +192,7 @@ public class LiftFrame extends javax.swing.JFrame {
         splitLift = new javax.swing.JPanel();
         labelLift = new javax.swing.JLabel();
         contentLift = new javax.swing.JPanel();
-        lift = new aihm.LiftPanel();
+        lift = new aihm.ui.LiftPanel();
         panelLiftButtons = new javax.swing.JPanel();
         floor3 = new javax.swing.JPanel();
         liftButton3 = new javax.swing.JButton();
@@ -743,18 +744,13 @@ public class LiftFrame extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                System.out.println(info.getName());
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LiftFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LiftFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LiftFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LiftFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -795,7 +791,7 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelCab;
     private javax.swing.JLabel labelLift;
-    private aihm.LiftPanel lift;
+    private aihm.ui.LiftPanel lift;
     private javax.swing.JButton liftButton0;
     private javax.swing.JButton liftButton1;
     private javax.swing.JButton liftButton2;
