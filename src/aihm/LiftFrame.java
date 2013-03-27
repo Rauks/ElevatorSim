@@ -250,7 +250,7 @@ public class LiftFrame extends javax.swing.JFrame {
         aboutDialog.getContentPane().setLayout(aboutDialogLayout);
         aboutDialogLayout.setHorizontalGroup(
             aboutDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
         aboutDialogLayout.setVerticalGroup(
             aboutDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,7 +259,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simulation d'ascenseur");
-        setPreferredSize(new java.awt.Dimension(400, 630));
+        setPreferredSize(new java.awt.Dimension(400, 650));
 
         content.setLayout(new java.awt.BorderLayout());
 
@@ -321,7 +321,7 @@ public class LiftFrame extends javax.swing.JFrame {
         content.add(mainBar, java.awt.BorderLayout.PAGE_START);
 
         split.setBorder(null);
-        split.setDividerLocation(250);
+        split.setDividerLocation(200);
         split.setDividerSize(1);
 
         splitLift.setBackground(new java.awt.Color(255, 255, 255));
@@ -340,7 +340,7 @@ public class LiftFrame extends javax.swing.JFrame {
         lift.setLayout(liftLayout);
         liftLayout.setHorizontalGroup(
             liftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 166, Short.MAX_VALUE)
+            .addGap(0, 117, Short.MAX_VALUE)
         );
         liftLayout.setVerticalGroup(
             liftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -442,9 +442,9 @@ public class LiftFrame extends javax.swing.JFrame {
             contentLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contentLiftLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lift, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelLiftButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addComponent(panelLiftButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         contentLiftLayout.setVerticalGroup(
@@ -535,9 +535,9 @@ public class LiftFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 6;
         panelCabButtons.add(cabButton2, gridBagConstraints);
 
+        cabState.setFont(new java.awt.Font("kroeger 05_55", 1, 30)); // NOI18N
         cabState.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cabState.setText("0");
-        cabState.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;

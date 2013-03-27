@@ -81,9 +81,9 @@ public class LiftPanel extends JPanel {
         int interFloorPadding = 10;
 
         //Cab
-        int cabX = 10 ;
+        int cabX = 4 ;
         int cabY = (int) ((float) ((LiftPanel.NB_FLOORS - 1) * height / LiftPanel.NB_FLOORS) * (1 - (float) this.posX / ((float) LiftPanel.MAX_POS_X))) + interFloorPadding;
-        int cabWidth = width - 20;
+        int cabWidth = width - 8;
         int cabHeight = (height / LiftPanel.NB_FLOORS) - (2 * interFloorPadding);
 
         g.setColor(Color.getHSBColor(0f, 0f, .9f));
@@ -93,18 +93,18 @@ public class LiftPanel extends JPanel {
 
         //Vertical guide
         g.setColor(Color.BLACK);
-        g.drawLine(5, 0, 5, height);
-        g.drawLine(width - 5, 0, width - 5, height);
+        g.drawLine(0, 0, 0, height);
+        g.drawLine(width, 0, width, height);
 
         //Cab doors
         int doorPadding = 2;
         float doorOpeningPercent = 1f - (float) this.doorsOverture / ((float) LiftPanel.MAX_DOORS_OPENING);
-        int doorWidth = (width - 22) / 2 - (doorPadding + doorPadding / 2);
+        int doorWidth = (width - 12) / 2 - (doorPadding + doorPadding / 2);
         int doorWidthWithOpening = (int) ((float) (doorWidth * doorOpeningPercent));
         int doorHeight = height / LiftPanel.NB_FLOORS - 2 - (2 * doorPadding) - (2 * interFloorPadding);
-        int leftDoorX = 11 + doorPadding;
+        int leftDoorX = 6 + doorPadding;
         int leftDoorXWithOpening = leftDoorX;
-        int rightDoorX = doorWidth + 12 + (width - 22) / 2 + (doorPadding / 2);
+        int rightDoorX = doorWidth + 7 + (width - 12) / 2 + (doorPadding / 2);
         int rightDoorXWithOpening = rightDoorX - doorWidthWithOpening;
         int doorY = cabY + 1 + doorPadding;
 
@@ -116,9 +116,9 @@ public class LiftPanel extends JPanel {
         g.drawRect(rightDoorXWithOpening, doorY, doorWidthWithOpening, doorHeight);
         
         //Interfloor blocs
-        int blockWidth = width - 11;
+        int blockWidth = width - 1;
         int blockHeight = interFloorPadding;
-        int blockX = 6;
+        int blockX = 1;
         int blockY = 3 - (interFloorPadding / 2);
         
         g.setColor(Color.DARK_GRAY);
