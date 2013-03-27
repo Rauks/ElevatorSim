@@ -23,15 +23,45 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  *
  * @author Karl
  */
-public class AudioPlayer extends Thread{
+public class AudioPlayer{
     public final static float MIN_VOLUME = 0f;
     public final static float RESET_VOLUME = 1f;
+    
+    private class PlayThread extends Thread{
+        @Override
+        public void run(){
+            try{
+                sourceDataLine.start();
+
+                int cnt;
+                byte tempBuffer[] = new byte[1000];
+
+                audioInputStream.reset();
+                boolean firstPlay = true;
+
+                while(loop || firstPlay){
+                    firstPlay = false;
+                    while((cnt = audioInputStream.read(tempBuffer, 0, tempBuffer.length)) != -1){
+                        if(cnt > 0){
+                            sourceDataLine.write(tempBuffer, 0, cnt);
+                        }
+                    }
+                    audioInputStream.reset();
+                }
+                sourceDataLine.drain();
+            } catch (IOException ex) {
+                Logger.getLogger(AudioPlayer.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
     
     private AudioInputStream audioInputStream;
     private AudioFormat audioFormat;
     private SourceDataLine sourceDataLine;
     
-    private boolean loop = false;
+    private PlayThread playThread;
+    
+    private boolean loop;
     
     public AudioPlayer(String audioFile){
         try {
@@ -45,6 +75,7 @@ public class AudioPlayer extends Thread{
         } catch (LineUnavailableException | UnsupportedAudioFileException | IOException ex) {
             Logger.getLogger(AudioPlayer.class.getName()).log(Level.SEVERE, null, ex);
         }
+        this.loop = false;
     }
     
     public void loop(boolean loop){
@@ -60,28 +91,15 @@ public class AudioPlayer extends Thread{
         }
     }
     
-    @Override
-    public void run(){
-        try{
-            this.sourceDataLine.start();
-
-            int cnt;
-            byte tempBuffer[] = new byte[1000];
-            
-            this.audioInputStream.reset();
-            boolean firstPlay = true;
-            
-            while(this.loop || firstPlay){
-                while((cnt = this.audioInputStream.read(tempBuffer, 0, tempBuffer.length)) != -1){
-                    if(cnt > 0){
-                        this.sourceDataLine.write(tempBuffer, 0, cnt);
-                    }
-                }
-                this.audioInputStream.reset();
-            }
-            this.sourceDataLine.drain();
-        } catch (IOException ex) {
-            Logger.getLogger(AudioPlayer.class.getName()).log(Level.SEVERE, null, ex);
+    public void stop(){
+        if(this.playThread != null && !this.playThread.isInterrupted()){
+            this.playThread.interrupt();
         }
+        this.playThread = new PlayThread();
+    }
+    
+    public void play(){
+        this.stop();
+        this.playThread.start();
     }
 }

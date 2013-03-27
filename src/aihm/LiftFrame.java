@@ -21,6 +21,7 @@ import javax.swing.Timer;
 public class LiftFrame extends javax.swing.JFrame {
     private Lift model;
     private AudioPlayer audioMusic;
+    private AudioPlayer audioDing;
     
     /**
      * Creates new form LiftFrame
@@ -31,18 +32,26 @@ public class LiftFrame extends javax.swing.JFrame {
         this.audioMusic = new AudioPlayer("/aihm/res/music.au");
         this.audioMusic.loop(true);
         this.audioMusic.volume(AudioPlayer.MIN_VOLUME);
-        this.audioMusic.start();
+        this.audioMusic.play();
+        
+        this.audioDing = new AudioPlayer("/aihm/res/ding.au");
         
         initComponents();
         
-
+        final int openWaitDef = 50;
         Timer timer = new Timer(20, new ActionListener(){
+            private int openWait = openWaitDef;
             @Override
             public void actionPerformed(ActionEvent evt){
                 try {
                     switch(model.getState()){
                         case OPENED :
-                            model.requestDoorsClosing();
+                            if(this.openWait > 0){
+                                this.openWait--;
+                            }
+                            else{
+                                model.requestDoorsClosing();
+                            }
                             break;
                         case CLOSED :
                             //Current floor announce
@@ -55,6 +64,7 @@ public class LiftFrame extends javax.swing.JFrame {
                                 if(model.isFloorInRequest(floor)){
                                     model.setCurrentFloor(floor);
                                     setFloorButtonUnselected(floor);
+                                    audioDing.play();
                                     model.requestDoorsOpening();
                                 }
                                 else{
@@ -82,14 +92,15 @@ public class LiftFrame extends javax.swing.JFrame {
                             break;
                         case OPENING :
                             lift.incrDoorsOverture();
-                            audioMusic.volume(((float)lift.getDoorsOverture() / (float)LiftPanel.MAX_DOORS_OPENING));
+                            audioMusic.volume(((float)lift.getDoorsOverture() / (float)LiftPanel.MAX_DOORS_OPENING / 4));
                             if(lift.getDoorsOverture() == LiftPanel.MAX_DOORS_OPENING){
                                 model.setDoorsOpened();
+                                this.openWait = openWaitDef;
                             }
                             break;
                         case CLOSING :
                             lift.decrDoorsOverture();
-                            audioMusic.volume(((float)lift.getDoorsOverture() / (float)LiftPanel.MAX_DOORS_OPENING));
+                            audioMusic.volume(((float)lift.getDoorsOverture() / (float)LiftPanel.MAX_DOORS_OPENING / 4));
                             if(lift.getDoorsOverture() == 0){
                                 model.setDoorsClosed();
                             }
