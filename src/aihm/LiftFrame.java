@@ -20,13 +20,20 @@ import javax.swing.Timer;
  */
 public class LiftFrame extends javax.swing.JFrame {
     private Lift model;
+    private AudioPlayer audioMusic;
     
     /**
      * Creates new form LiftFrame
      */
     public LiftFrame(final Lift model) {
         this.model = model;
+        
+        this.audioMusic = new AudioPlayer("/aihm/res/music.au").loop();
+        this.audioMusic.volume(AudioPlayer.MIN_VOLUME);
+        this.audioMusic.start();
+        
         initComponents();
+        
 
         Timer timer = new Timer(20, new ActionListener(){
             @Override
@@ -74,12 +81,14 @@ public class LiftFrame extends javax.swing.JFrame {
                             break;
                         case OPENING :
                             lift.incrDoorsOverture();
+                            audioMusic.volume(((float)lift.getDoorsOverture() / (float)LiftPanel.MAX_DOORS_OPENING));
                             if(lift.getDoorsOverture() == LiftPanel.MAX_DOORS_OPENING){
                                 model.setDoorsOpened();
                             }
                             break;
                         case CLOSING :
                             lift.decrDoorsOverture();
+                            audioMusic.volume(((float)lift.getDoorsOverture() / (float)LiftPanel.MAX_DOORS_OPENING));
                             if(lift.getDoorsOverture() == 0){
                                 model.setDoorsClosed();
                             }
