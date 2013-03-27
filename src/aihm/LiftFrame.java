@@ -259,7 +259,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simulation d'ascenseur");
-        setPreferredSize(new java.awt.Dimension(400, 650));
+        setIconImage(java.awt.Toolkit.getDefaultToolkit().getImage(getClass().getResource("/aihm/res/Elevator.png")));
 
         content.setLayout(new java.awt.BorderLayout());
 
