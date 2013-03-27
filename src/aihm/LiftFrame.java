@@ -6,6 +6,8 @@ package aihm;
 
 import aihm.model.Lift;
 import aihm.model.LiftException;
+import java.awt.GraphicsConfiguration;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.reflect.Field;
@@ -174,6 +176,11 @@ public class LiftFrame extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
+        aboutDialog = new javax.swing.JDialog();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
         mainBar = new javax.swing.JToolBar();
         mainButton0 = new javax.swing.JButton();
@@ -202,12 +209,53 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton2 = new javax.swing.JButton();
         cabState = new javax.swing.JLabel();
         cabButton3 = new javax.swing.JButton();
+        cabBell = new javax.swing.JButton();
         menu = new javax.swing.JMenuBar();
         menuFile = new javax.swing.JMenu();
         MenuFileQuit = new javax.swing.JMenuItem();
         menuOptions = new javax.swing.JMenu();
         optionsSoundMusic = new javax.swing.JCheckBoxMenuItem();
         optionsSoundDing = new javax.swing.JCheckBoxMenuItem();
+
+        aboutDialog.setMinimumSize(new java.awt.Dimension(300, 160));
+        aboutDialog.setResizable(false);
+        aboutDialog.setType(java.awt.Window.Type.UTILITY);
+
+        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
+        jPanel1Layout.columnWidths = new int[] {0};
+        jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0};
+        jPanel1.setLayout(jPanel1Layout);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("225kg Max.");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        jPanel1.add(jLabel1, gridBagConstraints);
+
+        jLabel2.setText("En cas de panne, contactez Karl Woditsch (2A IR)");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        jPanel1.add(jLabel2, gridBagConstraints);
+
+        jLabel3.setText("REF : TP-2AIR-AIHM-2012-2013");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        jPanel1.add(jLabel3, gridBagConstraints);
+
+        javax.swing.GroupLayout aboutDialogLayout = new javax.swing.GroupLayout(aboutDialog.getContentPane());
+        aboutDialog.getContentPane().setLayout(aboutDialogLayout);
+        aboutDialogLayout.setHorizontalGroup(
+            aboutDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, Short.MAX_VALUE)
+        );
+        aboutDialogLayout.setVerticalGroup(
+            aboutDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simulation d'ascenseur");
@@ -296,7 +344,7 @@ public class LiftFrame extends javax.swing.JFrame {
         );
         liftLayout.setVerticalGroup(
             liftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 471, Short.MAX_VALUE)
+            .addGap(0, 537, Short.MAX_VALUE)
         );
 
         panelLiftButtons.setBackground(new java.awt.Color(255, 255, 255));
@@ -405,7 +453,7 @@ public class LiftFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(contentLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lift, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelLiftButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE))
+                    .addComponent(panelLiftButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -424,7 +472,7 @@ public class LiftFrame extends javax.swing.JFrame {
         panelCabButtons.setBackground(new java.awt.Color(255, 255, 255));
         java.awt.GridBagLayout panelCabButtonsLayout = new java.awt.GridBagLayout();
         panelCabButtonsLayout.columnWidths = new int[] {0};
-        panelCabButtonsLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0};
+        panelCabButtonsLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
         panelCabButtons.setLayout(panelCabButtonsLayout);
 
         cabButton0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Zero.png"))); // NOI18N
@@ -444,7 +492,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 10;
         panelCabButtons.add(cabButton0, gridBagConstraints);
 
         cabButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/One.png"))); // NOI18N
@@ -464,7 +512,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 8;
         panelCabButtons.add(cabButton1, gridBagConstraints);
 
         cabButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Two.png"))); // NOI18N
@@ -484,7 +532,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 6;
         panelCabButtons.add(cabButton2, gridBagConstraints);
 
         cabState.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -514,8 +562,22 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 4;
         panelCabButtons.add(cabButton3, gridBagConstraints);
+
+        cabBell.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Bell.png"))); // NOI18N
+        cabBell.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cabBell.setFocusable(false);
+        cabBell.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/BellSelected.png"))); // NOI18N
+        cabBell.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cabBellActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        panelCabButtons.add(cabBell, gridBagConstraints);
 
         splitCab.add(panelCabButtons, java.awt.BorderLayout.CENTER);
 
@@ -660,6 +722,16 @@ public class LiftFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_optionsSoundDingActionPerformed
 
+    private void cabBellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cabBellActionPerformed
+        if(!this.aboutDialog.isVisible()){
+            GraphicsConfiguration gc = this.aboutDialog.getGraphicsConfiguration();  
+            Rectangle bounds = gc.getBounds();
+            this.aboutDialog.setLocation((int) ((bounds.width / 2) - (this.aboutDialog.getSize().width / 2)),  
+                                         (int) ((bounds.height / 2) - (this.aboutDialog.getSize().height / 2)));
+        }
+        this.aboutDialog.setVisible(true);
+    }//GEN-LAST:event_cabBellActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -693,12 +765,19 @@ public class LiftFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new LiftFrame(liftModel).setVisible(true);
+                LiftFrame frame = new LiftFrame(liftModel);
+                GraphicsConfiguration gc = frame.getGraphicsConfiguration();  
+                Rectangle bounds = gc.getBounds();
+                frame.setLocation((int) ((bounds.width / 2) - (frame.getSize().width / 2)),  
+                                  (int) ((bounds.height / 2) - (frame.getSize().height / 2)));
+                frame.setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem MenuFileQuit;
+    private javax.swing.JDialog aboutDialog;
+    private javax.swing.JButton cabBell;
     private javax.swing.JButton cabButton0;
     private javax.swing.JButton cabButton1;
     private javax.swing.JButton cabButton2;
@@ -710,6 +789,10 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JPanel floor1;
     private javax.swing.JPanel floor2;
     private javax.swing.JPanel floor3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelCab;
     private javax.swing.JLabel labelLift;
     private aihm.LiftPanel lift;
