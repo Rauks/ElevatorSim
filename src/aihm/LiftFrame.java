@@ -28,7 +28,8 @@ public class LiftFrame extends javax.swing.JFrame {
     public LiftFrame(final Lift model) {
         this.model = model;
         
-        this.audioMusic = new AudioPlayer("/aihm/res/music.au").loop();
+        this.audioMusic = new AudioPlayer("/aihm/res/music.au");
+        this.audioMusic.loop(true);
         this.audioMusic.volume(AudioPlayer.MIN_VOLUME);
         this.audioMusic.start();
         

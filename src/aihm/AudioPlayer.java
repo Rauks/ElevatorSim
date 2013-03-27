@@ -5,13 +5,17 @@
 package aihm;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.DataLine;
 import javax.sound.sampled.FloatControl;
 import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 
@@ -23,40 +27,54 @@ public class AudioPlayer extends Thread{
     public final static float MIN_VOLUME = 0f;
     public final static float RESET_VOLUME = 1f;
     
-    private Clip audioClip;
+    private AudioInputStream audioInputStream;
+    private AudioFormat audioFormat;
+    private SourceDataLine sourceDataLine;
+    
+    private boolean loop = false;
     
     public AudioPlayer(String audioFile){
-        AudioInputStream sound = null;
         try {
-            sound = AudioSystem.getAudioInputStream(AudioPlayer.class.getResource(audioFile));
-            this.audioClip = AudioSystem.getClip();
-            this.audioClip.open(sound);
+            URL audioUrl = AudioPlayer.class.getResource(audioFile);
+            this.audioInputStream = AudioSystem.getAudioInputStream(audioUrl);
+            this.audioFormat = this.audioInputStream.getFormat();
+            DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class, this.audioFormat);
+            this.sourceDataLine = (SourceDataLine)AudioSystem.getLine(dataLineInfo);
+            this.audioInputStream.mark(audioUrl.openConnection().getContentLength());
         } catch (LineUnavailableException | UnsupportedAudioFileException | IOException ex) {
             Logger.getLogger(AudioPlayer.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                sound.close();
-            } catch (IOException ex) {
-                Logger.getLogger(AudioPlayer.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
     
-    public AudioPlayer loop(){
-        this.audioClip.loop(Clip.LOOP_CONTINUOUSLY);
-        return this;
+    public void loop(boolean loop){
+        this.loop = loop;
     }
     
     public AudioPlayer volume(float gain){
-        FloatControl volume = (FloatControl) this.audioClip.getControl(FloatControl.Type.MASTER_GAIN);
-        float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
-        volume.setValue(dB);
         return this;
     }
     
     @Override
     public void run(){
-        this.audioClip.setFramePosition(0);  // Must always rewind!
-        this.audioClip.start();
+        try{
+            this.sourceDataLine.open(audioFormat);
+            this.sourceDataLine.start();
+
+            int cnt;
+            byte tempBuffer[] = new byte[1000];
+            
+            while(this.loop){
+                while((cnt = this.audioInputStream.read(tempBuffer, 0, tempBuffer.length)) != -1){
+                    if(cnt > 0){
+                        this.sourceDataLine.write(tempBuffer, 0, cnt);
+                    }
+                }
+                this.audioInputStream.reset();
+            }
+            this.sourceDataLine.drain();
+            this.sourceDataLine.close();
+        } catch (LineUnavailableException | IOException ex) {
+            Logger.getLogger(AudioPlayer.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
