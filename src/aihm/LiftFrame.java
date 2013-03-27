@@ -586,6 +586,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         content.add(split, java.awt.BorderLayout.CENTER);
 
+        menuFile.setMnemonic('F');
         menuFile.setText("Fichier");
 
         MenuFileQuit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
@@ -599,6 +600,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         menu.add(menuFile);
 
+        menuOptions.setMnemonic('O');
         menuOptions.setText("Options");
 
         optionsSoundMusic.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
