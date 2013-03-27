@@ -19,6 +19,8 @@ import javax.swing.Timer;
  * @author Karl
  */
 public class LiftFrame extends javax.swing.JFrame {
+    private static final float MUSIC_BASE_VOL = .05f;
+    
     private Lift model;
     private AudioPlayer audioMusic;
     private AudioPlayer audioDing;
@@ -29,11 +31,9 @@ public class LiftFrame extends javax.swing.JFrame {
     public LiftFrame(final Lift model) {
         this.model = model;
         
-        final float baseMusicVolume = .05f;
-        
         this.audioMusic = new AudioPlayer("/aihm/res/music.au");
         this.audioMusic.loop(true);
-        this.audioMusic.volume(baseMusicVolume);
+        this.audioMusic.volume(MUSIC_BASE_VOL);
         this.audioMusic.play();
         
         this.audioDing = new AudioPlayer("/aihm/res/ding.au");
@@ -67,7 +67,9 @@ public class LiftFrame extends javax.swing.JFrame {
                                 if(model.isFloorInRequest(floor)){
                                     model.setCurrentFloor(floor);
                                     setFloorButtonUnselected(floor);
-                                    audioDing.play();
+                                    if(optionsSoundDing.isSelected()){
+                                        audioDing.play();
+                                    }
                                     model.requestDoorsOpening();
                                 }
                                 else{
@@ -95,7 +97,9 @@ public class LiftFrame extends javax.swing.JFrame {
                             break;
                         case OPENING :
                             lift.incrDoorsOverture();
-                            audioMusic.volume(baseMusicVolume + ((float)lift.getDoorsOverture() / (float)LiftPanel.MAX_DOORS_OPENING / 4));
+                            if(optionsSoundMusic.isSelected()){
+                                audioMusic.volume(MUSIC_BASE_VOL + ((float)lift.getDoorsOverture() / (float)LiftPanel.MAX_DOORS_OPENING / 4));
+                            }
                             if(lift.getDoorsOverture() == LiftPanel.MAX_DOORS_OPENING){
                                 model.setDoorsOpened();
                                 this.openWait = openWaitDef;
@@ -103,7 +107,9 @@ public class LiftFrame extends javax.swing.JFrame {
                             break;
                         case CLOSING :
                             lift.decrDoorsOverture();
-                            audioMusic.volume(baseMusicVolume + ((float)lift.getDoorsOverture() / (float)LiftPanel.MAX_DOORS_OPENING / 4));
+                            if(optionsSoundMusic.isSelected()){
+                                audioMusic.volume(MUSIC_BASE_VOL + ((float)lift.getDoorsOverture() / (float)LiftPanel.MAX_DOORS_OPENING / 4));
+                            }
                             if(lift.getDoorsOverture() == 0){
                                 model.setDoorsClosed();
                             }
@@ -199,6 +205,9 @@ public class LiftFrame extends javax.swing.JFrame {
         menu = new javax.swing.JMenuBar();
         menuFile = new javax.swing.JMenu();
         MenuFileQuit = new javax.swing.JMenuItem();
+        menuOptions = new javax.swing.JMenu();
+        optionsSoundMusic = new javax.swing.JCheckBoxMenuItem();
+        optionsSoundDing = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simulation d'ascenseur");
@@ -527,6 +536,30 @@ public class LiftFrame extends javax.swing.JFrame {
 
         menu.add(menuFile);
 
+        menuOptions.setText("Options");
+
+        optionsSoundMusic.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+        optionsSoundMusic.setSelected(true);
+        optionsSoundMusic.setText("Musique");
+        optionsSoundMusic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optionsSoundMusicActionPerformed(evt);
+            }
+        });
+        menuOptions.add(optionsSoundMusic);
+
+        optionsSoundDing.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
+        optionsSoundDing.setSelected(true);
+        optionsSoundDing.setText("Bruitages");
+        optionsSoundDing.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optionsSoundDingActionPerformed(evt);
+            }
+        });
+        menuOptions.add(optionsSoundDing);
+
+        menu.add(menuOptions);
+
         setJMenuBar(menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -609,6 +642,24 @@ public class LiftFrame extends javax.swing.JFrame {
         this.requestFloor(3);
     }//GEN-LAST:event_liftButton3ActionPerformed
 
+    private void optionsSoundMusicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionsSoundMusicActionPerformed
+        if(optionsSoundMusic.isSelected()){
+            this.audioMusic.volume(MUSIC_BASE_VOL);
+        }
+        else{
+            this.audioMusic.volume(AudioPlayer.MIN_VOLUME);
+        }
+    }//GEN-LAST:event_optionsSoundMusicActionPerformed
+
+    private void optionsSoundDingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionsSoundDingActionPerformed
+        if(optionsSoundDing.isSelected()){
+            this.audioDing.volume(AudioPlayer.RESET_VOLUME);
+        }
+        else{
+            this.audioDing.volume(AudioPlayer.MIN_VOLUME);
+        }
+    }//GEN-LAST:event_optionsSoundDingActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -673,6 +724,9 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JButton mainButton3;
     private javax.swing.JMenuBar menu;
     private javax.swing.JMenu menuFile;
+    private javax.swing.JMenu menuOptions;
+    private javax.swing.JCheckBoxMenuItem optionsSoundDing;
+    private javax.swing.JCheckBoxMenuItem optionsSoundMusic;
     private javax.swing.JPanel panelCabButtons;
     private javax.swing.JPanel panelLiftButtons;
     private javax.swing.JSplitPane split;
