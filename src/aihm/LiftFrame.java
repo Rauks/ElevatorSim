@@ -174,6 +174,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simulation d'ascenseur");
+        setPreferredSize(new java.awt.Dimension(400, 565));
         setResizable(false);
 
         content.setLayout(new java.awt.BorderLayout());

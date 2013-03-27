@@ -17,11 +17,13 @@ public class LiftPanel extends JPanel {
     public static int MAX_DOORS_OPENING = 100;
     private int posX;
     private int doorsOverture;
+    private int nbFloors;
 
     public LiftPanel() {
         super();
         this.posX = 0;
         this.doorsOverture = 0;
+        this.nbFloors = 3;
     }
 
     public int getPosX() {
@@ -74,12 +76,16 @@ public class LiftPanel extends JPanel {
         //Calculus for placing draws
         int width = this.getWidth() - 1;
         int height = this.getHeight() - 1;
+        int interFloorPadding = 10;
 
         //Cab
-        int cabY = (int) ((float) (2 * height / 3) * (1 - (float) this.posX / ((float) LiftPanel.MAX_POS_X)));
+        int cabX = 10 ;
+        int cabY = (int) ((float) (2 * height / this.nbFloors) * (1 - (float) this.posX / ((float) LiftPanel.MAX_POS_X))) + interFloorPadding;
+        int cabWidth = width - 20;
+        int cabHeight = (height / 3) - (2 * interFloorPadding);
 
         g.setColor(Color.BLACK);
-        g.drawRect(10, cabY, width - 20, height / 3);
+        g.drawRect(cabX, cabY, cabWidth, cabHeight);
 
         //Vertical guide
         g.setColor(Color.BLACK);
@@ -87,15 +93,15 @@ public class LiftPanel extends JPanel {
         g.drawLine(width - 5, 0, width - 5, height);
 
         //Cab doors
-        int doorPadding = 3;
+        int doorPadding = 2;
         float doorOpeningPercent = 1f - (float) this.doorsOverture / ((float) LiftPanel.MAX_DOORS_OPENING);
         int doorWidth = (width - 22) / 2 - (doorPadding + doorPadding / 2);
         int doorWidthWithOpening = (int) ((float) (doorWidth * doorOpeningPercent));
-        int doorHeight = height / 3 - 2 - 2 * doorPadding;
+        int doorHeight = height / this.nbFloors - 2 - (2 * doorPadding) - (2 * interFloorPadding);
         int leftDoorX = 11 + doorPadding;
         int leftDoorXWithOpening = leftDoorX;
-        int rightDoorX = 12 + (width - 22) / 2 + (doorPadding / 2);
-        int rightDoorXWithOpening = rightDoorX + doorWidth - doorWidthWithOpening;
+        int rightDoorX = doorWidth + 12 + (width - 22) / 2 + (doorPadding / 2);
+        int rightDoorXWithOpening = rightDoorX - doorWidthWithOpening;
         int doorY = cabY + 1 + doorPadding;
 
         g.setColor(Color.LIGHT_GRAY);
@@ -104,5 +110,17 @@ public class LiftPanel extends JPanel {
         g.setColor(Color.BLACK);
         g.drawRect(leftDoorXWithOpening, doorY, doorWidthWithOpening, doorHeight);
         g.drawRect(rightDoorXWithOpening, doorY, doorWidthWithOpening, doorHeight);
+        
+        //Interfloor blocs
+        int blockWidth = width - 11;
+        int blockHeight = interFloorPadding;
+        int blockX = 6;
+        int blockY = 2 - (interFloorPadding / 2);
+        
+        g.setColor(Color.DARK_GRAY);
+        for (int i = 0; i <= this.nbFloors; i++) {
+            g.fillRect(blockX, i * (height / this.nbFloors) + blockY, blockWidth, blockHeight);
+        }
+        
     }
 }
