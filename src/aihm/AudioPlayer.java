@@ -63,7 +63,10 @@ public class AudioPlayer extends Thread{
             int cnt;
             byte tempBuffer[] = new byte[1000];
             
-            while(this.loop){
+            this.audioInputStream.reset();
+            boolean firstPlay = true;
+            
+            while(this.loop || firstPlay){
                 while((cnt = this.audioInputStream.read(tempBuffer, 0, tempBuffer.length)) != -1){
                     if(cnt > 0){
                         this.sourceDataLine.write(tempBuffer, 0, cnt);
