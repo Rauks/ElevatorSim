@@ -29,9 +29,11 @@ public class LiftFrame extends javax.swing.JFrame {
     public LiftFrame(final Lift model) {
         this.model = model;
         
+        final float baseMusicVolume = .05f;
+        
         this.audioMusic = new AudioPlayer("/aihm/res/music.au");
         this.audioMusic.loop(true);
-        this.audioMusic.volume(AudioPlayer.MIN_VOLUME);
+        this.audioMusic.volume(baseMusicVolume);
         this.audioMusic.play();
         
         this.audioDing = new AudioPlayer("/aihm/res/ding.au");
@@ -39,6 +41,7 @@ public class LiftFrame extends javax.swing.JFrame {
         initComponents();
         
         final int openWaitDef = 50;
+        
         Timer timer = new Timer(20, new ActionListener(){
             private int openWait = openWaitDef;
             @Override
@@ -92,7 +95,7 @@ public class LiftFrame extends javax.swing.JFrame {
                             break;
                         case OPENING :
                             lift.incrDoorsOverture();
-                            audioMusic.volume(((float)lift.getDoorsOverture() / (float)LiftPanel.MAX_DOORS_OPENING / 4));
+                            audioMusic.volume(baseMusicVolume + ((float)lift.getDoorsOverture() / (float)LiftPanel.MAX_DOORS_OPENING / 4));
                             if(lift.getDoorsOverture() == LiftPanel.MAX_DOORS_OPENING){
                                 model.setDoorsOpened();
                                 this.openWait = openWaitDef;
@@ -100,7 +103,7 @@ public class LiftFrame extends javax.swing.JFrame {
                             break;
                         case CLOSING :
                             lift.decrDoorsOverture();
-                            audioMusic.volume(((float)lift.getDoorsOverture() / (float)LiftPanel.MAX_DOORS_OPENING / 4));
+                            audioMusic.volume(baseMusicVolume + ((float)lift.getDoorsOverture() / (float)LiftPanel.MAX_DOORS_OPENING / 4));
                             if(lift.getDoorsOverture() == 0){
                                 model.setDoorsClosed();
                             }

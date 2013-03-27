@@ -119,7 +119,7 @@ public class LiftPanel extends JPanel {
         int blockWidth = width - 11;
         int blockHeight = interFloorPadding;
         int blockX = 6;
-        int blockY = 2 - (interFloorPadding / 2);
+        int blockY = 3 - (interFloorPadding / 2);
         
         g.setColor(Color.DARK_GRAY);
         for (int i = 0; i <= LiftPanel.NB_FLOORS; i++) {
