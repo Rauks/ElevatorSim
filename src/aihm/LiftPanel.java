@@ -86,6 +86,8 @@ public class LiftPanel extends JPanel {
         int cabWidth = width - 20;
         int cabHeight = (height / LiftPanel.NB_FLOORS) - (2 * interFloorPadding);
 
+        g.setColor(Color.getHSBColor(0f, 0f, .9f));
+        g.fillRect(cabX, cabY, cabWidth, cabHeight);
         g.setColor(Color.BLACK);
         g.drawRect(cabX, cabY, cabWidth, cabHeight);
 
