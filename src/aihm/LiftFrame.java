@@ -149,12 +149,15 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton0 = new javax.swing.JButton();
         mainButton1 = new javax.swing.JButton();
         mainButton2 = new javax.swing.JButton();
+        mainButton3 = new javax.swing.JButton();
         split = new javax.swing.JSplitPane();
         splitLift = new javax.swing.JPanel();
         labelLift = new javax.swing.JLabel();
         contentLift = new javax.swing.JPanel();
         lift = new aihm.LiftPanel();
         panelLiftButtons = new javax.swing.JPanel();
+        floor3 = new javax.swing.JPanel();
+        liftButton3 = new javax.swing.JButton();
         floor2 = new javax.swing.JPanel();
         liftButton2 = new javax.swing.JButton();
         floor1 = new javax.swing.JPanel();
@@ -168,14 +171,14 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton1 = new javax.swing.JButton();
         cabButton2 = new javax.swing.JButton();
         cabState = new javax.swing.JLabel();
+        cabButton3 = new javax.swing.JButton();
         menu = new javax.swing.JMenuBar();
         menuFile = new javax.swing.JMenu();
         MenuFileQuit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simulation d'ascenseur");
-        setPreferredSize(new java.awt.Dimension(400, 565));
-        setResizable(false);
+        setPreferredSize(new java.awt.Dimension(400, 630));
 
         content.setLayout(new java.awt.BorderLayout());
 
@@ -221,6 +224,19 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton2);
 
+        mainButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Three.png"))); // NOI18N
+        mainButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton3.setFocusable(false);
+        mainButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/ThreeSelected.png"))); // NOI18N
+        mainButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mainButton3ActionPerformed(evt);
+            }
+        });
+        mainBar.add(mainButton3);
+
         content.add(mainBar, java.awt.BorderLayout.PAGE_START);
 
         split.setBorder(null);
@@ -251,7 +267,28 @@ public class LiftFrame extends javax.swing.JFrame {
         );
 
         panelLiftButtons.setBackground(new java.awt.Color(255, 255, 255));
-        panelLiftButtons.setLayout(new java.awt.GridLayout(3, 1));
+        panelLiftButtons.setLayout(new java.awt.GridLayout(4, 1));
+
+        floor3.setBackground(new java.awt.Color(255, 255, 255));
+        floor3.setLayout(new javax.swing.BoxLayout(floor3, javax.swing.BoxLayout.LINE_AXIS));
+
+        liftButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Call.png"))); // NOI18N
+        liftButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton3.setFocusable(false);
+        liftButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/CallSelected.png"))); // NOI18N
+        liftButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton3, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton3, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        liftButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                liftButton3ActionPerformed(evt);
+            }
+        });
+        floor3.add(liftButton3);
+
+        panelLiftButtons.add(floor3);
 
         floor2.setBackground(new java.awt.Color(255, 255, 255));
         floor2.setLayout(new javax.swing.BoxLayout(floor2, javax.swing.BoxLayout.LINE_AXIS));
@@ -262,7 +299,7 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/CallSelected.png"))); // NOI18N
         liftButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton2, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton2, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
 
         liftButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -354,7 +391,7 @@ public class LiftFrame extends javax.swing.JFrame {
         panelCabButtons.setBackground(new java.awt.Color(255, 255, 255));
         java.awt.GridBagLayout panelCabButtonsLayout = new java.awt.GridBagLayout();
         panelCabButtonsLayout.columnWidths = new int[] {0};
-        panelCabButtonsLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0};
+        panelCabButtonsLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0};
         panelCabButtons.setLayout(panelCabButtonsLayout);
 
         cabButton0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Zero.png"))); // NOI18N
@@ -374,7 +411,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 8;
         panelCabButtons.add(cabButton0, gridBagConstraints);
 
         cabButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/One.png"))); // NOI18N
@@ -394,7 +431,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 6;
         panelCabButtons.add(cabButton1, gridBagConstraints);
 
         cabButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Two.png"))); // NOI18N
@@ -414,7 +451,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 4;
         panelCabButtons.add(cabButton2, gridBagConstraints);
 
         cabState.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -426,6 +463,26 @@ public class LiftFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 6;
         gridBagConstraints.ipady = 6;
         panelCabButtons.add(cabState, gridBagConstraints);
+
+        cabButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Three.png"))); // NOI18N
+        cabButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cabButton3.setFocusable(false);
+        cabButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        cabButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/ThreeSelected.png"))); // NOI18N
+        cabButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton3, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton3, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        cabButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cabButton3ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        panelCabButtons.add(cabButton3, gridBagConstraints);
 
         splitCab.add(panelCabButtons, java.awt.BorderLayout.CENTER);
 
@@ -513,6 +570,21 @@ public class LiftFrame extends javax.swing.JFrame {
         this.requestFloor(0);
     }//GEN-LAST:event_cabButton0ActionPerformed
 
+    private void mainButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton3ActionPerformed
+        this.setSourceButtonSelected(evt);
+        this.requestFloor(3);
+    }//GEN-LAST:event_mainButton3ActionPerformed
+
+    private void cabButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cabButton3ActionPerformed
+        this.setSourceButtonSelected(evt);
+        this.requestFloor(3);
+    }//GEN-LAST:event_cabButton3ActionPerformed
+
+    private void liftButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_liftButton3ActionPerformed
+        this.setSourceButtonSelected(evt);
+        this.requestFloor(3);
+    }//GEN-LAST:event_liftButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -540,7 +612,7 @@ public class LiftFrame extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        final Lift liftModel = new Lift(3);
+        final Lift liftModel = new Lift(LiftPanel.NB_FLOORS);
         
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -555,22 +627,26 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JButton cabButton0;
     private javax.swing.JButton cabButton1;
     private javax.swing.JButton cabButton2;
+    private javax.swing.JButton cabButton3;
     private javax.swing.JLabel cabState;
     private javax.swing.JPanel content;
     private javax.swing.JPanel contentLift;
     private javax.swing.JPanel floor0;
     private javax.swing.JPanel floor1;
     private javax.swing.JPanel floor2;
+    private javax.swing.JPanel floor3;
     private javax.swing.JLabel labelCab;
     private javax.swing.JLabel labelLift;
     private aihm.LiftPanel lift;
     private javax.swing.JButton liftButton0;
     private javax.swing.JButton liftButton1;
     private javax.swing.JButton liftButton2;
+    private javax.swing.JButton liftButton3;
     private javax.swing.JToolBar mainBar;
     private javax.swing.JButton mainButton0;
     private javax.swing.JButton mainButton1;
     private javax.swing.JButton mainButton2;
+    private javax.swing.JButton mainButton3;
     private javax.swing.JMenuBar menu;
     private javax.swing.JMenu menuFile;
     private javax.swing.JPanel panelCabButtons;
