@@ -8,6 +8,7 @@ import aihm.ui.lift.LiftPanel;
 import aihm.model.Lift;
 import aihm.model.LiftException;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.GraphicsConfiguration;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
@@ -17,6 +18,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
+import javax.swing.JCheckBoxMenuItem;
 import javax.swing.Timer;
 
 /**
@@ -199,6 +201,7 @@ public class LiftFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        graphicsLiftChoice = new javax.swing.ButtonGroup();
         content = new javax.swing.JPanel();
         mainBar = new javax.swing.JToolBar();
         mainButton0 = new javax.swing.JButton();
@@ -258,8 +261,17 @@ public class LiftFrame extends javax.swing.JFrame {
         menuFile = new javax.swing.JMenu();
         MenuFileQuit = new javax.swing.JMenuItem();
         menuOptions = new javax.swing.JMenu();
-        optionsSoundMusic = new javax.swing.JCheckBoxMenuItem();
+        optionsAudio = new javax.swing.JMenu();
         optionsSoundDing = new javax.swing.JCheckBoxMenuItem();
+        optionsSoundMusic = new javax.swing.JCheckBoxMenuItem();
+        optionsGraphics = new javax.swing.JMenu();
+        graphicsLifts = new javax.swing.JMenu();
+        graphicsLiftBlue = new javax.swing.JCheckBoxMenuItem();
+        graphicsLiftClassic = new javax.swing.JCheckBoxMenuItem();
+        graphicsLiftFuture = new javax.swing.JCheckBoxMenuItem();
+        graphicsLiftGold = new javax.swing.JCheckBoxMenuItem();
+        graphicsLiftCheap = new javax.swing.JCheckBoxMenuItem();
+        floorsRegen = new javax.swing.JMenuItem();
 
         aboutDialog.setMinimumSize(new java.awt.Dimension(300, 160));
         aboutDialog.setResizable(false);
@@ -1523,16 +1535,8 @@ public class LiftFrame extends javax.swing.JFrame {
         menuOptions.setMnemonic('O');
         menuOptions.setText("Options");
 
-        optionsSoundMusic.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
-        optionsSoundMusic.setMnemonic('M');
-        optionsSoundMusic.setSelected(true);
-        optionsSoundMusic.setText("Musique");
-        optionsSoundMusic.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                optionsSoundMusicActionPerformed(evt);
-            }
-        });
-        menuOptions.add(optionsSoundMusic);
+        optionsAudio.setMnemonic('A');
+        optionsAudio.setText("Audio");
 
         optionsSoundDing.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
         optionsSoundDing.setMnemonic('B');
@@ -1543,7 +1547,86 @@ public class LiftFrame extends javax.swing.JFrame {
                 optionsSoundDingActionPerformed(evt);
             }
         });
-        menuOptions.add(optionsSoundDing);
+        optionsAudio.add(optionsSoundDing);
+
+        optionsSoundMusic.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+        optionsSoundMusic.setMnemonic('M');
+        optionsSoundMusic.setSelected(true);
+        optionsSoundMusic.setText("Musique");
+        optionsSoundMusic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optionsSoundMusicActionPerformed(evt);
+            }
+        });
+        optionsAudio.add(optionsSoundMusic);
+
+        menuOptions.add(optionsAudio);
+
+        optionsGraphics.setMnemonic('G');
+        optionsGraphics.setText("Graphismes");
+
+        graphicsLifts.setMnemonic('A');
+        graphicsLifts.setText("Ascenseur");
+
+        graphicsLiftChoice.add(graphicsLiftBlue);
+        graphicsLiftBlue.setMnemonic('B');
+        graphicsLiftBlue.setText("Classique Bleu");
+        graphicsLiftBlue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphicsLiftBlueActionPerformed(evt);
+            }
+        });
+        graphicsLifts.add(graphicsLiftBlue);
+
+        graphicsLiftChoice.add(graphicsLiftClassic);
+        graphicsLiftClassic.setMnemonic('M');
+        graphicsLiftClassic.setSelected(true);
+        graphicsLiftClassic.setText("Classique Marron");
+        graphicsLiftClassic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphicsLiftClassicActionPerformed(evt);
+            }
+        });
+        graphicsLifts.add(graphicsLiftClassic);
+
+        graphicsLiftChoice.add(graphicsLiftFuture);
+        graphicsLiftFuture.setMnemonic('F');
+        graphicsLiftFuture.setText("Futuriste");
+        graphicsLiftFuture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphicsLiftFutureActionPerformed(evt);
+            }
+        });
+        graphicsLifts.add(graphicsLiftFuture);
+
+        graphicsLiftChoice.add(graphicsLiftGold);
+        graphicsLiftGold.setMnemonic('L');
+        graphicsLiftGold.setText("Luxurieux");
+        graphicsLiftGold.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphicsLiftGoldActionPerformed(evt);
+            }
+        });
+        graphicsLifts.add(graphicsLiftGold);
+
+        graphicsLiftChoice.add(graphicsLiftCheap);
+        graphicsLiftCheap.setMnemonic('R');
+        graphicsLiftCheap.setText("Rouillé");
+        graphicsLiftCheap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphicsLiftCheapActionPerformed(evt);
+            }
+        });
+        graphicsLifts.add(graphicsLiftCheap);
+
+        optionsGraphics.add(graphicsLifts);
+
+        floorsRegen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        floorsRegen.setMnemonic('C');
+        floorsRegen.setText("Changer les étages");
+        optionsGraphics.add(floorsRegen);
+
+        menuOptions.add(optionsGraphics);
 
         menu.add(menuOptions);
 
@@ -1612,6 +1695,26 @@ public class LiftFrame extends javax.swing.JFrame {
         
         this.requestFloor(floorIndex);
     }//GEN-LAST:event_actionButtonRequestFloorHandler
+   
+    private void graphicsLiftBlueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphicsLiftBlueActionPerformed
+        this.lift.loadLift(LiftPanel.LiftDesign.BLUE);
+    }//GEN-LAST:event_graphicsLiftBlueActionPerformed
+
+    private void graphicsLiftClassicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphicsLiftClassicActionPerformed
+        this.lift.loadLift(LiftPanel.LiftDesign.CLASSIC);
+    }//GEN-LAST:event_graphicsLiftClassicActionPerformed
+
+    private void graphicsLiftFutureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphicsLiftFutureActionPerformed
+        this.lift.loadLift(LiftPanel.LiftDesign.FUTURE);
+    }//GEN-LAST:event_graphicsLiftFutureActionPerformed
+
+    private void graphicsLiftGoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphicsLiftGoldActionPerformed
+        this.lift.loadLift(LiftPanel.LiftDesign.GOLD);
+    }//GEN-LAST:event_graphicsLiftGoldActionPerformed
+
+    private void graphicsLiftCheapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphicsLiftCheapActionPerformed
+        this.lift.loadLift(LiftPanel.LiftDesign.CHEAP);
+    }//GEN-LAST:event_graphicsLiftCheapActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1670,6 +1773,14 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JButton cabButton9;
     private javax.swing.JLabel cabState;
     private javax.swing.JPanel content;
+    private javax.swing.JMenuItem floorsRegen;
+    private javax.swing.JCheckBoxMenuItem graphicsLiftBlue;
+    private javax.swing.JCheckBoxMenuItem graphicsLiftCheap;
+    private javax.swing.ButtonGroup graphicsLiftChoice;
+    private javax.swing.JCheckBoxMenuItem graphicsLiftClassic;
+    private javax.swing.JCheckBoxMenuItem graphicsLiftFuture;
+    private javax.swing.JCheckBoxMenuItem graphicsLiftGold;
+    private javax.swing.JMenu graphicsLifts;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -1711,6 +1822,8 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar menu;
     private javax.swing.JMenu menuFile;
     private javax.swing.JMenu menuOptions;
+    private javax.swing.JMenu optionsAudio;
+    private javax.swing.JMenu optionsGraphics;
     private javax.swing.JCheckBoxMenuItem optionsSoundDing;
     private javax.swing.JCheckBoxMenuItem optionsSoundMusic;
     private javax.swing.JPanel panelCabButtons;
