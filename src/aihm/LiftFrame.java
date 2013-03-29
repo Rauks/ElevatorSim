@@ -342,10 +342,11 @@ public class LiftFrame extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImage(java.awt.Toolkit.getDefaultToolkit().getImage(getClass().getResource("/aihm/res/Elevator.png")));
         setMaximumSize(new java.awt.Dimension(2147483647, 996));
-        setMinimumSize(new java.awt.Dimension(875, 996));
+        setMinimumSize(new java.awt.Dimension(875, 300));
 
         content.setBackground(new java.awt.Color(102, 102, 102));
         content.setMaximumSize(new java.awt.Dimension(875, 2147483647));
+        content.setMinimumSize(new java.awt.Dimension(875, 300));
         content.setLayout(new java.awt.BorderLayout());
 
         mainBar.setBorder(null);
