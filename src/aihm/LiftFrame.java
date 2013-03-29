@@ -46,7 +46,6 @@ public class LiftFrame extends javax.swing.JFrame {
         this.audioMusic = new AudioPlayer("res/Music.au");
         this.audioMusic.loop(true);
         this.audioMusic.volume(MUSIC_BASE_VOL);
-        this.audioMusic.play();
         
         this.audioDing = new AudioPlayer("res/Ding.au");
         
@@ -179,6 +178,7 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
         timer.start();
+        this.audioMusic.play();
     }
     
     public void requestFloor(int index){
@@ -1506,7 +1506,7 @@ public class LiftFrame extends javax.swing.JFrame {
             .addGroup(splitLiftLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         content.add(splitLift, java.awt.BorderLayout.LINE_START);
