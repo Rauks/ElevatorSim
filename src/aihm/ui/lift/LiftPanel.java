@@ -5,7 +5,15 @@
 package aihm.ui.lift;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 /**
@@ -16,16 +24,63 @@ import javax.swing.JPanel;
  * 
  */
 public class LiftPanel extends JPanel {
-    public final static int NB_FLOORS = 4;
-    public final static int MAX_POS_X = 100;
-    public final static int MAX_DOORS_OPENING = 100;
+    public final static int NB_FLOORS = 15;
+    public final static int MAX_POS_X = NB_FLOORS * 56;
+    public final static int MAX_DOORS_OPENING = 6;
+
     private int posX;
     private int doorsOverture;
+    
+    BufferedImage imageBackground;
+    BufferedImage imageCane;
+    BufferedImage imageBottom;
+    BufferedImage[] imagesFloors;
+    
+    BufferedImage imageLiftFront;
+    BufferedImage imageLiftBack;
+    BufferedImage imageLiftLeftDoor;
+    BufferedImage imageLiftRightDoor;
 
     public LiftPanel() {
         super();
-        this.posX = 0;
-        this.doorsOverture = 0;
+        try {
+            //Lift initialisation
+            this.posX = 0;
+            this.doorsOverture = 0;
+            
+            //Building images loading
+            URL urlBackground = LiftPanel.class.getResource("./res/Background.png");
+            this.imageBackground = ImageIO.read(urlBackground);
+            URL urlCane = LiftPanel.class.getResource("./res/Cane.png");
+            this.imageCane = ImageIO.read(urlCane);
+            URL urlBottom = LiftPanel.class.getResource("./res/Bottom.png");
+            this.imageBottom = ImageIO.read(urlBottom);
+            
+            this.imagesFloors = new BufferedImage[NB_FLOORS - 2]; //Lobby & roof already in background
+            int floorFileMin = 1;
+            int floorFileMax = 52;
+            for (int i = 0; i < imagesFloors.length; i++) {
+                int fileChoosedIndex = floorFileMin + (int)(Math.random() * ((floorFileMax - floorFileMin) + 1));
+                URL urlFloor = LiftPanel.class.getResource(new StringBuilder().append("./res/floors/").append(fileChoosedIndex).append(".png").toString());
+                this.imagesFloors[i] = ImageIO.read(urlFloor);
+            }
+            
+            //Lift images loading
+            URL urlLiftFront = LiftPanel.class.getResource("./res/LiftFront.png");
+            this.imageLiftFront = ImageIO.read(urlLiftFront);
+            URL urlLiftBack = LiftPanel.class.getResource("./res/LiftBack.png");
+            this.imageLiftBack = ImageIO.read(urlLiftBack);
+            URL urlLiftLeftDoor = LiftPanel.class.getResource("./res/LiftLeftDoor.png");
+            this.imageLiftLeftDoor = ImageIO.read(urlLiftLeftDoor);
+            URL urlLiftRightDoor = LiftPanel.class.getResource("./res/LiftRightDoor.png");
+            this.imageLiftRightDoor = ImageIO.read(urlLiftRightDoor);
+            
+            //JPanel preferred size is the background image size
+            this.setPreferredSize(new Dimension(this.imageBackground.getWidth(), this.imageBackground.getHeight()));
+        } catch (IOException ex) {
+            Logger.getLogger(LiftPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     public int getPosX() {
@@ -72,6 +127,31 @@ public class LiftPanel extends JPanel {
 
     @Override
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2d = (Graphics2D) g;
+        
+        g2d.drawImage(this.imageBackground, 0, 0, null);
+        g2d.drawImage(this.imageCane, 240, 7, null);
+        
+        int imageFloorHeight = MAX_POS_X / NB_FLOORS;
+        for (int i = 0; i < imagesFloors.length; i++) {
+            g2d.drawImage(this.imagesFloors[i], 273, 133 + i * imageFloorHeight, null);
+        }
+        
+        int cabX = 241;
+        int minCabY = 80;
+        int maxCabY = minCabY + imageFloorHeight * (NB_FLOORS - 1);
+        int cabY = maxCabY - this.posX;
+        g2d.drawImage(this.imageLiftBack, cabX, cabY, null);
+        g2d.drawImage(this.imageLiftLeftDoor, cabX - this.doorsOverture, cabY, null);
+        g2d.drawImage(this.imageLiftRightDoor, cabX + this.doorsOverture, cabY, null);
+        g2d.drawImage(this.imageLiftFront, cabX, cabY, null);
+        
+        g2d.drawImage(this.imageBottom, 212, 917, null);
+        
+        /* 
+         * Old horrible graphics, new fancy graphics are more awsome !
+         * 
         //Background
         super.paintComponent(g);
 
@@ -125,6 +205,6 @@ public class LiftPanel extends JPanel {
         for (int i = 0; i <= LiftPanel.NB_FLOORS; i++) {
             g.fillRect(blockX, i * (height / LiftPanel.NB_FLOORS) + blockY, blockWidth, blockHeight);
         }
-        
+        */
     }
 }
