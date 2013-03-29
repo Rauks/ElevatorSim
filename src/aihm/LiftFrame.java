@@ -305,11 +305,12 @@ public class LiftFrame extends javax.swing.JFrame {
         setTitle("Simulation d'ascenseur");
         setIconImage(java.awt.Toolkit.getDefaultToolkit().getImage(getClass().getResource("/aihm/res/Elevator.png")));
 
-        content.setBackground(new java.awt.Color(204, 204, 204));
-        content.setLayout(new java.awt.BorderLayout(1, 0));
+        content.setBackground(new java.awt.Color(153, 153, 153));
+        content.setLayout(new java.awt.BorderLayout());
 
         mainBar.setFloatable(false);
         mainBar.setRollover(true);
+        mainBar.setOpaque(false);
 
         mainButton0.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         mainButton0.setForeground(this.colorUnrequestedFloorLabel);
@@ -320,6 +321,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton0.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton0.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton0.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton0.setOpaque(false);
         mainButton0.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton0.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton0.addActionListener(new java.awt.event.ActionListener() {
@@ -338,6 +340,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton1.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton1.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton1.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton1.setOpaque(false);
         mainButton1.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -356,6 +359,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton2.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton2.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton2.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton2.setOpaque(false);
         mainButton2.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -374,6 +378,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton3.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton3.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton3.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton3.setOpaque(false);
         mainButton3.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -392,6 +397,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton4.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton4.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton4.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton4.setOpaque(false);
         mainButton4.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -410,6 +416,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton5.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton5.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton5.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton5.setOpaque(false);
         mainButton5.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -428,6 +435,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton6.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton6.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton6.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton6.setOpaque(false);
         mainButton6.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -446,6 +454,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton7.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton7.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton7.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton7.setOpaque(false);
         mainButton7.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -464,6 +473,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton8.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton8.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton8.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton8.setOpaque(false);
         mainButton8.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -482,6 +492,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton9.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton9.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton9.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton9.setOpaque(false);
         mainButton9.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -500,6 +511,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton10.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton10.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton10.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton10.setOpaque(false);
         mainButton10.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -518,6 +530,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton11.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton11.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton11.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton11.setOpaque(false);
         mainButton11.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton11.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -536,6 +549,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton12.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton12.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton12.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton12.setOpaque(false);
         mainButton12.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton12.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -554,6 +568,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton13.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton13.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton13.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton13.setOpaque(false);
         mainButton13.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton13.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -572,6 +587,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton14.setMargin(new java.awt.Insets(6, 1, 1, 1));
         mainButton14.setMaximumSize(new java.awt.Dimension(40, 31));
         mainButton14.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton14.setOpaque(false);
         mainButton14.setPreferredSize(new java.awt.Dimension(40, 31));
         mainButton14.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -584,14 +600,17 @@ public class LiftFrame extends javax.swing.JFrame {
         content.add(mainBar, java.awt.BorderLayout.PAGE_START);
 
         splitCab.setBackground(new java.awt.Color(255, 255, 255));
+        splitCab.setOpaque(false);
         splitCab.setLayout(new java.awt.BorderLayout());
 
+        labelCab.setBackground(new java.awt.Color(255, 255, 255));
         labelCab.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelCab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelCab.setText("Cabine");
         splitCab.add(labelCab, java.awt.BorderLayout.PAGE_START);
 
         panelCabButtons.setBackground(new java.awt.Color(255, 255, 255));
+        panelCabButtons.setOpaque(false);
         java.awt.GridBagLayout panelCabButtonsLayout = new java.awt.GridBagLayout();
         panelCabButtonsLayout.columnWidths = new int[] {0, 5, 0, 5, 0};
         panelCabButtonsLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
@@ -615,6 +634,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabBell.setMargin(new java.awt.Insets(1, 1, 1, 1));
         cabBell.setMaximumSize(new java.awt.Dimension(55, 35));
         cabBell.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabBell.setOpaque(false);
         cabBell.setPreferredSize(new java.awt.Dimension(55, 35));
         cabBell.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/BellSelected.png"))); // NOI18N
         cabBell.addActionListener(new java.awt.event.ActionListener() {
@@ -636,6 +656,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton0.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton0.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton0.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton0.setOpaque(false);
         cabButton0.setPreferredSize(new java.awt.Dimension(55, 35));
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton0, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton0, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -662,6 +683,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton1.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton1.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton1.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton1.setOpaque(false);
         cabButton1.setPreferredSize(new java.awt.Dimension(55, 35));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton1, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -688,6 +710,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton2.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton2.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton2.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton2.setOpaque(false);
         cabButton2.setPreferredSize(new java.awt.Dimension(55, 35));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton2, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -714,6 +737,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton3.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton3.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton3.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton3.setOpaque(false);
         cabButton3.setPreferredSize(new java.awt.Dimension(55, 35));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton3, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton3, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -740,6 +764,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton4.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton4.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton4.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton4.setOpaque(false);
         cabButton4.setPreferredSize(new java.awt.Dimension(55, 35));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton4, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton4, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -766,6 +791,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton5.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton5.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton5.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton5.setOpaque(false);
         cabButton5.setPreferredSize(new java.awt.Dimension(55, 35));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, cabButton5, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton5, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -792,6 +818,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton6.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton6.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton6.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton6.setOpaque(false);
         cabButton6.setPreferredSize(new java.awt.Dimension(55, 35));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton6, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton6, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -818,6 +845,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton7.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton7.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton7.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton7.setOpaque(false);
         cabButton7.setPreferredSize(new java.awt.Dimension(55, 35));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton7, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton7, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -844,6 +872,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton8.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton8.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton8.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton8.setOpaque(false);
         cabButton8.setPreferredSize(new java.awt.Dimension(55, 35));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton8, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton8, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -870,6 +899,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton9.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton9.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton9.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton9.setOpaque(false);
         cabButton9.setPreferredSize(new java.awt.Dimension(55, 35));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton9, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton9, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -896,6 +926,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton10.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton10.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton10.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton10.setOpaque(false);
         cabButton10.setPreferredSize(new java.awt.Dimension(55, 35));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton10, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton10, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -922,6 +953,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton11.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton11.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton11.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton11.setOpaque(false);
         cabButton11.setPreferredSize(new java.awt.Dimension(55, 35));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton11, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton11, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -948,6 +980,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton12.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton12.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton12.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton12.setOpaque(false);
         cabButton12.setPreferredSize(new java.awt.Dimension(55, 35));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton12, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton12, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -974,6 +1007,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton13.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton13.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton13.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton13.setOpaque(false);
         cabButton13.setPreferredSize(new java.awt.Dimension(55, 35));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton13, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton13, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -1000,6 +1034,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton14.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton14.setMaximumSize(new java.awt.Dimension(55, 35));
         cabButton14.setMinimumSize(new java.awt.Dimension(55, 35));
+        cabButton14.setOpaque(false);
         cabButton14.setPreferredSize(new java.awt.Dimension(55, 35));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton14, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton14, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -1022,8 +1057,10 @@ public class LiftFrame extends javax.swing.JFrame {
         content.add(splitCab, java.awt.BorderLayout.CENTER);
 
         splitLift.setBackground(new java.awt.Color(255, 255, 255));
+        splitLift.setOpaque(false);
 
         lift.setBackground(new java.awt.Color(255, 255, 255));
+        lift.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         liftButtons.setOpaque(false);
 
@@ -1439,12 +1476,12 @@ public class LiftFrame extends javax.swing.JFrame {
             .addGroup(liftLayout.createSequentialGroup()
                 .addGap(191, 191, 191)
                 .addComponent(liftButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(390, Short.MAX_VALUE))
+                .addContainerGap(388, Short.MAX_VALUE))
         );
         liftLayout.setVerticalGroup(
             liftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, liftLayout.createSequentialGroup()
-                .addContainerGap(86, Short.MAX_VALUE)
+                .addContainerGap(84, Short.MAX_VALUE)
                 .addComponent(liftButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
@@ -1453,11 +1490,17 @@ public class LiftFrame extends javax.swing.JFrame {
         splitLift.setLayout(splitLiftLayout);
         splitLiftLayout.setHorizontalGroup(
             splitLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(splitLiftLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         splitLiftLayout.setVerticalGroup(
             splitLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(splitLiftLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         content.add(splitLift, java.awt.BorderLayout.LINE_START);

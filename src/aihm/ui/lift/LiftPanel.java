@@ -24,6 +24,20 @@ import javax.swing.JPanel;
  * 
  */
 public class LiftPanel extends JPanel {
+    public enum LiftDesign{
+        BLUE("blue"), CHEAP("cheap"), CLASSIC("classic"), FUTURE("future"), GOLD("gold");
+        
+        private String dir;
+        
+        private LiftDesign(String dir){
+            this.dir = dir;
+        }
+        
+        private String getDir(){
+            return this.dir;
+        }
+    }
+    
     public final static int NB_FLOORS = 15;
     public final static int MAX_POS_X = NB_FLOORS * 56;
     public final static int MAX_DOORS_OPENING = 6;
@@ -66,14 +80,7 @@ public class LiftPanel extends JPanel {
             }
             
             //Lift images loading
-            URL urlLiftFront = LiftPanel.class.getResource("res/LiftFront.png");
-            this.imageLiftFront = ImageIO.read(urlLiftFront);
-            URL urlLiftBack = LiftPanel.class.getResource("res/LiftBack.png");
-            this.imageLiftBack = ImageIO.read(urlLiftBack);
-            URL urlLiftLeftDoor = LiftPanel.class.getResource("res/LiftLeftDoor.png");
-            this.imageLiftLeftDoor = ImageIO.read(urlLiftLeftDoor);
-            URL urlLiftRightDoor = LiftPanel.class.getResource("res/LiftRightDoor.png");
-            this.imageLiftRightDoor = ImageIO.read(urlLiftRightDoor);
+            this.loadLift(LiftDesign.CLASSIC);
             
             //JPanel preferred size is the background image size
             this.setPreferredSize(new Dimension(this.imageBackground.getWidth(), this.imageBackground.getHeight()));
@@ -81,6 +88,21 @@ public class LiftPanel extends JPanel {
             Logger.getLogger(LiftPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+    }
+
+    public final void loadLift(LiftDesign design){
+        try {
+            URL urlLiftFront = LiftPanel.class.getResource("res/lifts/" + design.getDir() + "/Front.png");
+            this.imageLiftFront = ImageIO.read(urlLiftFront);
+            URL urlLiftBack = LiftPanel.class.getResource("res/lifts/" + design.getDir() + "/Back.png");
+            this.imageLiftBack = ImageIO.read(urlLiftBack);
+            URL urlLiftLeftDoor = LiftPanel.class.getResource("res/lifts/" + design.getDir() + "/LeftDoor.png");
+            this.imageLiftLeftDoor = ImageIO.read(urlLiftLeftDoor);
+            URL urlLiftRightDoor = LiftPanel.class.getResource("res/lifts/" + design.getDir() + "/RightDoor.png");
+            this.imageLiftRightDoor = ImageIO.read(urlLiftRightDoor);
+        } catch (IOException ex) {
+            Logger.getLogger(LiftPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public int getPosX() {
