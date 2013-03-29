@@ -7,6 +7,7 @@ package aihm;
 import aihm.ui.lift.LiftPanel;
 import aihm.model.Lift;
 import aihm.model.LiftException;
+import java.awt.Color;
 import java.awt.GraphicsConfiguration;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
@@ -15,6 +16,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.Timer;
 
 /**
@@ -151,10 +153,6 @@ public class LiftFrame extends javax.swing.JFrame {
         }
     }
     
-    private void setSourceButtonSelected(java.awt.event.ActionEvent evt){
-        ((javax.swing.JButton) evt.getSource()).setSelected(true);
-    }
-    
     private void setFloorButtonUnselected(int index){
         /*
         switch(index){
@@ -176,6 +174,7 @@ public class LiftFrame extends javax.swing.JFrame {
             Field f = this.getClass().getDeclaredField("mainButton" + index);
             f.setAccessible(true);
             f.get(this).getClass().getMethod("setSelected", new Class[]{boolean.class}).invoke(f.get(this), false);
+            f.get(this).getClass().getMethod("setForeground", new Class[]{Color.class}).invoke(f.get(this), Color.BLACK);
         } catch (NoSuchFieldException | NoSuchMethodException| SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
             Logger.getLogger(LiftFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -214,7 +213,6 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton12 = new javax.swing.JButton();
         mainButton13 = new javax.swing.JButton();
         mainButton14 = new javax.swing.JButton();
-        mainButton15 = new javax.swing.JButton();
         splitCab = new javax.swing.JPanel();
         labelCab = new javax.swing.JLabel();
         panelCabButtons = new javax.swing.JPanel();
@@ -235,7 +233,6 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton12 = new javax.swing.JButton();
         cabButton13 = new javax.swing.JButton();
         cabButton14 = new javax.swing.JButton();
-        cabButton15 = new javax.swing.JButton();
         splitLift = new javax.swing.JPanel();
         contentLift = new javax.swing.JPanel();
         lift = new aihm.ui.lift.LiftPanel();
@@ -308,7 +305,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton0.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton0ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton0);
@@ -325,7 +322,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton1ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton1);
@@ -342,7 +339,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton2ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton2);
@@ -359,7 +356,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton3ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton3);
@@ -376,7 +373,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton4ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton4);
@@ -393,7 +390,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton5ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton5);
@@ -410,7 +407,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton6ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton6);
@@ -427,7 +424,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton7ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton7);
@@ -444,7 +441,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton8ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton8);
@@ -461,7 +458,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton9ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton9);
@@ -478,7 +475,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton10ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton10);
@@ -495,7 +492,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton11.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton11ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton11);
@@ -512,7 +509,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton12.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton12ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton12);
@@ -529,7 +526,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton13.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton13ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton13);
@@ -546,27 +543,10 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton14.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mainButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton14ActionPerformed(evt);
+                actionButtonRequestFloorHandler(evt);
             }
         });
         mainBar.add(mainButton14);
-
-        mainButton15.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton15.setText("15");
-        mainButton15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton15.setFocusable(false);
-        mainButton15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton15.setMargin(new java.awt.Insets(6, 1, 1, 1));
-        mainButton15.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton15.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton15.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton15.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainButton15ActionPerformed(evt);
-            }
-        });
-        mainBar.add(mainButton15);
 
         content.add(mainBar, java.awt.BorderLayout.PAGE_START);
 
@@ -580,17 +560,16 @@ public class LiftFrame extends javax.swing.JFrame {
 
         panelCabButtons.setBackground(new java.awt.Color(255, 255, 255));
         java.awt.GridBagLayout panelCabButtonsLayout = new java.awt.GridBagLayout();
-        panelCabButtonsLayout.columnWidths = new int[] {0, 5, 0, 5, 0, 5, 0};
-        panelCabButtonsLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
+        panelCabButtonsLayout.columnWidths = new int[] {0, 5, 0, 5, 0};
+        panelCabButtonsLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
         panelCabButtons.setLayout(panelCabButtonsLayout);
 
         cabState.setFont(new java.awt.Font("kroeger 05_55", 1, 30)); // NOI18N
         cabState.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cabState.setText("0");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.ipadx = 6;
         gridBagConstraints.ipady = 6;
         panelCabButtons.add(cabState, gridBagConstraints);
@@ -610,8 +589,8 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 12;
         panelCabButtons.add(cabBell, gridBagConstraints);
 
         cabButton0.setBackground(new java.awt.Color(255, 255, 255));
@@ -625,10 +604,17 @@ public class LiftFrame extends javax.swing.JFrame {
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton0, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton0, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton0, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton0, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
+        cabButton0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 10;
         panelCabButtons.add(cabButton0, gridBagConstraints);
 
         cabButton1.setBackground(new java.awt.Color(255, 255, 255));
@@ -642,10 +628,17 @@ public class LiftFrame extends javax.swing.JFrame {
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton1, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton1, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
+        cabButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
         panelCabButtons.add(cabButton1, gridBagConstraints);
 
         cabButton2.setBackground(new java.awt.Color(255, 255, 255));
@@ -659,10 +652,17 @@ public class LiftFrame extends javax.swing.JFrame {
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton2, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton2, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton2, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
+        cabButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
         panelCabButtons.add(cabButton2, gridBagConstraints);
 
         cabButton3.setBackground(new java.awt.Color(255, 255, 255));
@@ -676,10 +676,17 @@ public class LiftFrame extends javax.swing.JFrame {
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton3, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton3, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton3, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton3, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
+        cabButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
         panelCabButtons.add(cabButton3, gridBagConstraints);
 
         cabButton4.setBackground(new java.awt.Color(255, 255, 255));
@@ -693,10 +700,17 @@ public class LiftFrame extends javax.swing.JFrame {
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton4, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton4, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton4, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton4, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
+        cabButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 2;
         panelCabButtons.add(cabButton4, gridBagConstraints);
 
         cabButton5.setBackground(new java.awt.Color(255, 255, 255));
@@ -710,10 +724,17 @@ public class LiftFrame extends javax.swing.JFrame {
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, cabButton5, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton5, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton5, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton5, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
+        cabButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 10;
         panelCabButtons.add(cabButton5, gridBagConstraints);
 
         cabButton6.setBackground(new java.awt.Color(255, 255, 255));
@@ -727,10 +748,17 @@ public class LiftFrame extends javax.swing.JFrame {
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton6, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton6, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton6, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton6, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
+        cabButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
         panelCabButtons.add(cabButton6, gridBagConstraints);
 
         cabButton7.setBackground(new java.awt.Color(255, 255, 255));
@@ -744,10 +772,17 @@ public class LiftFrame extends javax.swing.JFrame {
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton7, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton7, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton7, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton7, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
+        cabButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
         panelCabButtons.add(cabButton7, gridBagConstraints);
 
         cabButton8.setBackground(new java.awt.Color(255, 255, 255));
@@ -761,10 +796,17 @@ public class LiftFrame extends javax.swing.JFrame {
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton8, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton8, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton8, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton8, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
+        cabButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
         panelCabButtons.add(cabButton8, gridBagConstraints);
 
         cabButton9.setBackground(new java.awt.Color(255, 255, 255));
@@ -778,10 +820,17 @@ public class LiftFrame extends javax.swing.JFrame {
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton9, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton9, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton9, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton9, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
+        cabButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 2;
         panelCabButtons.add(cabButton9, gridBagConstraints);
 
         cabButton10.setBackground(new java.awt.Color(255, 255, 255));
@@ -795,10 +844,17 @@ public class LiftFrame extends javax.swing.JFrame {
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton10, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton10, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton10, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton10, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
+        cabButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 10;
         panelCabButtons.add(cabButton10, gridBagConstraints);
 
         cabButton11.setBackground(new java.awt.Color(255, 255, 255));
@@ -812,10 +868,17 @@ public class LiftFrame extends javax.swing.JFrame {
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton11, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton11, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton11, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton11, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
+        cabButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 8;
         panelCabButtons.add(cabButton11, gridBagConstraints);
 
         cabButton12.setBackground(new java.awt.Color(255, 255, 255));
@@ -829,10 +892,17 @@ public class LiftFrame extends javax.swing.JFrame {
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton12, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton12, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton12, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton12, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
+        cabButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 6;
         panelCabButtons.add(cabButton12, gridBagConstraints);
 
         cabButton13.setBackground(new java.awt.Color(255, 255, 255));
@@ -846,10 +916,17 @@ public class LiftFrame extends javax.swing.JFrame {
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton13, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton13, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton13, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton13, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
 
+        cabButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
         panelCabButtons.add(cabButton13, gridBagConstraints);
 
         cabButton14.setBackground(new java.awt.Color(255, 255, 255));
@@ -863,28 +940,18 @@ public class LiftFrame extends javax.swing.JFrame {
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton14, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton14, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 8;
-        panelCabButtons.add(cabButton14, gridBagConstraints);
-
-        cabButton15.setBackground(new java.awt.Color(255, 255, 255));
-        cabButton15.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton15.setText("15");
-        cabButton15.setFocusable(false);
-        cabButton15.setMargin(new java.awt.Insets(6, 1, 1, 1));
-        cabButton15.setMaximumSize(new java.awt.Dimension(55, 35));
-        cabButton15.setMinimumSize(new java.awt.Dimension(55, 35));
-        cabButton15.setPreferredSize(new java.awt.Dimension(55, 35));
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton15, org.jdesktop.beansbinding.ELProperty.create("${selected}"), cabButton15, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton14, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), cabButton14, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
         bindingGroup.addBinding(binding);
 
+        cabButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 8;
-        panelCabButtons.add(cabButton15, gridBagConstraints);
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 2;
+        panelCabButtons.add(cabButton14, gridBagConstraints);
 
         splitCab.add(panelCabButtons, java.awt.BorderLayout.CENTER);
 
@@ -978,7 +1045,7 @@ public class LiftFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, 935, Short.MAX_VALUE)
+            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, 876, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -993,11 +1060,6 @@ public class LiftFrame extends javax.swing.JFrame {
     private void MenuFileQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuFileQuitActionPerformed
         Runtime.getRuntime().exit(0);
     }//GEN-LAST:event_MenuFileQuitActionPerformed
-
-    private void mainButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton0ActionPerformed
-        this.setSourceButtonSelected(evt);
-        this.requestFloor(0);
-    }//GEN-LAST:event_mainButton0ActionPerformed
 
     private void optionsSoundMusicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionsSoundMusicActionPerformed
         if(optionsSoundMusic.isSelected()){
@@ -1027,65 +1089,21 @@ public class LiftFrame extends javax.swing.JFrame {
         this.aboutDialog.setVisible(true);
     }//GEN-LAST:event_cabBellActionPerformed
 
-    private void mainButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton1ActionPerformed
+    private void actionButtonRequestFloorHandler(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionButtonRequestFloorHandler
+        JButton source = ((JButton) evt.getSource());
+        int floorIndex = Integer.parseInt(source.getText());
 
-    private void mainButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton2ActionPerformed
-
-    private void mainButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton3ActionPerformed
-
-    private void mainButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton4ActionPerformed
-
-    private void mainButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton5ActionPerformed
-
-    private void mainButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton6ActionPerformed
-
-    private void mainButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton7ActionPerformed
-
-    private void mainButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton8ActionPerformed
-
-    private void mainButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton9ActionPerformed
-
-    private void mainButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton10ActionPerformed
-
-    private void mainButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton11ActionPerformed
-
-    private void mainButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton12ActionPerformed
-
-    private void mainButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton13ActionPerformed
-
-    private void mainButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton14ActionPerformed
-
-    private void mainButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButton15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mainButton15ActionPerformed
+        try {
+            Field f = this.getClass().getDeclaredField("mainButton" + floorIndex);
+            f.setAccessible(true);
+            f.get(this).getClass().getMethod("setSelected", new Class[]{boolean.class}).invoke(f.get(this), true);
+            f.get(this).getClass().getMethod("setForeground", new Class[]{Color.class}).invoke(f.get(this), Color.getHSBColor(0f, 1f, .8f));
+        } catch (NoSuchFieldException | NoSuchMethodException| SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+            Logger.getLogger(LiftFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }        
+        
+        this.requestFloor(floorIndex);
+    }//GEN-LAST:event_actionButtonRequestFloorHandler
 
     /**
      * @param args the command line arguments
@@ -1134,7 +1152,6 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JButton cabButton12;
     private javax.swing.JButton cabButton13;
     private javax.swing.JButton cabButton14;
-    private javax.swing.JButton cabButton15;
     private javax.swing.JButton cabButton2;
     private javax.swing.JButton cabButton3;
     private javax.swing.JButton cabButton4;
@@ -1160,7 +1177,6 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JButton mainButton12;
     private javax.swing.JButton mainButton13;
     private javax.swing.JButton mainButton14;
-    private javax.swing.JButton mainButton15;
     private javax.swing.JButton mainButton2;
     private javax.swing.JButton mainButton3;
     private javax.swing.JButton mainButton4;

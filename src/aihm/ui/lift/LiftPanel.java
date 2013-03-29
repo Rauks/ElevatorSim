@@ -131,7 +131,6 @@ public class LiftPanel extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
         
         g2d.drawImage(this.imageBackground, 0, 0, null);
-        g2d.drawImage(this.imageCane, 240, 7, null);
         
         int imageFloorHeight = MAX_POS_X / NB_FLOORS;
         for (int i = 0; i < imagesFloors.length; i++) {
@@ -147,6 +146,7 @@ public class LiftPanel extends JPanel {
         g2d.drawImage(this.imageLiftRightDoor, cabX + this.doorsOverture, cabY, null);
         g2d.drawImage(this.imageLiftFront, cabX, cabY, null);
         
+        g2d.drawImage(this.imageCane, 240, 7, null);
         g2d.drawImage(this.imageBottom, 212, 917, null);
         
         /* 
