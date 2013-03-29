@@ -4,7 +4,7 @@
  */
 package aihm;
 
-import aihm.ui.LiftPanel;
+import aihm.ui.lift.LiftPanel;
 import aihm.model.Lift;
 import aihm.model.LiftException;
 import java.awt.GraphicsConfiguration;
@@ -192,7 +192,7 @@ public class LiftFrame extends javax.swing.JFrame {
         splitLift = new javax.swing.JPanel();
         labelLift = new javax.swing.JLabel();
         contentLift = new javax.swing.JPanel();
-        lift = new aihm.ui.LiftPanel();
+        lift = new aihm.ui.lift.LiftPanel();
         panelLiftButtons = new javax.swing.JPanel();
         floor3 = new javax.swing.JPanel();
         liftButton3 = new javax.swing.JButton();
@@ -795,7 +795,7 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelCab;
     private javax.swing.JLabel labelLift;
-    private aihm.ui.LiftPanel lift;
+    private aihm.ui.lift.LiftPanel lift;
     private javax.swing.JButton liftButton0;
     private javax.swing.JButton liftButton1;
     private javax.swing.JButton liftButton2;

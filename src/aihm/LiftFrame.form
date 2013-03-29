@@ -567,7 +567,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="aihm.ui.LiftPanel" name="lift">
+                    <Container class="aihm.ui.lift.LiftPanel" name="lift">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
