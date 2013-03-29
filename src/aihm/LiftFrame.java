@@ -26,8 +26,8 @@ import javax.swing.Timer;
 public class LiftFrame extends javax.swing.JFrame {
     private static final float MUSIC_BASE_VOL = .05f;
     
-    private final Color unrequestedFloor = Color.BLACK;
-    private final Color requestedFloor = Color.getHSBColor(0f, 1f, .8f); //Red
+    private final Color colorUnrequestedFloorLabel = Color.BLACK;
+    private final Color colorRequestedFloorLabel = Color.getHSBColor(0f, 1f, .8f); //Red
 
     private Lift model;
     private AudioPlayer audioMusic;
@@ -177,7 +177,7 @@ public class LiftFrame extends javax.swing.JFrame {
             Field f = this.getClass().getDeclaredField("mainButton" + index);
             f.setAccessible(true);
             f.get(this).getClass().getMethod("setSelected", new Class[]{boolean.class}).invoke(f.get(this), false);
-            f.get(this).getClass().getMethod("setForeground", new Class[]{Color.class}).invoke(f.get(this), this.unrequestedFloor);
+            f.get(this).getClass().getMethod("setForeground", new Class[]{Color.class}).invoke(f.get(this), this.colorUnrequestedFloorLabel);
         } catch (NoSuchFieldException | NoSuchMethodException| SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
             Logger.getLogger(LiftFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -312,7 +312,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.setRollover(true);
 
         mainButton0.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton0.setForeground(this.unrequestedFloor);
+        mainButton0.setForeground(this.colorUnrequestedFloorLabel);
         mainButton0.setText("0");
         mainButton0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton0.setFocusable(false);
@@ -330,7 +330,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton0);
 
         mainButton1.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton1.setForeground(this.unrequestedFloor);
+        mainButton1.setForeground(this.colorUnrequestedFloorLabel);
         mainButton1.setText("1");
         mainButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton1.setFocusable(false);
@@ -348,7 +348,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton1);
 
         mainButton2.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton2.setForeground(this.unrequestedFloor);
+        mainButton2.setForeground(this.colorUnrequestedFloorLabel);
         mainButton2.setText("2");
         mainButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton2.setFocusable(false);
@@ -366,7 +366,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton2);
 
         mainButton3.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton3.setForeground(this.unrequestedFloor);
+        mainButton3.setForeground(this.colorUnrequestedFloorLabel);
         mainButton3.setText("3");
         mainButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton3.setFocusable(false);
@@ -384,7 +384,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton3);
 
         mainButton4.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton4.setForeground(this.unrequestedFloor);
+        mainButton4.setForeground(this.colorUnrequestedFloorLabel);
         mainButton4.setText("4");
         mainButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton4.setFocusable(false);
@@ -402,7 +402,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton4);
 
         mainButton5.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton5.setForeground(this.unrequestedFloor);
+        mainButton5.setForeground(this.colorUnrequestedFloorLabel);
         mainButton5.setText("5");
         mainButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton5.setFocusable(false);
@@ -420,7 +420,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton5);
 
         mainButton6.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton6.setForeground(this.unrequestedFloor);
+        mainButton6.setForeground(this.colorUnrequestedFloorLabel);
         mainButton6.setText("6");
         mainButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton6.setFocusable(false);
@@ -438,7 +438,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton6);
 
         mainButton7.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton7.setForeground(this.unrequestedFloor);
+        mainButton7.setForeground(this.colorUnrequestedFloorLabel);
         mainButton7.setText("7");
         mainButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton7.setFocusable(false);
@@ -456,7 +456,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton7);
 
         mainButton8.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton8.setForeground(this.unrequestedFloor);
+        mainButton8.setForeground(this.colorUnrequestedFloorLabel);
         mainButton8.setText("8");
         mainButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton8.setFocusable(false);
@@ -474,7 +474,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton8);
 
         mainButton9.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton9.setForeground(this.unrequestedFloor);
+        mainButton9.setForeground(this.colorUnrequestedFloorLabel);
         mainButton9.setText("9");
         mainButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton9.setFocusable(false);
@@ -492,7 +492,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton9);
 
         mainButton10.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton10.setForeground(this.unrequestedFloor);
+        mainButton10.setForeground(this.colorUnrequestedFloorLabel);
         mainButton10.setText("10");
         mainButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton10.setFocusable(false);
@@ -510,7 +510,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton10);
 
         mainButton11.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton11.setForeground(this.unrequestedFloor);
+        mainButton11.setForeground(this.colorUnrequestedFloorLabel);
         mainButton11.setText("11");
         mainButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton11.setFocusable(false);
@@ -528,7 +528,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton11);
 
         mainButton12.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton12.setForeground(this.unrequestedFloor);
+        mainButton12.setForeground(this.colorUnrequestedFloorLabel);
         mainButton12.setText("12");
         mainButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton12.setFocusable(false);
@@ -546,7 +546,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton12);
 
         mainButton13.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton13.setForeground(this.unrequestedFloor);
+        mainButton13.setForeground(this.colorUnrequestedFloorLabel);
         mainButton13.setText("13");
         mainButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton13.setFocusable(false);
@@ -564,7 +564,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton13);
 
         mainButton14.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        mainButton14.setForeground(this.unrequestedFloor);
+        mainButton14.setForeground(this.colorUnrequestedFloorLabel);
         mainButton14.setText("14");
         mainButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton14.setFocusable(false);
@@ -608,11 +608,11 @@ public class LiftFrame extends javax.swing.JFrame {
         panelCabButtons.add(cabState, gridBagConstraints);
 
         cabBell.setBackground(new java.awt.Color(255, 255, 255));
-        cabBell.setForeground(this.unrequestedFloor);
+        cabBell.setForeground(this.colorUnrequestedFloorLabel);
         cabBell.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Bell.png"))); // NOI18N
         cabBell.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabBell.setFocusable(false);
-        cabBell.setMargin(new java.awt.Insets(6, 1, 1, 1));
+        cabBell.setMargin(new java.awt.Insets(1, 1, 1, 1));
         cabBell.setMaximumSize(new java.awt.Dimension(55, 35));
         cabBell.setMinimumSize(new java.awt.Dimension(55, 35));
         cabBell.setPreferredSize(new java.awt.Dimension(55, 35));
@@ -629,7 +629,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton0.setBackground(new java.awt.Color(255, 255, 255));
         cabButton0.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton0.setForeground(this.unrequestedFloor);
+        cabButton0.setForeground(this.colorUnrequestedFloorLabel);
         cabButton0.setText("0");
         cabButton0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton0.setFocusable(false);
@@ -655,7 +655,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton1.setBackground(new java.awt.Color(255, 255, 255));
         cabButton1.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton1.setForeground(this.unrequestedFloor);
+        cabButton1.setForeground(this.colorUnrequestedFloorLabel);
         cabButton1.setText("1");
         cabButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton1.setFocusable(false);
@@ -681,7 +681,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton2.setBackground(new java.awt.Color(255, 255, 255));
         cabButton2.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton2.setForeground(this.unrequestedFloor);
+        cabButton2.setForeground(this.colorUnrequestedFloorLabel);
         cabButton2.setText("2");
         cabButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton2.setFocusable(false);
@@ -707,7 +707,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton3.setBackground(new java.awt.Color(255, 255, 255));
         cabButton3.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton3.setForeground(this.unrequestedFloor);
+        cabButton3.setForeground(this.colorUnrequestedFloorLabel);
         cabButton3.setText("3");
         cabButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton3.setFocusable(false);
@@ -733,7 +733,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton4.setBackground(new java.awt.Color(255, 255, 255));
         cabButton4.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton4.setForeground(this.unrequestedFloor);
+        cabButton4.setForeground(this.colorUnrequestedFloorLabel);
         cabButton4.setText("4");
         cabButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton4.setFocusable(false);
@@ -759,7 +759,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton5.setBackground(new java.awt.Color(255, 255, 255));
         cabButton5.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton5.setForeground(this.unrequestedFloor);
+        cabButton5.setForeground(this.colorUnrequestedFloorLabel);
         cabButton5.setText("5");
         cabButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton5.setFocusable(false);
@@ -785,7 +785,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton6.setBackground(new java.awt.Color(255, 255, 255));
         cabButton6.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton6.setForeground(this.unrequestedFloor);
+        cabButton6.setForeground(this.colorUnrequestedFloorLabel);
         cabButton6.setText("6");
         cabButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton6.setFocusable(false);
@@ -811,7 +811,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton7.setBackground(new java.awt.Color(255, 255, 255));
         cabButton7.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton7.setForeground(this.unrequestedFloor);
+        cabButton7.setForeground(this.colorUnrequestedFloorLabel);
         cabButton7.setText("7");
         cabButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton7.setFocusable(false);
@@ -837,7 +837,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton8.setBackground(new java.awt.Color(255, 255, 255));
         cabButton8.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton8.setForeground(this.unrequestedFloor);
+        cabButton8.setForeground(this.colorUnrequestedFloorLabel);
         cabButton8.setText("8");
         cabButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton8.setFocusable(false);
@@ -863,7 +863,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton9.setBackground(new java.awt.Color(255, 255, 255));
         cabButton9.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton9.setForeground(this.unrequestedFloor);
+        cabButton9.setForeground(this.colorUnrequestedFloorLabel);
         cabButton9.setText("9");
         cabButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton9.setFocusable(false);
@@ -889,7 +889,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton10.setBackground(new java.awt.Color(255, 255, 255));
         cabButton10.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton10.setForeground(this.unrequestedFloor);
+        cabButton10.setForeground(this.colorUnrequestedFloorLabel);
         cabButton10.setText("10");
         cabButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton10.setFocusable(false);
@@ -915,7 +915,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton11.setBackground(new java.awt.Color(255, 255, 255));
         cabButton11.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton11.setForeground(this.unrequestedFloor);
+        cabButton11.setForeground(this.colorUnrequestedFloorLabel);
         cabButton11.setText("11");
         cabButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton11.setFocusable(false);
@@ -941,7 +941,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton12.setBackground(new java.awt.Color(255, 255, 255));
         cabButton12.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton12.setForeground(this.unrequestedFloor);
+        cabButton12.setForeground(this.colorUnrequestedFloorLabel);
         cabButton12.setText("12");
         cabButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton12.setFocusable(false);
@@ -967,7 +967,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton13.setBackground(new java.awt.Color(255, 255, 255));
         cabButton13.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton13.setForeground(this.unrequestedFloor);
+        cabButton13.setForeground(this.colorUnrequestedFloorLabel);
         cabButton13.setText("13");
         cabButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton13.setFocusable(false);
@@ -993,7 +993,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton14.setBackground(new java.awt.Color(255, 255, 255));
         cabButton14.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
-        cabButton14.setForeground(this.unrequestedFloor);
+        cabButton14.setForeground(this.colorUnrequestedFloorLabel);
         cabButton14.setText("14");
         cabButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton14.setFocusable(false);
@@ -1024,12 +1024,12 @@ public class LiftFrame extends javax.swing.JFrame {
         splitLift.setBackground(new java.awt.Color(255, 255, 255));
 
         lift.setBackground(new java.awt.Color(255, 255, 255));
-        lift.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         liftButtons.setOpaque(false);
 
-        liftButton1.setBackground(this.unrequestedFloor);
+        liftButton1.setBackground(new java.awt.Color(255, 255, 255));
         liftButton1.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton1.setForeground(this.colorUnrequestedFloorLabel);
         liftButton1.setText("1");
         liftButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton1.setFocusable(false);
@@ -1050,8 +1050,9 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
 
-        liftButton2.setBackground(this.unrequestedFloor);
+        liftButton2.setBackground(new java.awt.Color(255, 255, 255));
         liftButton2.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton2.setForeground(this.colorUnrequestedFloorLabel);
         liftButton2.setText("2");
         liftButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton2.setFocusable(false);
@@ -1072,8 +1073,9 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
 
-        liftButton3.setBackground(this.unrequestedFloor);
+        liftButton3.setBackground(new java.awt.Color(255, 255, 255));
         liftButton3.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton3.setForeground(this.colorUnrequestedFloorLabel);
         liftButton3.setText("3");
         liftButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton3.setFocusable(false);
@@ -1094,8 +1096,9 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
 
-        liftButton4.setBackground(this.unrequestedFloor);
+        liftButton4.setBackground(new java.awt.Color(255, 255, 255));
         liftButton4.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton4.setForeground(this.colorUnrequestedFloorLabel);
         liftButton4.setText("4");
         liftButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton4.setFocusable(false);
@@ -1116,8 +1119,9 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
 
-        liftButton5.setBackground(this.unrequestedFloor);
+        liftButton5.setBackground(new java.awt.Color(255, 255, 255));
         liftButton5.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton5.setForeground(this.colorUnrequestedFloorLabel);
         liftButton5.setText("5");
         liftButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton5.setFocusable(false);
@@ -1138,8 +1142,9 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
 
-        liftButton6.setBackground(this.unrequestedFloor);
+        liftButton6.setBackground(new java.awt.Color(255, 255, 255));
         liftButton6.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton6.setForeground(this.colorUnrequestedFloorLabel);
         liftButton6.setText("6");
         liftButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton6.setFocusable(false);
@@ -1160,8 +1165,9 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
 
-        liftButton7.setBackground(this.unrequestedFloor);
+        liftButton7.setBackground(new java.awt.Color(255, 255, 255));
         liftButton7.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton7.setForeground(this.colorUnrequestedFloorLabel);
         liftButton7.setText("7");
         liftButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton7.setFocusable(false);
@@ -1182,8 +1188,9 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
 
-        liftButton8.setBackground(this.unrequestedFloor);
+        liftButton8.setBackground(new java.awt.Color(255, 255, 255));
         liftButton8.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton8.setForeground(this.colorUnrequestedFloorLabel);
         liftButton8.setText("8");
         liftButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton8.setFocusable(false);
@@ -1204,8 +1211,9 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
 
-        liftButton9.setBackground(this.unrequestedFloor);
+        liftButton9.setBackground(new java.awt.Color(255, 255, 255));
         liftButton9.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton9.setForeground(this.colorUnrequestedFloorLabel);
         liftButton9.setText("9");
         liftButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton9.setFocusable(false);
@@ -1226,8 +1234,9 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
 
-        liftButton10.setBackground(this.unrequestedFloor);
+        liftButton10.setBackground(new java.awt.Color(255, 255, 255));
         liftButton10.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton10.setForeground(this.colorUnrequestedFloorLabel);
         liftButton10.setText("10");
         liftButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton10.setFocusable(false);
@@ -1248,8 +1257,9 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
 
-        liftButton11.setBackground(this.unrequestedFloor);
+        liftButton11.setBackground(new java.awt.Color(255, 255, 255));
         liftButton11.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton11.setForeground(this.colorUnrequestedFloorLabel);
         liftButton11.setText("11");
         liftButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton11.setFocusable(false);
@@ -1270,8 +1280,9 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
 
-        liftButton12.setBackground(this.unrequestedFloor);
+        liftButton12.setBackground(new java.awt.Color(255, 255, 255));
         liftButton12.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton12.setForeground(this.colorUnrequestedFloorLabel);
         liftButton12.setText("12");
         liftButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton12.setFocusable(false);
@@ -1292,8 +1303,9 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
 
-        liftButton13.setBackground(this.unrequestedFloor);
+        liftButton13.setBackground(new java.awt.Color(255, 255, 255));
         liftButton13.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton13.setForeground(this.colorUnrequestedFloorLabel);
         liftButton13.setText("13");
         liftButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton13.setFocusable(false);
@@ -1314,8 +1326,9 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
 
-        liftButton14.setBackground(this.unrequestedFloor);
+        liftButton14.setBackground(new java.awt.Color(255, 255, 255));
         liftButton14.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton14.setForeground(this.colorUnrequestedFloorLabel);
         liftButton14.setText("14");
         liftButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton14.setFocusable(false);
@@ -1336,8 +1349,9 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
 
-        liftButton0.setBackground(this.unrequestedFloor);
+        liftButton0.setBackground(new java.awt.Color(255, 255, 255));
         liftButton0.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton0.setForeground(this.colorUnrequestedFloorLabel);
         liftButton0.setText("0");
         liftButton0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         liftButton0.setFocusable(false);
@@ -1425,12 +1439,12 @@ public class LiftFrame extends javax.swing.JFrame {
             .addGroup(liftLayout.createSequentialGroup()
                 .addGap(191, 191, 191)
                 .addComponent(liftButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(388, Short.MAX_VALUE))
+                .addContainerGap(390, Short.MAX_VALUE))
         );
         liftLayout.setVerticalGroup(
             liftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, liftLayout.createSequentialGroup()
-                .addContainerGap(84, Short.MAX_VALUE)
+                .addContainerGap(86, Short.MAX_VALUE)
                 .addComponent(liftButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
@@ -1548,7 +1562,7 @@ public class LiftFrame extends javax.swing.JFrame {
             Field f = this.getClass().getDeclaredField("mainButton" + floorIndex);
             f.setAccessible(true);
             f.get(this).getClass().getMethod("setSelected", new Class[]{boolean.class}).invoke(f.get(this), true);
-            f.get(this).getClass().getMethod("setForeground", new Class[]{Color.class}).invoke(f.get(this), this.requestedFloor);
+            f.get(this).getClass().getMethod("setForeground", new Class[]{Color.class}).invoke(f.get(this), this.colorRequestedFloorLabel);
         } catch (NoSuchFieldException | NoSuchMethodException| SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
             Logger.getLogger(LiftFrame.class.getName()).log(Level.SEVERE, null, ex);
         }        
