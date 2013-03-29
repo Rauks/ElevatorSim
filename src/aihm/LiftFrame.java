@@ -225,23 +225,6 @@ public class LiftFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         graphicsLiftChoice = new javax.swing.ButtonGroup();
-        lift = new aihm.ui.lift.LiftPanel();
-        liftButtons = new javax.swing.JPanel();
-        liftButton1 = new javax.swing.JButton();
-        liftButton2 = new javax.swing.JButton();
-        liftButton3 = new javax.swing.JButton();
-        liftButton4 = new javax.swing.JButton();
-        liftButton5 = new javax.swing.JButton();
-        liftButton6 = new javax.swing.JButton();
-        liftButton7 = new javax.swing.JButton();
-        liftButton8 = new javax.swing.JButton();
-        liftButton9 = new javax.swing.JButton();
-        liftButton10 = new javax.swing.JButton();
-        liftButton11 = new javax.swing.JButton();
-        liftButton12 = new javax.swing.JButton();
-        liftButton13 = new javax.swing.JButton();
-        liftButton14 = new javax.swing.JButton();
-        liftButton0 = new javax.swing.JButton();
         content = new javax.swing.JPanel();
         mainBar = new javax.swing.JToolBar();
         mainButton0 = new javax.swing.JButton();
@@ -261,6 +244,23 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton14 = new javax.swing.JButton();
         splitLift = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
+        lift = new aihm.ui.lift.LiftPanel();
+        liftButtons = new javax.swing.JPanel();
+        liftButton1 = new javax.swing.JButton();
+        liftButton2 = new javax.swing.JButton();
+        liftButton3 = new javax.swing.JButton();
+        liftButton4 = new javax.swing.JButton();
+        liftButton5 = new javax.swing.JButton();
+        liftButton6 = new javax.swing.JButton();
+        liftButton7 = new javax.swing.JButton();
+        liftButton8 = new javax.swing.JButton();
+        liftButton9 = new javax.swing.JButton();
+        liftButton10 = new javax.swing.JButton();
+        liftButton11 = new javax.swing.JButton();
+        liftButton12 = new javax.swing.JButton();
+        liftButton13 = new javax.swing.JButton();
+        liftButton14 = new javax.swing.JButton();
+        liftButton0 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         panelCabButtons = new javax.swing.JPanel();
         cabState = new javax.swing.JLabel();
@@ -336,6 +336,302 @@ public class LiftFrame extends javax.swing.JFrame {
             aboutDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Simulation d'ascenseur");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setIconImage(java.awt.Toolkit.getDefaultToolkit().getImage(getClass().getResource("/aihm/res/Elevator.png")));
+        setMaximumSize(new java.awt.Dimension(2147483647, 996));
+        setMinimumSize(new java.awt.Dimension(875, 996));
+
+        content.setBackground(new java.awt.Color(102, 102, 102));
+        content.setMaximumSize(new java.awt.Dimension(875, 2147483647));
+        content.setLayout(new java.awt.BorderLayout());
+
+        mainBar.setBorder(null);
+        mainBar.setFloatable(false);
+
+        mainButton0.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton0.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton0.setText("0");
+        mainButton0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton0.setFocusable(false);
+        mainButton0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton0.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton0.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton0.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton0.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton0.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton0);
+
+        mainButton1.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton1.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton1.setText("1");
+        mainButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton1.setFocusable(false);
+        mainButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton1.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton1.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton1.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton1.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton1);
+
+        mainButton2.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton2.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton2.setText("2");
+        mainButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton2.setFocusable(false);
+        mainButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton2.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton2.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton2.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton2.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton2);
+
+        mainButton3.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton3.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton3.setText("3");
+        mainButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton3.setFocusable(false);
+        mainButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton3.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton3.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton3.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton3.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton3);
+
+        mainButton4.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton4.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton4.setText("4");
+        mainButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton4.setFocusable(false);
+        mainButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton4.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton4.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton4.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton4.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton4);
+
+        mainButton5.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton5.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton5.setText("5");
+        mainButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton5.setFocusable(false);
+        mainButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton5.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton5.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton5.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton5.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton5);
+
+        mainButton6.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton6.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton6.setText("6");
+        mainButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton6.setFocusable(false);
+        mainButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton6.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton6.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton6.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton6.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton6);
+
+        mainButton7.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton7.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton7.setText("7");
+        mainButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton7.setFocusable(false);
+        mainButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton7.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton7.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton7.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton7.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton7);
+
+        mainButton8.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton8.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton8.setText("8");
+        mainButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton8.setFocusable(false);
+        mainButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton8.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton8.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton8.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton8.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton8);
+
+        mainButton9.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton9.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton9.setText("9");
+        mainButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton9.setFocusable(false);
+        mainButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton9.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton9.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton9.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton9.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton9);
+
+        mainButton10.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton10.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton10.setText("10");
+        mainButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton10.setFocusable(false);
+        mainButton10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton10.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton10.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton10.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton10.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton10);
+
+        mainButton11.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton11.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton11.setText("11");
+        mainButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton11.setFocusable(false);
+        mainButton11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton11.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton11.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton11.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton11.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton11.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton11);
+
+        mainButton12.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton12.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton12.setText("12");
+        mainButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton12.setFocusable(false);
+        mainButton12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton12.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton12.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton12.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton12.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton12.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton12);
+
+        mainButton13.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton13.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton13.setText("13");
+        mainButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton13.setFocusable(false);
+        mainButton13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton13.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton13.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton13.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton13.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton13.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton13);
+
+        mainButton14.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
+        mainButton14.setForeground(this.colorUnrequestedFloorLabel);
+        mainButton14.setText("14");
+        mainButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainButton14.setFocusable(false);
+        mainButton14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainButton14.setMargin(new java.awt.Insets(3, 1, 3, 1));
+        mainButton14.setMaximumSize(new java.awt.Dimension(40, 31));
+        mainButton14.setMinimumSize(new java.awt.Dimension(40, 31));
+        mainButton14.setPreferredSize(new java.awt.Dimension(40, 31));
+        mainButton14.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mainButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+        mainBar.add(mainButton14);
+
+        content.add(mainBar, java.awt.BorderLayout.PAGE_START);
+
+        splitLift.setMaximumSize(new java.awt.Dimension(680, 32767));
+
+        jScrollPane2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane2.setHorizontalScrollBar(null);
+
+        lift.setMaximumSize(new java.awt.Dimension(641, 934));
+        lift.setMinimumSize(new java.awt.Dimension(641, 934));
 
         liftButtons.setOpaque(false);
 
@@ -736,302 +1032,17 @@ public class LiftFrame extends javax.swing.JFrame {
             .addGroup(liftLayout.createSequentialGroup()
                 .addGap(185, 185, 185)
                 .addComponent(liftButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(396, 396, 396))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
         liftLayout.setVerticalGroup(
             liftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, liftLayout.createSequentialGroup()
                 .addGap(92, 92, 92)
                 .addComponent(liftButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Simulation d'ascenseur");
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setIconImage(java.awt.Toolkit.getDefaultToolkit().getImage(getClass().getResource("/aihm/res/Elevator.png")));
-        setMinimumSize(new java.awt.Dimension(864, 400));
-
-        content.setBackground(new java.awt.Color(102, 102, 102));
-        content.setLayout(new java.awt.BorderLayout());
-
-        mainBar.setBorder(null);
-        mainBar.setFloatable(false);
-
-        mainButton0.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton0.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton0.setText("0");
-        mainButton0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton0.setFocusable(false);
-        mainButton0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton0.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton0.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton0.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton0.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton0.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton0);
-
-        mainButton1.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton1.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton1.setText("1");
-        mainButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton1.setFocusable(false);
-        mainButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton1.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton1.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton1.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton1.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton1);
-
-        mainButton2.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton2.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton2.setText("2");
-        mainButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton2.setFocusable(false);
-        mainButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton2.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton2.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton2.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton2.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton2);
-
-        mainButton3.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton3.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton3.setText("3");
-        mainButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton3.setFocusable(false);
-        mainButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton3.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton3.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton3.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton3.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton3);
-
-        mainButton4.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton4.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton4.setText("4");
-        mainButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton4.setFocusable(false);
-        mainButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton4.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton4.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton4.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton4.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton4);
-
-        mainButton5.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton5.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton5.setText("5");
-        mainButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton5.setFocusable(false);
-        mainButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton5.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton5.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton5.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton5.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton5);
-
-        mainButton6.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton6.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton6.setText("6");
-        mainButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton6.setFocusable(false);
-        mainButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton6.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton6.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton6.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton6.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton6);
-
-        mainButton7.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton7.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton7.setText("7");
-        mainButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton7.setFocusable(false);
-        mainButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton7.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton7.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton7.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton7.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton7);
-
-        mainButton8.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton8.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton8.setText("8");
-        mainButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton8.setFocusable(false);
-        mainButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton8.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton8.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton8.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton8.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton8);
-
-        mainButton9.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton9.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton9.setText("9");
-        mainButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton9.setFocusable(false);
-        mainButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton9.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton9.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton9.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton9.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton9);
-
-        mainButton10.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton10.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton10.setText("10");
-        mainButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton10.setFocusable(false);
-        mainButton10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton10.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton10.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton10.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton10.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton10);
-
-        mainButton11.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton11.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton11.setText("11");
-        mainButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton11.setFocusable(false);
-        mainButton11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton11.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton11.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton11.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton11.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton11.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton11);
-
-        mainButton12.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton12.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton12.setText("12");
-        mainButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton12.setFocusable(false);
-        mainButton12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton12.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton12.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton12.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton12.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton12.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton12);
-
-        mainButton13.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton13.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton13.setText("13");
-        mainButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton13.setFocusable(false);
-        mainButton13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton13.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton13.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton13.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton13.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton13.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton13);
-
-        mainButton14.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
-        mainButton14.setForeground(this.colorUnrequestedFloorLabel);
-        mainButton14.setText("14");
-        mainButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainButton14.setFocusable(false);
-        mainButton14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainButton14.setMargin(new java.awt.Insets(3, 1, 3, 1));
-        mainButton14.setMaximumSize(new java.awt.Dimension(40, 31));
-        mainButton14.setMinimumSize(new java.awt.Dimension(40, 31));
-        mainButton14.setPreferredSize(new java.awt.Dimension(40, 31));
-        mainButton14.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        mainButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionButtonRequestFloorHandler(evt);
-            }
-        });
-        mainBar.add(mainButton14);
-
-        content.add(mainBar, java.awt.BorderLayout.PAGE_START);
-
-        jScrollPane2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setViewportView(lift);
 
         javax.swing.GroupLayout splitLiftLayout = new javax.swing.GroupLayout(splitLift);
         splitLift.setLayout(splitLiftLayout);
@@ -1039,21 +1050,18 @@ public class LiftFrame extends javax.swing.JFrame {
             splitLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(splitLiftLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         splitLiftLayout.setVerticalGroup(
             splitLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitLiftLayout.createSequentialGroup()
+            .addGroup(splitLiftLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 914, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 943, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         content.add(splitLift, java.awt.BorderLayout.WEST);
-
-        jPanel2.setMaximumSize(new java.awt.Dimension(205, 32767));
-        jPanel2.setMinimumSize(new java.awt.Dimension(205, 935));
 
         java.awt.GridBagLayout panelCabButtonsLayout = new java.awt.GridBagLayout();
         panelCabButtonsLayout.columnWidths = new int[] {0, 5, 0, 5, 0};
@@ -1485,17 +1493,16 @@ public class LiftFrame extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(panelCabButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelCabButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 914, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(120, 120, 120)
+                .addComponent(panelCabButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(585, Short.MAX_VALUE))
         );
 
         content.add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -1623,11 +1630,11 @@ public class LiftFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, 866, Short.MAX_VALUE)
+            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         bindingGroup.bind();
