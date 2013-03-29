@@ -8,7 +8,6 @@ import aihm.ui.lift.LiftPanel;
 import aihm.model.Lift;
 import aihm.model.LiftException;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.GraphicsConfiguration;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
@@ -18,7 +17,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
-import javax.swing.JCheckBoxMenuItem;
 import javax.swing.Timer;
 
 /**
@@ -41,12 +39,12 @@ public class LiftFrame extends javax.swing.JFrame {
     public LiftFrame(final Lift model) {
         this.model = model;
         
-        this.audioMusic = new AudioPlayer("/aihm/res/music.au");
+        this.audioMusic = new AudioPlayer("res/Music.au");
         this.audioMusic.loop(true);
         this.audioMusic.volume(MUSIC_BASE_VOL);
         this.audioMusic.play();
         
-        this.audioDing = new AudioPlayer("/aihm/res/ding.au");
+        this.audioDing = new AudioPlayer("res/Ding.au");
         
         initComponents();
         
@@ -220,7 +218,6 @@ public class LiftFrame extends javax.swing.JFrame {
         mainButton13 = new javax.swing.JButton();
         mainButton14 = new javax.swing.JButton();
         splitCab = new javax.swing.JPanel();
-        labelCab = new javax.swing.JLabel();
         panelCabButtons = new javax.swing.JPanel();
         cabState = new javax.swing.JLabel();
         cabBell = new javax.swing.JButton();
@@ -261,10 +258,11 @@ public class LiftFrame extends javax.swing.JFrame {
         menuFile = new javax.swing.JMenu();
         MenuFileQuit = new javax.swing.JMenuItem();
         menuOptions = new javax.swing.JMenu();
-        optionsAudio = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         optionsSoundDing = new javax.swing.JCheckBoxMenuItem();
         optionsSoundMusic = new javax.swing.JCheckBoxMenuItem();
-        optionsGraphics = new javax.swing.JMenu();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem2 = new javax.swing.JMenuItem();
         graphicsLifts = new javax.swing.JMenu();
         graphicsLiftBlue = new javax.swing.JCheckBoxMenuItem();
         graphicsLiftClassic = new javax.swing.JCheckBoxMenuItem();
@@ -614,12 +612,6 @@ public class LiftFrame extends javax.swing.JFrame {
         splitCab.setBackground(new java.awt.Color(255, 255, 255));
         splitCab.setOpaque(false);
         splitCab.setLayout(new java.awt.BorderLayout());
-
-        labelCab.setBackground(new java.awt.Color(255, 255, 255));
-        labelCab.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        labelCab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelCab.setText("Cabine");
-        splitCab.add(labelCab, java.awt.BorderLayout.PAGE_START);
 
         panelCabButtons.setBackground(new java.awt.Color(255, 255, 255));
         panelCabButtons.setOpaque(false);
@@ -1535,8 +1527,9 @@ public class LiftFrame extends javax.swing.JFrame {
         menuOptions.setMnemonic('O');
         menuOptions.setText("Options");
 
-        optionsAudio.setMnemonic('A');
-        optionsAudio.setText("Audio");
+        jMenuItem1.setText("Audio");
+        jMenuItem1.setEnabled(false);
+        menuOptions.add(jMenuItem1);
 
         optionsSoundDing.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
         optionsSoundDing.setMnemonic('B');
@@ -1547,7 +1540,7 @@ public class LiftFrame extends javax.swing.JFrame {
                 optionsSoundDingActionPerformed(evt);
             }
         });
-        optionsAudio.add(optionsSoundDing);
+        menuOptions.add(optionsSoundDing);
 
         optionsSoundMusic.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
         optionsSoundMusic.setMnemonic('M');
@@ -1558,12 +1551,12 @@ public class LiftFrame extends javax.swing.JFrame {
                 optionsSoundMusicActionPerformed(evt);
             }
         });
-        optionsAudio.add(optionsSoundMusic);
+        menuOptions.add(optionsSoundMusic);
+        menuOptions.add(jSeparator1);
 
-        menuOptions.add(optionsAudio);
-
-        optionsGraphics.setMnemonic('G');
-        optionsGraphics.setText("Graphismes");
+        jMenuItem2.setText("Graphismes");
+        jMenuItem2.setEnabled(false);
+        menuOptions.add(jMenuItem2);
 
         graphicsLifts.setMnemonic('A');
         graphicsLifts.setText("Ascenseur");
@@ -1619,14 +1612,17 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         graphicsLifts.add(graphicsLiftCheap);
 
-        optionsGraphics.add(graphicsLifts);
+        menuOptions.add(graphicsLifts);
 
         floorsRegen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
         floorsRegen.setMnemonic('C');
         floorsRegen.setText("Changer les étages");
-        optionsGraphics.add(floorsRegen);
-
-        menuOptions.add(optionsGraphics);
+        floorsRegen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                floorsRegenActionPerformed(evt);
+            }
+        });
+        menuOptions.add(floorsRegen);
 
         menu.add(menuOptions);
 
@@ -1716,6 +1712,10 @@ public class LiftFrame extends javax.swing.JFrame {
         this.lift.loadLift(LiftPanel.LiftDesign.CHEAP);
     }//GEN-LAST:event_graphicsLiftCheapActionPerformed
 
+    private void floorsRegenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_floorsRegenActionPerformed
+        this.lift.loadFloors();
+    }//GEN-LAST:event_floorsRegenActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1784,8 +1784,10 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel labelCab;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     private aihm.ui.lift.LiftPanel lift;
     private javax.swing.JButton liftButton0;
     private javax.swing.JButton liftButton1;
@@ -1822,8 +1824,6 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar menu;
     private javax.swing.JMenu menuFile;
     private javax.swing.JMenu menuOptions;
-    private javax.swing.JMenu optionsAudio;
-    private javax.swing.JMenu optionsGraphics;
     private javax.swing.JCheckBoxMenuItem optionsSoundDing;
     private javax.swing.JCheckBoxMenuItem optionsSoundMusic;
     private javax.swing.JPanel panelCabButtons;

@@ -71,13 +71,7 @@ public class LiftPanel extends JPanel {
             this.imageBottom = ImageIO.read(urlBottom);
             
             this.imagesFloors = new BufferedImage[NB_FLOORS - 2]; //Lobby & roof already in background
-            int floorFileMin = 1;
-            int floorFileMax = 52;
-            for (int i = 0; i < imagesFloors.length; i++) {
-                int fileChoosedIndex = floorFileMin + (int)(Math.random() * ((floorFileMax - floorFileMin) + 1));
-                URL urlFloor = LiftPanel.class.getResource(new StringBuilder().append("res/floors/").append(fileChoosedIndex).append(".png").toString());
-                this.imagesFloors[i] = ImageIO.read(urlFloor);
-            }
+            this.loadFloors();
             
             //Lift images loading
             this.loadLift(LiftDesign.CLASSIC);
@@ -88,6 +82,20 @@ public class LiftPanel extends JPanel {
             Logger.getLogger(LiftPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+    }
+    
+    public final void loadFloors(){
+        try {
+            int floorFileMin = 1;
+            int floorFileMax = 52;
+            for (int i = 0; i < imagesFloors.length; i++) {
+                int fileChoosedIndex = floorFileMin + (int)(Math.random() * ((floorFileMax - floorFileMin) + 1));
+                URL urlFloor = LiftPanel.class.getResource(new StringBuilder().append("res/floors/").append(fileChoosedIndex).append(".png").toString());
+                this.imagesFloors[i] = ImageIO.read(urlFloor);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(LiftPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public final void loadLift(LiftDesign design){
@@ -149,7 +157,6 @@ public class LiftPanel extends JPanel {
 
     @Override
     public void paintComponent(Graphics g) {
-        //super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
         
         g2d.drawImage(this.imageBackground, 0, 0, null);
