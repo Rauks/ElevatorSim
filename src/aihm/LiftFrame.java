@@ -26,6 +26,9 @@ import javax.swing.Timer;
 public class LiftFrame extends javax.swing.JFrame {
     private static final float MUSIC_BASE_VOL = .05f;
     
+    private final Color unrequestedFloor = Color.BLACK;
+    private final Color requestedFloor = Color.getHSBColor(0f, 1f, .8f); //Red
+
     private Lift model;
     private AudioPlayer audioMusic;
     private AudioPlayer audioDing;
@@ -48,7 +51,7 @@ public class LiftFrame extends javax.swing.JFrame {
         final int openWaitDef = 50;
         final int openWaitDoorDef = 4;
         
-        Timer timer = new Timer(15, new ActionListener(){
+        Timer timer = new Timer(20, new ActionListener(){
             private int openWait = openWaitDef;
             private int openWaitDoor = openWaitDoorDef;
             @Override
@@ -91,10 +94,10 @@ public class LiftFrame extends javax.swing.JFrame {
                                     case STANDBY :
                                         break;
                                     case UP :
-                                        lift.incrPosX();
+                                        lift.setPosX(lift.getPosX() + 4);
                                         break;
                                     case DOWN :
-                                        lift.decrPosX();
+                                        lift.setPosX(lift.getPosX() - 4);
                                         break;
                                 }
                             }
@@ -174,7 +177,7 @@ public class LiftFrame extends javax.swing.JFrame {
             Field f = this.getClass().getDeclaredField("mainButton" + index);
             f.setAccessible(true);
             f.get(this).getClass().getMethod("setSelected", new Class[]{boolean.class}).invoke(f.get(this), false);
-            f.get(this).getClass().getMethod("setForeground", new Class[]{Color.class}).invoke(f.get(this), Color.BLACK);
+            f.get(this).getClass().getMethod("setForeground", new Class[]{Color.class}).invoke(f.get(this), this.unrequestedFloor);
         } catch (NoSuchFieldException | NoSuchMethodException| SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
             Logger.getLogger(LiftFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -309,6 +312,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.setRollover(true);
 
         mainButton0.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton0.setForeground(this.unrequestedFloor);
         mainButton0.setText("0");
         mainButton0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton0.setFocusable(false);
@@ -326,6 +330,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton0);
 
         mainButton1.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton1.setForeground(this.unrequestedFloor);
         mainButton1.setText("1");
         mainButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton1.setFocusable(false);
@@ -343,6 +348,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton1);
 
         mainButton2.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton2.setForeground(this.unrequestedFloor);
         mainButton2.setText("2");
         mainButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton2.setFocusable(false);
@@ -360,6 +366,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton2);
 
         mainButton3.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton3.setForeground(this.unrequestedFloor);
         mainButton3.setText("3");
         mainButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton3.setFocusable(false);
@@ -377,6 +384,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton3);
 
         mainButton4.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton4.setForeground(this.unrequestedFloor);
         mainButton4.setText("4");
         mainButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton4.setFocusable(false);
@@ -394,6 +402,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton4);
 
         mainButton5.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton5.setForeground(this.unrequestedFloor);
         mainButton5.setText("5");
         mainButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton5.setFocusable(false);
@@ -411,6 +420,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton5);
 
         mainButton6.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton6.setForeground(this.unrequestedFloor);
         mainButton6.setText("6");
         mainButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton6.setFocusable(false);
@@ -428,6 +438,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton6);
 
         mainButton7.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton7.setForeground(this.unrequestedFloor);
         mainButton7.setText("7");
         mainButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton7.setFocusable(false);
@@ -445,6 +456,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton7);
 
         mainButton8.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton8.setForeground(this.unrequestedFloor);
         mainButton8.setText("8");
         mainButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton8.setFocusable(false);
@@ -462,6 +474,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton8);
 
         mainButton9.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton9.setForeground(this.unrequestedFloor);
         mainButton9.setText("9");
         mainButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton9.setFocusable(false);
@@ -479,6 +492,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton9);
 
         mainButton10.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton10.setForeground(this.unrequestedFloor);
         mainButton10.setText("10");
         mainButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton10.setFocusable(false);
@@ -496,6 +510,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton10);
 
         mainButton11.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton11.setForeground(this.unrequestedFloor);
         mainButton11.setText("11");
         mainButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton11.setFocusable(false);
@@ -513,6 +528,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton11);
 
         mainButton12.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton12.setForeground(this.unrequestedFloor);
         mainButton12.setText("12");
         mainButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton12.setFocusable(false);
@@ -530,6 +546,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton12);
 
         mainButton13.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton13.setForeground(this.unrequestedFloor);
         mainButton13.setText("13");
         mainButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton13.setFocusable(false);
@@ -547,6 +564,7 @@ public class LiftFrame extends javax.swing.JFrame {
         mainBar.add(mainButton13);
 
         mainButton14.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        mainButton14.setForeground(this.unrequestedFloor);
         mainButton14.setText("14");
         mainButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainButton14.setFocusable(false);
@@ -590,6 +608,7 @@ public class LiftFrame extends javax.swing.JFrame {
         panelCabButtons.add(cabState, gridBagConstraints);
 
         cabBell.setBackground(new java.awt.Color(255, 255, 255));
+        cabBell.setForeground(this.unrequestedFloor);
         cabBell.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aihm/res/Bell.png"))); // NOI18N
         cabBell.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabBell.setFocusable(false);
@@ -610,6 +629,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton0.setBackground(new java.awt.Color(255, 255, 255));
         cabButton0.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton0.setForeground(this.unrequestedFloor);
         cabButton0.setText("0");
         cabButton0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton0.setFocusable(false);
@@ -635,6 +655,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton1.setBackground(new java.awt.Color(255, 255, 255));
         cabButton1.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton1.setForeground(this.unrequestedFloor);
         cabButton1.setText("1");
         cabButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton1.setFocusable(false);
@@ -660,6 +681,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton2.setBackground(new java.awt.Color(255, 255, 255));
         cabButton2.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton2.setForeground(this.unrequestedFloor);
         cabButton2.setText("2");
         cabButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton2.setFocusable(false);
@@ -685,6 +707,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton3.setBackground(new java.awt.Color(255, 255, 255));
         cabButton3.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton3.setForeground(this.unrequestedFloor);
         cabButton3.setText("3");
         cabButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton3.setFocusable(false);
@@ -710,6 +733,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton4.setBackground(new java.awt.Color(255, 255, 255));
         cabButton4.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton4.setForeground(this.unrequestedFloor);
         cabButton4.setText("4");
         cabButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton4.setFocusable(false);
@@ -735,6 +759,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton5.setBackground(new java.awt.Color(255, 255, 255));
         cabButton5.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton5.setForeground(this.unrequestedFloor);
         cabButton5.setText("5");
         cabButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton5.setFocusable(false);
@@ -760,6 +785,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton6.setBackground(new java.awt.Color(255, 255, 255));
         cabButton6.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton6.setForeground(this.unrequestedFloor);
         cabButton6.setText("6");
         cabButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton6.setFocusable(false);
@@ -785,6 +811,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton7.setBackground(new java.awt.Color(255, 255, 255));
         cabButton7.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton7.setForeground(this.unrequestedFloor);
         cabButton7.setText("7");
         cabButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton7.setFocusable(false);
@@ -810,6 +837,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton8.setBackground(new java.awt.Color(255, 255, 255));
         cabButton8.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton8.setForeground(this.unrequestedFloor);
         cabButton8.setText("8");
         cabButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton8.setFocusable(false);
@@ -835,6 +863,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton9.setBackground(new java.awt.Color(255, 255, 255));
         cabButton9.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton9.setForeground(this.unrequestedFloor);
         cabButton9.setText("9");
         cabButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton9.setFocusable(false);
@@ -860,6 +889,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton10.setBackground(new java.awt.Color(255, 255, 255));
         cabButton10.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton10.setForeground(this.unrequestedFloor);
         cabButton10.setText("10");
         cabButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton10.setFocusable(false);
@@ -885,6 +915,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton11.setBackground(new java.awt.Color(255, 255, 255));
         cabButton11.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton11.setForeground(this.unrequestedFloor);
         cabButton11.setText("11");
         cabButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton11.setFocusable(false);
@@ -910,6 +941,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton12.setBackground(new java.awt.Color(255, 255, 255));
         cabButton12.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton12.setForeground(this.unrequestedFloor);
         cabButton12.setText("12");
         cabButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton12.setFocusable(false);
@@ -935,6 +967,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton13.setBackground(new java.awt.Color(255, 255, 255));
         cabButton13.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton13.setForeground(this.unrequestedFloor);
         cabButton13.setText("13");
         cabButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton13.setFocusable(false);
@@ -960,6 +993,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         cabButton14.setBackground(new java.awt.Color(255, 255, 255));
         cabButton14.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
+        cabButton14.setForeground(this.unrequestedFloor);
         cabButton14.setText("14");
         cabButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton14.setFocusable(false);
@@ -988,14 +1022,13 @@ public class LiftFrame extends javax.swing.JFrame {
         content.add(splitCab, java.awt.BorderLayout.CENTER);
 
         splitLift.setBackground(new java.awt.Color(255, 255, 255));
-        splitLift.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lift.setBackground(new java.awt.Color(255, 255, 255));
         lift.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         liftButtons.setOpaque(false);
 
-        liftButton1.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton1.setBackground(this.unrequestedFloor);
         liftButton1.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton1.setText("1");
         liftButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1006,7 +1039,18 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton1.setOpaque(false);
         liftButton1.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        liftButton2.setBackground(new java.awt.Color(255, 255, 255));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton1, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton1, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+
+        liftButton2.setBackground(this.unrequestedFloor);
         liftButton2.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton2.setText("2");
         liftButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1017,7 +1061,18 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton2.setOpaque(false);
         liftButton2.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        liftButton3.setBackground(new java.awt.Color(255, 255, 255));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton2, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton2, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton2, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+
+        liftButton3.setBackground(this.unrequestedFloor);
         liftButton3.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton3.setText("3");
         liftButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1028,7 +1083,18 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton3.setOpaque(false);
         liftButton3.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        liftButton4.setBackground(new java.awt.Color(255, 255, 255));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton3, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton3, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton3, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton3, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+
+        liftButton4.setBackground(this.unrequestedFloor);
         liftButton4.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton4.setText("4");
         liftButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1039,7 +1105,18 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton4.setOpaque(false);
         liftButton4.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        liftButton5.setBackground(new java.awt.Color(255, 255, 255));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton4, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton4, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton4, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton4, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+
+        liftButton5.setBackground(this.unrequestedFloor);
         liftButton5.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton5.setText("5");
         liftButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1050,7 +1127,18 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton5.setOpaque(false);
         liftButton5.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        liftButton6.setBackground(new java.awt.Color(255, 255, 255));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton5, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton5, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton5, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton5, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+
+        liftButton6.setBackground(this.unrequestedFloor);
         liftButton6.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton6.setText("6");
         liftButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1061,7 +1149,18 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton6.setOpaque(false);
         liftButton6.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        liftButton7.setBackground(new java.awt.Color(255, 255, 255));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton6, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton6, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton6, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton6, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+
+        liftButton7.setBackground(this.unrequestedFloor);
         liftButton7.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton7.setText("7");
         liftButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1072,7 +1171,18 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton7.setOpaque(false);
         liftButton7.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        liftButton8.setBackground(new java.awt.Color(255, 255, 255));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton7, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton7, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton7, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton7, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+
+        liftButton8.setBackground(this.unrequestedFloor);
         liftButton8.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton8.setText("8");
         liftButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1083,7 +1193,18 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton8.setOpaque(false);
         liftButton8.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        liftButton9.setBackground(new java.awt.Color(255, 255, 255));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton8, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton8, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton8, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton8, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+
+        liftButton9.setBackground(this.unrequestedFloor);
         liftButton9.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton9.setText("9");
         liftButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1094,7 +1215,18 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton9.setOpaque(false);
         liftButton9.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        liftButton10.setBackground(new java.awt.Color(255, 255, 255));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton9, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton9, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton9, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton9, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+
+        liftButton10.setBackground(this.unrequestedFloor);
         liftButton10.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton10.setText("10");
         liftButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1105,7 +1237,18 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton10.setOpaque(false);
         liftButton10.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        liftButton11.setBackground(new java.awt.Color(255, 255, 255));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton10, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton10, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton10, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton10, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+
+        liftButton11.setBackground(this.unrequestedFloor);
         liftButton11.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton11.setText("11");
         liftButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1116,7 +1259,18 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton11.setOpaque(false);
         liftButton11.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        liftButton12.setBackground(new java.awt.Color(255, 255, 255));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton11, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton11, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton11, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton11, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+
+        liftButton12.setBackground(this.unrequestedFloor);
         liftButton12.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton12.setText("12");
         liftButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1127,7 +1281,18 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton12.setOpaque(false);
         liftButton12.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        liftButton13.setBackground(new java.awt.Color(255, 255, 255));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton12, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton12, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton12, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton12, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+
+        liftButton13.setBackground(this.unrequestedFloor);
         liftButton13.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton13.setText("13");
         liftButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1138,7 +1303,18 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton13.setOpaque(false);
         liftButton13.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        liftButton14.setBackground(new java.awt.Color(255, 255, 255));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton13, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton13, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton13, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton13, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+
+        liftButton14.setBackground(this.unrequestedFloor);
         liftButton14.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton14.setText("14");
         liftButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1149,7 +1325,18 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton14.setOpaque(false);
         liftButton14.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        liftButton0.setBackground(new java.awt.Color(255, 255, 255));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton14, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton14, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton14, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton14, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
+
+        liftButton0.setBackground(this.unrequestedFloor);
         liftButton0.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
         liftButton0.setText("0");
         liftButton0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1159,6 +1346,17 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton0.setMinimumSize(new java.awt.Dimension(40, 23));
         liftButton0.setOpaque(false);
         liftButton0.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton0, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton0, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton0, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton0, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
+        bindingGroup.addBinding(binding);
+
+        liftButton0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonRequestFloorHandler(evt);
+            }
+        });
 
         javax.swing.GroupLayout liftButtonsLayout = new javax.swing.GroupLayout(liftButtons);
         liftButtons.setLayout(liftButtonsLayout);
@@ -1237,7 +1435,16 @@ public class LiftFrame extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
-        splitLift.add(lift, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        javax.swing.GroupLayout splitLiftLayout = new javax.swing.GroupLayout(splitLift);
+        splitLift.setLayout(splitLiftLayout);
+        splitLiftLayout.setHorizontalGroup(
+            splitLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        splitLiftLayout.setVerticalGroup(
+            splitLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         content.add(splitLift, java.awt.BorderLayout.LINE_START);
 
@@ -1293,7 +1500,7 @@ public class LiftFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 989, Short.MAX_VALUE)
+            .addComponent(content, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         bindingGroup.bind();
@@ -1341,7 +1548,7 @@ public class LiftFrame extends javax.swing.JFrame {
             Field f = this.getClass().getDeclaredField("mainButton" + floorIndex);
             f.setAccessible(true);
             f.get(this).getClass().getMethod("setSelected", new Class[]{boolean.class}).invoke(f.get(this), true);
-            f.get(this).getClass().getMethod("setForeground", new Class[]{Color.class}).invoke(f.get(this), Color.getHSBColor(0f, 1f, .8f));
+            f.get(this).getClass().getMethod("setForeground", new Class[]{Color.class}).invoke(f.get(this), this.requestedFloor);
         } catch (NoSuchFieldException | NoSuchMethodException| SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
             Logger.getLogger(LiftFrame.class.getName()).log(Level.SEVERE, null, ex);
         }        

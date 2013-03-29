@@ -27,7 +27,7 @@ public class LiftPanel extends JPanel {
     public final static int NB_FLOORS = 15;
     public final static int MAX_POS_X = NB_FLOORS * 56;
     public final static int MAX_DOORS_OPENING = 6;
-
+    
     private int posX;
     private int doorsOverture;
     
@@ -127,7 +127,7 @@ public class LiftPanel extends JPanel {
 
     @Override
     public void paintComponent(Graphics g) {
-        super.paintComponent(g);
+        //super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
         
         g2d.drawImage(this.imageBackground, 0, 0, null);

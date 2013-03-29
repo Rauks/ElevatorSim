@@ -385,7 +385,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="content" alignment="1" pref="989" max="32767" attributes="0"/>
+          <Component id="content" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -419,6 +419,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="0"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Curseur en forme de main"/>
@@ -447,6 +450,9 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="1"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -477,6 +483,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="2"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Curseur en forme de main"/>
@@ -505,6 +514,9 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="3"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -535,6 +547,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="4"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Curseur en forme de main"/>
@@ -563,6 +578,9 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="5"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -593,6 +611,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="6"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Curseur en forme de main"/>
@@ -621,6 +642,9 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="7"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -651,6 +675,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="8"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Curseur en forme de main"/>
@@ -679,6 +706,9 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="9"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -709,6 +739,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="10"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Curseur en forme de main"/>
@@ -737,6 +770,9 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="11"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -767,6 +803,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="12"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Curseur en forme de main"/>
@@ -796,6 +835,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="13"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Curseur en forme de main"/>
@@ -824,6 +866,9 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="kroeger 05_55" size="22" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.unrequestedFloor" type="code"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="14"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -910,6 +955,9 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
+                    </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/aihm/res/Bell.png"/>
                     </Property>
@@ -950,6 +998,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="0"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Curseur en forme de main"/>
@@ -988,6 +1039,9 @@
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="1"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -1028,6 +1082,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="2"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Curseur en forme de main"/>
@@ -1066,6 +1123,9 @@
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="3"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -1106,6 +1166,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="4"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Curseur en forme de main"/>
@@ -1144,6 +1207,9 @@
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="5"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -1184,6 +1250,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="6"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Curseur en forme de main"/>
@@ -1222,6 +1291,9 @@
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="7"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -1262,6 +1334,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="8"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Curseur en forme de main"/>
@@ -1300,6 +1375,9 @@
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="9"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -1340,6 +1418,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="10"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Curseur en forme de main"/>
@@ -1378,6 +1459,9 @@
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="11"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -1418,6 +1502,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="12"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Curseur en forme de main"/>
@@ -1457,6 +1544,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="13"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Curseur en forme de main"/>
@@ -1495,6 +1585,9 @@
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="kroeger 05_55" size="22" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="this.unrequestedFloor" type="code"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="14"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -2582,8 +2675,17 @@
             </Constraint>
           </Constraints>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-            <Property name="useNullLayout" type="boolean" value="false"/>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lift" min="-2" max="-2" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lift" min="-2" max="-2" attributes="0"/>
+              </Group>
+            </DimensionLayout>
           </Layout>
           <SubComponents>
             <Container class="aihm.ui.lift.LiftPanel" name="lift">
@@ -2597,11 +2699,6 @@
                   </Border>
                 </Property>
               </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
-                </Constraint>
-              </Constraints>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -2696,8 +2793,8 @@
                   <SubComponents>
                     <Component class="javax.swing.JButton" name="liftButton1">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -2721,11 +2818,18 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton1" sourcePath="${selected}" target="liftButton1" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton1" sourcePath="${foreground}" target="liftButton1" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="liftButton2">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -2749,11 +2853,18 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton2" sourcePath="${selected}" target="liftButton2" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton2" sourcePath="${foreground}" target="liftButton2" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="liftButton3">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -2777,11 +2888,18 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton3" sourcePath="${selected}" target="liftButton3" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton3" sourcePath="${foreground}" target="liftButton3" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="liftButton4">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -2805,11 +2923,18 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton4" sourcePath="${selected}" target="liftButton4" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton4" sourcePath="${foreground}" target="liftButton4" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="liftButton5">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -2833,11 +2958,18 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton5" sourcePath="${selected}" target="liftButton5" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton5" sourcePath="${foreground}" target="liftButton5" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="liftButton6">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -2861,11 +2993,18 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton6" sourcePath="${selected}" target="liftButton6" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton6" sourcePath="${foreground}" target="liftButton6" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="liftButton7">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -2889,11 +3028,18 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton7" sourcePath="${selected}" target="liftButton7" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton7" sourcePath="${foreground}" target="liftButton7" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="liftButton8">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -2917,11 +3063,18 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton8" sourcePath="${selected}" target="liftButton8" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton8" sourcePath="${foreground}" target="liftButton8" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="liftButton9">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -2945,11 +3098,18 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton9" sourcePath="${selected}" target="liftButton9" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton9" sourcePath="${foreground}" target="liftButton9" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="liftButton10">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -2973,11 +3133,18 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton10" sourcePath="${selected}" target="liftButton10" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton10" sourcePath="${foreground}" target="liftButton10" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="liftButton11">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -3001,11 +3168,18 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton11" sourcePath="${selected}" target="liftButton11" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton11" sourcePath="${foreground}" target="liftButton11" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="liftButton12">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -3029,11 +3203,18 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton12" sourcePath="${selected}" target="liftButton12" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton12" sourcePath="${foreground}" target="liftButton12" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="liftButton13">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -3057,11 +3238,18 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton13" sourcePath="${selected}" target="liftButton13" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton13" sourcePath="${foreground}" target="liftButton13" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="liftButton14">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -3085,11 +3273,18 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton14" sourcePath="${selected}" target="liftButton14" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton14" sourcePath="${foreground}" target="liftButton14" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="liftButton0">
                       <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="this.unrequestedFloor" type="code"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="kroeger 05_55" size="10" style="1"/>
@@ -3113,6 +3308,13 @@
                           <Dimension value="[40, 23]"/>
                         </Property>
                       </Properties>
+                      <BindingProperties>
+                        <BindingProperty name="selected" source="mainButton0" sourcePath="${selected}" target="liftButton0" targetPath="selected" updateStrategy="0" immediately="false"/>
+                        <BindingProperty name="foreground" source="mainButton0" sourcePath="${foreground}" target="liftButton0" targetPath="foreground" updateStrategy="0" immediately="false"/>
+                      </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionButtonRequestFloorHandler"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
