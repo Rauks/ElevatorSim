@@ -48,7 +48,7 @@ public class LiftFrame extends javax.swing.JFrame {
         final int openWaitDef = 50;
         final int openWaitDoorDef = 4;
         
-        Timer timer = new Timer(20, new ActionListener(){
+        Timer timer = new Timer(1, new ActionListener(){
             private int openWait = openWaitDef;
             private int openWaitDoor = openWaitDoorDef;
             @Override
@@ -234,8 +234,23 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton13 = new javax.swing.JButton();
         cabButton14 = new javax.swing.JButton();
         splitLift = new javax.swing.JPanel();
-        contentLift = new javax.swing.JPanel();
         lift = new aihm.ui.lift.LiftPanel();
+        liftButtons = new javax.swing.JPanel();
+        liftButton1 = new javax.swing.JButton();
+        liftButton2 = new javax.swing.JButton();
+        liftButton3 = new javax.swing.JButton();
+        liftButton4 = new javax.swing.JButton();
+        liftButton5 = new javax.swing.JButton();
+        liftButton6 = new javax.swing.JButton();
+        liftButton7 = new javax.swing.JButton();
+        liftButton8 = new javax.swing.JButton();
+        liftButton9 = new javax.swing.JButton();
+        liftButton10 = new javax.swing.JButton();
+        liftButton11 = new javax.swing.JButton();
+        liftButton12 = new javax.swing.JButton();
+        liftButton13 = new javax.swing.JButton();
+        liftButton14 = new javax.swing.JButton();
+        liftButton0 = new javax.swing.JButton();
         menu = new javax.swing.JMenuBar();
         menuFile = new javax.swing.JMenu();
         MenuFileQuit = new javax.swing.JMenuItem();
@@ -596,6 +611,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton0.setBackground(new java.awt.Color(255, 255, 255));
         cabButton0.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton0.setText("0");
+        cabButton0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton0.setFocusable(false);
         cabButton0.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton0.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -620,6 +636,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton1.setBackground(new java.awt.Color(255, 255, 255));
         cabButton1.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton1.setText("1");
+        cabButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton1.setFocusable(false);
         cabButton1.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton1.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -644,6 +661,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton2.setBackground(new java.awt.Color(255, 255, 255));
         cabButton2.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton2.setText("2");
+        cabButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton2.setFocusable(false);
         cabButton2.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton2.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -668,6 +686,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton3.setBackground(new java.awt.Color(255, 255, 255));
         cabButton3.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton3.setText("3");
+        cabButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton3.setFocusable(false);
         cabButton3.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton3.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -692,6 +711,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton4.setBackground(new java.awt.Color(255, 255, 255));
         cabButton4.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton4.setText("4");
+        cabButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton4.setFocusable(false);
         cabButton4.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton4.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -716,6 +736,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton5.setBackground(new java.awt.Color(255, 255, 255));
         cabButton5.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton5.setText("5");
+        cabButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton5.setFocusable(false);
         cabButton5.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton5.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -740,6 +761,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton6.setBackground(new java.awt.Color(255, 255, 255));
         cabButton6.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton6.setText("6");
+        cabButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton6.setFocusable(false);
         cabButton6.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton6.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -764,6 +786,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton7.setBackground(new java.awt.Color(255, 255, 255));
         cabButton7.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton7.setText("7");
+        cabButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton7.setFocusable(false);
         cabButton7.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton7.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -788,6 +811,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton8.setBackground(new java.awt.Color(255, 255, 255));
         cabButton8.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton8.setText("8");
+        cabButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton8.setFocusable(false);
         cabButton8.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton8.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -812,6 +836,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton9.setBackground(new java.awt.Color(255, 255, 255));
         cabButton9.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton9.setText("9");
+        cabButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton9.setFocusable(false);
         cabButton9.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton9.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -836,6 +861,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton10.setBackground(new java.awt.Color(255, 255, 255));
         cabButton10.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton10.setText("10");
+        cabButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton10.setFocusable(false);
         cabButton10.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton10.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -860,6 +886,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton11.setBackground(new java.awt.Color(255, 255, 255));
         cabButton11.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton11.setText("11");
+        cabButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton11.setFocusable(false);
         cabButton11.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton11.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -884,6 +911,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton12.setBackground(new java.awt.Color(255, 255, 255));
         cabButton12.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton12.setText("12");
+        cabButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton12.setFocusable(false);
         cabButton12.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton12.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -908,6 +936,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton13.setBackground(new java.awt.Color(255, 255, 255));
         cabButton13.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton13.setText("13");
+        cabButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton13.setFocusable(false);
         cabButton13.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton13.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -932,6 +961,7 @@ public class LiftFrame extends javax.swing.JFrame {
         cabButton14.setBackground(new java.awt.Color(255, 255, 255));
         cabButton14.setFont(new java.awt.Font("kroeger 05_55", 1, 22)); // NOI18N
         cabButton14.setText("14");
+        cabButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cabButton14.setFocusable(false);
         cabButton14.setMargin(new java.awt.Insets(6, 1, 1, 1));
         cabButton14.setMaximumSize(new java.awt.Dimension(55, 35));
@@ -958,42 +988,256 @@ public class LiftFrame extends javax.swing.JFrame {
         content.add(splitCab, java.awt.BorderLayout.CENTER);
 
         splitLift.setBackground(new java.awt.Color(255, 255, 255));
-        splitLift.setLayout(new java.awt.BorderLayout());
-
-        contentLift.setBackground(new java.awt.Color(255, 255, 255));
+        splitLift.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lift.setBackground(new java.awt.Color(255, 255, 255));
         lift.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        liftButtons.setOpaque(false);
+
+        liftButton1.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton1.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton1.setText("1");
+        liftButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton1.setFocusable(false);
+        liftButton1.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton1.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton1.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton1.setOpaque(false);
+        liftButton1.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        liftButton2.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton2.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton2.setText("2");
+        liftButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton2.setFocusable(false);
+        liftButton2.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton2.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton2.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton2.setOpaque(false);
+        liftButton2.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        liftButton3.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton3.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton3.setText("3");
+        liftButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton3.setFocusable(false);
+        liftButton3.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton3.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton3.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton3.setOpaque(false);
+        liftButton3.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        liftButton4.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton4.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton4.setText("4");
+        liftButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton4.setFocusable(false);
+        liftButton4.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton4.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton4.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton4.setOpaque(false);
+        liftButton4.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        liftButton5.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton5.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton5.setText("5");
+        liftButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton5.setFocusable(false);
+        liftButton5.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton5.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton5.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton5.setOpaque(false);
+        liftButton5.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        liftButton6.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton6.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton6.setText("6");
+        liftButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton6.setFocusable(false);
+        liftButton6.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton6.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton6.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton6.setOpaque(false);
+        liftButton6.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        liftButton7.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton7.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton7.setText("7");
+        liftButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton7.setFocusable(false);
+        liftButton7.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton7.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton7.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton7.setOpaque(false);
+        liftButton7.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        liftButton8.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton8.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton8.setText("8");
+        liftButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton8.setFocusable(false);
+        liftButton8.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton8.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton8.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton8.setOpaque(false);
+        liftButton8.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        liftButton9.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton9.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton9.setText("9");
+        liftButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton9.setFocusable(false);
+        liftButton9.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton9.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton9.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton9.setOpaque(false);
+        liftButton9.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        liftButton10.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton10.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton10.setText("10");
+        liftButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton10.setFocusable(false);
+        liftButton10.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton10.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton10.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton10.setOpaque(false);
+        liftButton10.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        liftButton11.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton11.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton11.setText("11");
+        liftButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton11.setFocusable(false);
+        liftButton11.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton11.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton11.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton11.setOpaque(false);
+        liftButton11.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        liftButton12.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton12.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton12.setText("12");
+        liftButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton12.setFocusable(false);
+        liftButton12.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton12.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton12.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton12.setOpaque(false);
+        liftButton12.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        liftButton13.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton13.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton13.setText("13");
+        liftButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton13.setFocusable(false);
+        liftButton13.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton13.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton13.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton13.setOpaque(false);
+        liftButton13.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        liftButton14.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton14.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton14.setText("14");
+        liftButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton14.setFocusable(false);
+        liftButton14.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton14.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton14.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton14.setOpaque(false);
+        liftButton14.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        liftButton0.setBackground(new java.awt.Color(255, 255, 255));
+        liftButton0.setFont(new java.awt.Font("kroeger 05_55", 1, 10)); // NOI18N
+        liftButton0.setText("0");
+        liftButton0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        liftButton0.setFocusable(false);
+        liftButton0.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        liftButton0.setMaximumSize(new java.awt.Dimension(40, 23));
+        liftButton0.setMinimumSize(new java.awt.Dimension(40, 23));
+        liftButton0.setOpaque(false);
+        liftButton0.setPreferredSize(new java.awt.Dimension(40, 23));
+
+        javax.swing.GroupLayout liftButtonsLayout = new javax.swing.GroupLayout(liftButtons);
+        liftButtons.setLayout(liftButtonsLayout);
+        liftButtonsLayout.setHorizontalGroup(
+            liftButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(liftButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(liftButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(liftButton0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(liftButton14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(liftButton13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(liftButton12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(liftButton11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(liftButton10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(liftButton9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(liftButton8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(liftButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(liftButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(liftButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(liftButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(liftButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(liftButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(liftButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        liftButtonsLayout.setVerticalGroup(
+            liftButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(liftButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(liftButton14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(liftButton13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(liftButton12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(liftButton11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(liftButton10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(liftButton9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(liftButton8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(liftButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(liftButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(liftButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(liftButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(liftButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(liftButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(liftButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(liftButton0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout liftLayout = new javax.swing.GroupLayout(lift);
         lift.setLayout(liftLayout);
         liftLayout.setHorizontalGroup(
             liftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 639, Short.MAX_VALUE)
+            .addGroup(liftLayout.createSequentialGroup()
+                .addGap(191, 191, 191)
+                .addComponent(liftButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(388, Short.MAX_VALUE))
         );
         liftLayout.setVerticalGroup(
             liftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 932, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, liftLayout.createSequentialGroup()
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addComponent(liftButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
         );
 
-        javax.swing.GroupLayout contentLiftLayout = new javax.swing.GroupLayout(contentLift);
-        contentLift.setLayout(contentLiftLayout);
-        contentLiftLayout.setHorizontalGroup(
-            contentLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contentLiftLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        contentLiftLayout.setVerticalGroup(
-            contentLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contentLiftLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        splitLift.add(contentLift, java.awt.BorderLayout.LINE_START);
+        splitLift.add(lift, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         content.add(splitLift, java.awt.BorderLayout.LINE_START);
 
@@ -1049,7 +1293,7 @@ public class LiftFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(content, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 989, Short.MAX_VALUE)
         );
 
         bindingGroup.bind();
@@ -1162,13 +1406,28 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JButton cabButton9;
     private javax.swing.JLabel cabState;
     private javax.swing.JPanel content;
-    private javax.swing.JPanel contentLift;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelCab;
     private aihm.ui.lift.LiftPanel lift;
+    private javax.swing.JButton liftButton0;
+    private javax.swing.JButton liftButton1;
+    private javax.swing.JButton liftButton10;
+    private javax.swing.JButton liftButton11;
+    private javax.swing.JButton liftButton12;
+    private javax.swing.JButton liftButton13;
+    private javax.swing.JButton liftButton14;
+    private javax.swing.JButton liftButton2;
+    private javax.swing.JButton liftButton3;
+    private javax.swing.JButton liftButton4;
+    private javax.swing.JButton liftButton5;
+    private javax.swing.JButton liftButton6;
+    private javax.swing.JButton liftButton7;
+    private javax.swing.JButton liftButton8;
+    private javax.swing.JButton liftButton9;
+    private javax.swing.JPanel liftButtons;
     private javax.swing.JToolBar mainBar;
     private javax.swing.JButton mainButton0;
     private javax.swing.JButton mainButton1;
