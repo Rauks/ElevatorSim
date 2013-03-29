@@ -4,7 +4,6 @@
  */
 package aihm.ui.lift;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -154,6 +153,8 @@ public class LiftPanel extends JPanel {
     public void decrDoorsOverture() {
         this.setDoorsOverture(this.getDoorsOverture() - 1);
     }
+    
+    
 
     @Override
     public void paintComponent(Graphics g) {
