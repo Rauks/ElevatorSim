@@ -49,11 +49,11 @@ public class LiftPanel extends JPanel {
             this.doorsOverture = 0;
             
             //Building images loading
-            URL urlBackground = LiftPanel.class.getResource("./res/Background.png");
+            URL urlBackground = LiftPanel.class.getResource("res/Background.png");
             this.imageBackground = ImageIO.read(urlBackground);
-            URL urlCane = LiftPanel.class.getResource("./res/Cane.png");
+            URL urlCane = LiftPanel.class.getResource("res/Cane.png");
             this.imageCane = ImageIO.read(urlCane);
-            URL urlBottom = LiftPanel.class.getResource("./res/Bottom.png");
+            URL urlBottom = LiftPanel.class.getResource("res/Bottom.png");
             this.imageBottom = ImageIO.read(urlBottom);
             
             this.imagesFloors = new BufferedImage[NB_FLOORS - 2]; //Lobby & roof already in background
@@ -61,18 +61,18 @@ public class LiftPanel extends JPanel {
             int floorFileMax = 52;
             for (int i = 0; i < imagesFloors.length; i++) {
                 int fileChoosedIndex = floorFileMin + (int)(Math.random() * ((floorFileMax - floorFileMin) + 1));
-                URL urlFloor = LiftPanel.class.getResource(new StringBuilder().append("./res/floors/").append(fileChoosedIndex).append(".png").toString());
+                URL urlFloor = LiftPanel.class.getResource(new StringBuilder().append("res/floors/").append(fileChoosedIndex).append(".png").toString());
                 this.imagesFloors[i] = ImageIO.read(urlFloor);
             }
             
             //Lift images loading
-            URL urlLiftFront = LiftPanel.class.getResource("./res/LiftFront.png");
+            URL urlLiftFront = LiftPanel.class.getResource("res/LiftFront.png");
             this.imageLiftFront = ImageIO.read(urlLiftFront);
-            URL urlLiftBack = LiftPanel.class.getResource("./res/LiftBack.png");
+            URL urlLiftBack = LiftPanel.class.getResource("res/LiftBack.png");
             this.imageLiftBack = ImageIO.read(urlLiftBack);
-            URL urlLiftLeftDoor = LiftPanel.class.getResource("./res/LiftLeftDoor.png");
+            URL urlLiftLeftDoor = LiftPanel.class.getResource("res/LiftLeftDoor.png");
             this.imageLiftLeftDoor = ImageIO.read(urlLiftLeftDoor);
-            URL urlLiftRightDoor = LiftPanel.class.getResource("./res/LiftRightDoor.png");
+            URL urlLiftRightDoor = LiftPanel.class.getResource("res/LiftRightDoor.png");
             this.imageLiftRightDoor = ImageIO.read(urlLiftRightDoor);
             
             //JPanel preferred size is the background image size
