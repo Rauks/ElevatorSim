@@ -57,11 +57,52 @@ public class Lift {
         return !this.floorRequests.isEmpty();
     }
 
-    private int getNextFloor(){
+    /**
+     * Return the next targeted floor in requests queue.
+     * 
+     * @return The floor index or -1 if no floor is requested.
+     */
+    private int getNextFloorTarget(){
         if(this.hasRequests()){
             return this.floorRequests.peek().getValue();
         }
-        return this.currentFloor.getValue();
+        return -1;
+    }
+    
+    /**
+     * Return the next floor requested in the way to reach the targeted floor.
+     * 
+     * @return The floor index or -1 if no floor is requested.
+     */
+    public int getNextFloorStop(){
+        try {
+            int target = this.getNextFloorTarget();
+            int current = this.getCurrentFloor();
+            switch(this.getRequestedMove()){
+                case STANDBY:
+                    if(this.isFloorInRequest(current)){
+                        return current;
+                    }
+                    else{
+                        return -1;
+                    }
+                case UP:
+                    for (int i = this.getCurrentFloor(); i <= target; i++) {
+                        if(this.isFloorInRequest(i)){
+                            return i;
+                        }
+                    }
+                case DOWN:
+                    for (int i = this.getCurrentFloor(); i >= target; i--) {
+                        if(this.isFloorInRequest(i)){
+                            return i;
+                        }
+                    }
+            }
+        } catch (LiftException ex) {
+            Logger.getLogger(Lift.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return -1;
     }
     
     public Moves getRequestedMove() throws LiftException{
@@ -72,7 +113,7 @@ public class Lift {
             return Moves.STANDBY;
         }
         int currentIndex = this.getCurrentFloor();
-        int nextIndex = this.getNextFloor();
+        int nextIndex = this.getNextFloorTarget();
         if(currentIndex == nextIndex){
             return Moves.STANDBY;
         }

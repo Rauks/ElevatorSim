@@ -79,7 +79,7 @@ public class LiftFrame extends javax.swing.JFrame {
                                 int floor = liftPosX / floorPX;
                                 
                                 //Is current floor in requests ?
-                                if(model.isFloorInRequest(floor)){
+                                if(floor == model.getNextFloorStop()){
                                     model.setCurrentFloor(floor);
                                     setFloorButtonUnselected(floor);
                                     if(optionsSoundDing.isSelected()){
@@ -94,14 +94,43 @@ public class LiftFrame extends javax.swing.JFrame {
                             
                             //Move if doors are closed
                             if(model.getState() == Lift.States.CLOSED){
+                                int targetFloor = model.getNextFloorStop();
+                                int targetFloorPos = targetFloor * floorPX;
+                                int currentPos = lift.getPosX();
+                                int[] speed = new int[]{10, 30, 50}; //Speed changes positions
+                                int deltaPos;
                                 switch(model.getRequestedMove()){
                                     case STANDBY :
                                         break;
                                     case UP :
-                                        lift.setPosX(lift.getPosX() + 4);
+                                        deltaPos = targetFloorPos - currentPos;
+                                        if(deltaPos < speed[0]){
+                                            lift.setPosX(currentPos + 1);
+                                        }
+                                        else if(deltaPos >= speed[0] && deltaPos < speed[1]){
+                                            lift.setPosX(currentPos + 2);
+                                        }
+                                        else if(deltaPos >= speed[1] && deltaPos < speed[2]){
+                                            lift.setPosX(currentPos + 4);
+                                        }
+                                        else {
+                                            lift.setPosX(currentPos + 8);
+                                        }
                                         break;
                                     case DOWN :
-                                        lift.setPosX(lift.getPosX() - 4);
+                                        deltaPos = currentPos - targetFloorPos;
+                                        if(deltaPos < speed[0]){
+                                            lift.setPosX(currentPos - 1);
+                                        }
+                                        else if(deltaPos >= speed[0] && deltaPos < speed[1]){
+                                            lift.setPosX(currentPos - 2);
+                                        }
+                                        else if(deltaPos >= speed[1] && deltaPos < speed[2]){
+                                            lift.setPosX(currentPos - 4);
+                                        }
+                                        else {
+                                            lift.setPosX(currentPos - 8);
+                                        }
                                         break;
                                 }
                             }
@@ -623,7 +652,7 @@ public class LiftFrame extends javax.swing.JFrame {
         panelCabButtonsLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
         panelCabButtons.setLayout(panelCabButtonsLayout);
 
-        cabState.setFont(new java.awt.Font("kroeger 05_55", 1, 30)); // NOI18N
+        cabState.setFont(new java.awt.Font("kroeger 05_55", 1, 30));
         cabState.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cabState.setText("0");
         gridBagConstraints = new java.awt.GridBagConstraints();
