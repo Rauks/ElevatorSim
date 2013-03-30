@@ -461,7 +461,7 @@
       <Connection code="java.awt.Toolkit.getDefaultToolkit().getImage(getClass().getResource(&quot;/aihm/res/Elevator.png&quot;))" type="code"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[875, 800]"/>
+      <Dimension value="[875, 750]"/>
     </Property>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
@@ -506,7 +506,7 @@
           <Dimension value="[875, 500]"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[875, 800]"/>
+          <Dimension value="[875, 750]"/>
         </Property>
       </Properties>
 
@@ -1038,7 +1038,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="scrollPane" pref="747" max="32767" attributes="0"/>
+                      <Component id="scrollPane" pref="697" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1717,9 +1717,9 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="120" max="32767" attributes="0"/>
+                      <EmptySpace pref="95" max="32767" attributes="0"/>
                       <Component id="panelCabButtons" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="389" max="32767" attributes="0"/>
+                      <EmptySpace pref="364" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

@@ -341,13 +341,13 @@ public class LiftFrame extends javax.swing.JFrame {
         setTitle("Simulation d'ascenseur");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImage(java.awt.Toolkit.getDefaultToolkit().getImage(getClass().getResource("/aihm/res/Elevator.png")));
-        setPreferredSize(new java.awt.Dimension(875, 800));
+        setPreferredSize(new java.awt.Dimension(875, 750));
         setResizable(false);
 
         content.setBackground(new java.awt.Color(102, 102, 102));
         content.setMaximumSize(new java.awt.Dimension(875, 2147483647));
         content.setMinimumSize(new java.awt.Dimension(875, 500));
-        content.setPreferredSize(new java.awt.Dimension(875, 800));
+        content.setPreferredSize(new java.awt.Dimension(875, 750));
         content.setLayout(new java.awt.BorderLayout());
 
         mainBar.setBorder(null);
@@ -1061,7 +1061,7 @@ public class LiftFrame extends javax.swing.JFrame {
             splitLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(splitLiftLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
+                .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1504,9 +1504,9 @@ public class LiftFrame extends javax.swing.JFrame {
         splitCabLayout.setVerticalGroup(
             splitCabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(splitCabLayout.createSequentialGroup()
-                .addContainerGap(120, Short.MAX_VALUE)
+                .addContainerGap(95, Short.MAX_VALUE)
                 .addComponent(panelCabButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(389, Short.MAX_VALUE))
+                .addContainerGap(364, Short.MAX_VALUE))
         );
 
         content.add(splitCab, java.awt.BorderLayout.CENTER);
