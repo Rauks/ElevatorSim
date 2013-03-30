@@ -36,6 +36,19 @@ public class LiftPanel extends JPanel {
             return this.dir;
         }
     }
+    public enum CityDesign{
+        DAY("day"), NIGHT("night");
+        
+        private String dir;
+        
+        private CityDesign(String dir){
+            this.dir = dir;
+        }
+        
+        private String getDir(){
+            return this.dir;
+        }
+    }
     
     public final static int NB_FLOORS = 15;
     public final static int MAX_POSITION = NB_FLOORS * 56;
@@ -49,8 +62,10 @@ public class LiftPanel extends JPanel {
     private final int maxCabY = minCabY + imageFloorHeight * (NB_FLOORS - 1);
     
     BufferedImage imageBackground;
+    BufferedImage imageTower;
     BufferedImage imageCane;
     BufferedImage imageBottom;
+    
     BufferedImage[] imagesFloors;
     
     BufferedImage imageLiftFront;
@@ -60,29 +75,45 @@ public class LiftPanel extends JPanel {
 
     public LiftPanel() {
         super();
+        
+        //Building images loading
+        this.loadBuilding(CityDesign.DAY);
+
+        //Floors images loading
+        this.imagesFloors = new BufferedImage[NB_FLOORS - 2]; //Lobby & roof already in background
+        this.loadFloors();
+
+        //Lift images loading
+        this.loadLift(LiftDesign.CLASSIC);
+
+        //JPanel preferred size is the background image size
+        this.setPreferredSize(new Dimension(this.imageBackground.getWidth(), this.imageBackground.getHeight()));
+    }
+    
+    /**
+     * Load a specific building and city theme.
+     * 
+     * @param design Theme choice
+     */
+    public final void loadBuilding(CityDesign design){
         try {
-            //Building images loading
-            URL urlBackground = LiftPanel.class.getResource("res/Background.png");
+            URL urlBackground = LiftPanel.class.getResource("res/building/" + design.getDir() + "/Background.png");
             this.imageBackground = ImageIO.read(urlBackground);
-            URL urlCane = LiftPanel.class.getResource("res/Cane.png");
+            URL urlTower = LiftPanel.class.getResource("res/building/" + design.getDir() + "/Tower.png");
+            this.imageTower = ImageIO.read(urlTower);
+            URL urlCane = LiftPanel.class.getResource("res/building/" + design.getDir() + "/Cane.png");
             this.imageCane = ImageIO.read(urlCane);
-            URL urlBottom = LiftPanel.class.getResource("res/Bottom.png");
+            URL urlBottom = LiftPanel.class.getResource("res/building/" + design.getDir() + "/Bottom.png");
             this.imageBottom = ImageIO.read(urlBottom);
-            
-            this.imagesFloors = new BufferedImage[NB_FLOORS - 2]; //Lobby & roof already in background
-            this.loadFloors();
-            
-            //Lift images loading
-            this.loadLift(LiftDesign.CLASSIC);
-            
-            //JPanel preferred size is the background image size
-            this.setPreferredSize(new Dimension(this.imageBackground.getWidth(), this.imageBackground.getHeight()));
         } catch (IOException ex) {
             Logger.getLogger(LiftPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }
     
+    /**
+     * Load randomly the floors for the building.
+     * 
+     */
     public final void loadFloors(){
         try {
             int floorFileMin = 1;
@@ -97,6 +128,11 @@ public class LiftPanel extends JPanel {
         }
     }
 
+    /**
+     * Load a specific lift theme.
+     * 
+     * @param design Theme choice
+     */
     public final void loadLift(LiftDesign design){
         try {
             URL urlLiftFront = LiftPanel.class.getResource("res/lifts/" + design.getDir() + "/Front.png");
@@ -139,6 +175,11 @@ public class LiftPanel extends JPanel {
         return this.cabX;
     }
 
+    /**
+     * Change the position of the lift. If the position value is out of bound, the minimum or the maximum position is set.
+     * 
+     * @param position The new position.
+     */
     public void setPosition(int position) {
         if (position > LiftPanel.MAX_POSITION) {
             position = LiftPanel.MAX_POSITION;
@@ -147,19 +188,34 @@ public class LiftPanel extends JPanel {
         }
         this.position = position;
     }
-
+    /**
+     * Increase the position of the lift by one. Safe for the positions bounds.
+     */
     public void incrPosition() {
         this.setPosition(this.getPosition() + 1);
     }
 
+    /**
+     * Decrease the position of the lift by one. Safe for the positions bounds.
+     */
     public void decrPosition() {
         this.setPosition(this.getPosition() - 1);
     }
-
+    
+    /**
+     * Get the current doors ouverture.
+     * 
+     * @return The door overture.
+     */
     public int getDoorsOverture() {
         return this.doorsOverture;
     }
 
+    /**
+     * Set the door ouverture of the lift. If the ouverture value is out of bound, the minimum or the maximum position is set.
+     * 
+     * @param open The ouverture value.
+     */
     public void setDoorsOverture(int open) {
         if (open > LiftPanel.MAX_DOORS_OPENING) {
             open = LiftPanel.MAX_DOORS_OPENING;
@@ -169,15 +225,19 @@ public class LiftPanel extends JPanel {
         this.doorsOverture = open;
     }
 
+    /**
+     * Increase the door ouverture of the lift by one. Safe for the ouverture value bounds.
+     */
     public void incrDoorsOverture() {
         this.setDoorsOverture(this.getDoorsOverture() + 1);
     }
 
+    /**
+     * Decrease the door ouverture of the lift by one. Safe for the ouverture value bounds.
+     */
     public void decrDoorsOverture() {
         this.setDoorsOverture(this.getDoorsOverture() - 1);
     }
-    
-    
 
     @Override
     public void paintComponent(Graphics g) {
@@ -185,6 +245,7 @@ public class LiftPanel extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
         
         g2d.drawImage(this.imageBackground, 0, 0, null);
+        g2d.drawImage(this.imageTower, 0, 0, null);
 
         for (int i = 0; i < this.imagesFloors.length; i++) {
             g2d.drawImage(this.imagesFloors[i], 273, 133 + i * this.imageFloorHeight, null);

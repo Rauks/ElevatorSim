@@ -15,6 +15,11 @@ public class Floor {
         this.value = value;
     }
 
+    /**
+     * Get the floor index.
+     * 
+     * @return The index.
+     */
     public int getValue() {
         return value;
     }
