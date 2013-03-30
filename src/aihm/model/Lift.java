@@ -30,6 +30,12 @@ public class Lift {
         this.state = States.CLOSED;
     }
     
+    /**
+     * Check if the index is in floors bounds.
+     * 
+     * @param index The floor index to check.
+     * @throws LiftException Throw this exception if the index of out of floors bounds.
+     */
     private void checkFloorIndex(int index) throws LiftException{
         if(index < 0){
             throw new LiftException("Floor out of bound");
@@ -39,6 +45,12 @@ public class Lift {
         }
     }
     
+    /**
+     * Add a floor index to the requests queue of the lift.
+     * 
+     * @param index The floor index.
+     * @throws LiftException Throw this exception if the index of out of floors bounds.
+     */
     public void requestFloor(int index) throws LiftException{
         Logger.getLogger(LiftFrame.class.getName()).log(Level.INFO, "Request floor : {0}", index);
         this.checkFloorIndex(index);
@@ -47,12 +59,23 @@ public class Lift {
             this.floorRequests.add(new Floor(index));
         }
     }
-    
+    /**
+     * Check if the floor index is in requests queue of the lift.
+     * 
+     * @param index The floor index.
+     * @return True if the floor index is in requests queue of the lift.
+     * @throws LiftException Throw this exception if the index of out of floors bounds.
+     */
     public boolean isFloorInRequest(int index) throws LiftException{
         this.checkFloorIndex(index);
         return this.floorRequests.contains(new Floor(index));
     }
     
+    /**
+     * Check if the lift has requests.
+     * 
+     * @return  True if the laft has requests in his queue.
+     */
     private boolean hasRequests(){
         return !this.floorRequests.isEmpty();
     }
@@ -105,6 +128,12 @@ public class Lift {
         return -1;
     }
     
+    /**
+     * Calculate the move to do in order to reach  the next floor in requests queue
+     * 
+     * @return The move to do.
+     * @throws LiftException In case of unauthorized state change.
+     */
     public Moves getRequestedMove() throws LiftException{
         if(this.state != States.CLOSED){
             throw new LiftException("Doors must be in CLOSED state to change the current floor");
@@ -125,6 +154,12 @@ public class Lift {
         }
     }
     
+    /**
+     * Change the current floor of the lift. The lift state must be CLOSED.
+     * 
+     * @param index The floor index.
+     * @throws LiftException Throw this exception if the index of out of floors bounds or in case of unauthorized state change.
+     */
     public void setCurrentFloor(int index) throws LiftException{
         if(this.state != States.CLOSED){
             throw new LiftException("Doors must be in CLOSED state to change the current floor");
@@ -134,14 +169,29 @@ public class Lift {
         this.currentFloor = new Floor(index);
     }
     
+    /**
+     * Get the current floor index.
+     * 
+     * @return The vurrent floor index. 
+     */
     public int getCurrentFloor(){
         return this.currentFloor.getValue();
     }
     
+    /**
+     * Get the number of floors.
+     * 
+     * @return The number of floors.
+     */
     public int getNbFloors(){
         return this.nbFloors;
     }
     
+    /**
+     * Change the state of the lift to OPENING. The state of the lift must be CLOSED or CLOSING.
+     * 
+     * @throws LiftException In case of unauthorized state change.
+     */
     public void requestDoorsOpening() throws LiftException{
         if(this.state != States.CLOSED && this.state != States.CLOSING){
             throw new LiftException("Doors must be in CLOSED or CLOSING state before to request them to OPENING");
@@ -150,6 +200,11 @@ public class Lift {
         this.state = States.OPENING;
     }
     
+    /**
+     * Change the state of the lift to CLOSING. The state of the lift must be OPENED or OPENING.
+     * 
+     * @throws LiftException In case of unauthorized state change.
+     */
     public void requestDoorsClosing() throws LiftException{
         if(this.state != States.OPENED && this.state != States.OPENING){
             throw new LiftException("Doors must be in OPENED or OPENING state before to request them to CLOSING");
@@ -157,6 +212,11 @@ public class Lift {
         this.state = States.CLOSING;
     }
     
+    /**
+     * Change the state of the lift to OPENED. The state of the lift must be OPENING.
+     * 
+     * @throws LiftException In case of unauthorized state change.
+     */
     public void setDoorsOpened() throws LiftException{
         if(this.state != States.OPENING){
             throw new LiftException("Doors must be in OPENING state before to set them to OPENED");
@@ -164,6 +224,11 @@ public class Lift {
         this.state = States.OPENED;
     }
     
+    /**
+     * Change the state of the lift to CLOSED. The state of the lift must be CLOSING.
+     * 
+     * @throws LiftException In case of unauthorized state change.
+     */
     public void setDoorsClosed() throws LiftException{
         if(this.state != States.CLOSING){
             throw new LiftException("Doors must be in CLOSING state before to set them to CLOSED");
@@ -171,6 +236,11 @@ public class Lift {
         this.state = States.CLOSED;
     }
     
+    /**
+     * Get the current lift state.
+     * 
+     * @return The current state.
+     */
     public States getState(){
         return this.state;
     }

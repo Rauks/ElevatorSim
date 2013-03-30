@@ -175,6 +175,11 @@ public class LiftPanel extends JPanel {
         return this.cabX;
     }
 
+    /**
+     * Change the position of the lift. If the position value is out of bound, the minimum or the maximum position is set.
+     * 
+     * @param position The new position.
+     */
     public void setPosition(int position) {
         if (position > LiftPanel.MAX_POSITION) {
             position = LiftPanel.MAX_POSITION;
@@ -183,19 +188,34 @@ public class LiftPanel extends JPanel {
         }
         this.position = position;
     }
-
+    /**
+     * Increase the position of the lift by one. Safe for the positions bounds.
+     */
     public void incrPosition() {
         this.setPosition(this.getPosition() + 1);
     }
 
+    /**
+     * Decrease the position of the lift by one. Safe for the positions bounds.
+     */
     public void decrPosition() {
         this.setPosition(this.getPosition() - 1);
     }
-
+    
+    /**
+     * Get the current doors ouverture.
+     * 
+     * @return The door overture.
+     */
     public int getDoorsOverture() {
         return this.doorsOverture;
     }
 
+    /**
+     * Set the door ouverture of the lift. If the ouverture value is out of bound, the minimum or the maximum position is set.
+     * 
+     * @param open The ouverture value.
+     */
     public void setDoorsOverture(int open) {
         if (open > LiftPanel.MAX_DOORS_OPENING) {
             open = LiftPanel.MAX_DOORS_OPENING;
@@ -205,15 +225,19 @@ public class LiftPanel extends JPanel {
         this.doorsOverture = open;
     }
 
+    /**
+     * Increase the door ouverture of the lift by one. Safe for the ouverture value bounds.
+     */
     public void incrDoorsOverture() {
         this.setDoorsOverture(this.getDoorsOverture() + 1);
     }
 
+    /**
+     * Decrease the door ouverture of the lift by one. Safe for the ouverture value bounds.
+     */
     public void decrDoorsOverture() {
         this.setDoorsOverture(this.getDoorsOverture() - 1);
     }
-    
-    
 
     @Override
     public void paintComponent(Graphics g) {

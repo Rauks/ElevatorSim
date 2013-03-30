@@ -5,6 +5,7 @@
 package aihm;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sound.sampled.AudioSystem;
@@ -23,11 +24,16 @@ public class AudioPlayer{
     
     private Clip clip;
     
-    public AudioPlayer(String audioFile){
+    /**
+     * Create an AudioPlayer.
+     * 
+     * @param audioFile The URL of the audi file to play.
+     */
+    public AudioPlayer(URL audioURL){
         try {
             this.clip = AudioSystem.getClip();
             try {
-                this.clip.open(AudioSystem.getAudioInputStream(LiftFrame.class.getResource(audioFile)));
+                this.clip.open(AudioSystem.getAudioInputStream(audioURL));
             } catch (UnsupportedAudioFileException | IOException ex) {
                 Logger.getLogger(LiftFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -36,22 +42,36 @@ public class AudioPlayer{
         }
     }
     
+    /**
+     * Change the volume of the audio.
+     * 
+     * @param gain Gain value between 0.0 and 1.0.
+     */
     public void setVolume(float gain){
         float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
         FloatControl volume = (FloatControl) this.clip.getControl(FloatControl.Type.MASTER_GAIN);
         volume.setValue(dB);
     }
     
+    /**
+     * Stop the audio playback.
+     */
     public void stop(){
         this.clip.stop();
         this.clip.flush();
     }
     
+    /**
+     * Play the audio in loop.
+     */
     public void playLooped(){
         this.clip.loop(Clip.LOOP_CONTINUOUSLY);
         this.clip.start();
     }
     
+    /**
+     * Play the audio only once.
+     */
     public void play(){
         this.stop();
         this.clip.setFramePosition(0);

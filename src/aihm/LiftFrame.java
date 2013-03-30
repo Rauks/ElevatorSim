@@ -43,10 +43,10 @@ public class LiftFrame extends javax.swing.JFrame {
     public LiftFrame(final Lift model) {
         this.model = model;
         
-        this.audioMusic = new AudioPlayer("res/Music.au");
+        this.audioMusic = new AudioPlayer(LiftFrame.class.getResource("res/Music.au"));
         this.audioMusic.setVolume(0.3f);
         
-        this.audioDing = new AudioPlayer("res/Ding.au");
+        this.audioDing = new AudioPlayer(LiftFrame.class.getResource("res/Ding.au"));
         
         initComponents();
         
@@ -198,6 +198,11 @@ public class LiftFrame extends javax.swing.JFrame {
         this.audioMusic.playLooped();
     }
     
+    /**
+     * Add the floor to the requests of the lift model.
+     * 
+     * @param index The floor index.
+     */
     public void requestFloor(int index){
         try {
             this.model.requestFloor(index);
@@ -206,23 +211,13 @@ public class LiftFrame extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Unselect the main button for the floor designed by the index.
+     * 
+     * @param index The floor index.
+     */
     private void setFloorButtonUnselected(int index){
-        /*
-        switch(index){
-            case 0 :
-                this.mainButton0.setSelected(false);
-                break;
-            case 1 :
-                this.mainButton1.setSelected(false);
-                break;
-            case 2 : 
-                this.mainButton2.setSelected(false);
-                break;
-        }
-        */
-        
-        //Better (in case of adding new floors and new buttons)
-        //Uses reflexives calls on mainButtonX where X is the floor number.
+        //Reflexive calls, better than 15 methods for 15 buttons...
         try {
             Field f = this.getClass().getDeclaredField("mainButton" + index);
             f.setAccessible(true);
