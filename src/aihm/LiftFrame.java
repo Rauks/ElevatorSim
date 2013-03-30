@@ -76,17 +76,17 @@ public class LiftFrame extends javax.swing.JFrame {
                                 int floor = liftPosX / floorPX;
                                 
                                 //Is current floor in requests ?
-                                if(floor == model.getNextFloorStop()){
+                                if(floor == model.getNextFloorStop() || model.isFloorInRequest(floor)){
                                     model.setCurrentFloor(floor);
-                                    setFloorButtonUnselected(floor);
                                     if(optionsSoundDing.isSelected()){
                                         audioDing.play();
                                     }
                                     model.requestDoorsOpening();
                                 }
-                                else{
+                                else {
                                     model.setCurrentFloor(floor);
                                 }
+                                setFloorButtonUnselected(floor);
                             }
                             
                             //Move if doors are closed
@@ -345,8 +345,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         content.setBackground(new java.awt.Color(102, 102, 102));
         content.setMaximumSize(new java.awt.Dimension(875, 2147483647));
-        content.setMinimumSize(new java.awt.Dimension(875, 500));
-        content.setPreferredSize(new java.awt.Dimension(875, 750));
+        content.setMinimumSize(new java.awt.Dimension(875, 0));
         content.setLayout(new java.awt.BorderLayout());
 
         mainBar.setBorder(null);
@@ -633,8 +632,9 @@ public class LiftFrame extends javax.swing.JFrame {
         scrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setHorizontalScrollBar(null);
 
-        lift.setMaximumSize(new java.awt.Dimension(641, 934));
-        lift.setMinimumSize(new java.awt.Dimension(641, 934));
+        lift.setBackground(new java.awt.Color(231, 231, 231));
+        lift.setMaximumSize(new java.awt.Dimension(641, 32767));
+        lift.setMinimumSize(new java.awt.Dimension(641, 0));
 
         liftButtons.setOpaque(false);
 
@@ -1041,7 +1041,7 @@ public class LiftFrame extends javax.swing.JFrame {
             liftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, liftLayout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addComponent(liftButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(liftButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap(5, Short.MAX_VALUE))
         );
 
@@ -1060,7 +1060,7 @@ public class LiftFrame extends javax.swing.JFrame {
             splitLiftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(splitLiftLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
+                .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 676, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1497,15 +1497,15 @@ public class LiftFrame extends javax.swing.JFrame {
         splitCabLayout.setHorizontalGroup(
             splitCabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitCabLayout.createSequentialGroup()
-                .addComponent(panelCabButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelCabButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
                 .addContainerGap())
         );
         splitCabLayout.setVerticalGroup(
             splitCabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(splitCabLayout.createSequentialGroup()
-                .addContainerGap(95, Short.MAX_VALUE)
+                .addContainerGap(219, Short.MAX_VALUE)
                 .addComponent(panelCabButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(364, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         content.add(splitCab, java.awt.BorderLayout.CENTER);
@@ -1633,11 +1633,11 @@ public class LiftFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, 865, Short.MAX_VALUE)
+            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         bindingGroup.bind();
