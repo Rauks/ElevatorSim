@@ -371,13 +371,14 @@ public class LiftFrame extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImage(java.awt.Toolkit.getDefaultToolkit().getImage(getClass().getResource("/aihm/res/Elevator.png")));
 
-        content.setBackground(new java.awt.Color(102, 102, 102));
         content.setMaximumSize(new java.awt.Dimension(875, 2147483647));
         content.setMinimumSize(new java.awt.Dimension(875, 0));
         content.setLayout(new java.awt.BorderLayout());
 
+        mainBar.setBackground(new java.awt.Color(102, 102, 102));
         mainBar.setBorder(null);
 
+        mainButton0.setBackground(new java.awt.Color(102, 102, 102));
         mainButton0.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton0.setForeground(this.colorUnrequestedFloorLabel);
         mainButton0.setText("0");
@@ -396,6 +397,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton0);
 
+        mainButton1.setBackground(new java.awt.Color(102, 102, 102));
         mainButton1.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton1.setForeground(this.colorUnrequestedFloorLabel);
         mainButton1.setText("1");
@@ -414,6 +416,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton1);
 
+        mainButton2.setBackground(new java.awt.Color(102, 102, 102));
         mainButton2.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton2.setForeground(this.colorUnrequestedFloorLabel);
         mainButton2.setText("2");
@@ -432,6 +435,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton2);
 
+        mainButton3.setBackground(new java.awt.Color(102, 102, 102));
         mainButton3.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton3.setForeground(this.colorUnrequestedFloorLabel);
         mainButton3.setText("3");
@@ -450,6 +454,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton3);
 
+        mainButton4.setBackground(new java.awt.Color(102, 102, 102));
         mainButton4.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton4.setForeground(this.colorUnrequestedFloorLabel);
         mainButton4.setText("4");
@@ -468,6 +473,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton4);
 
+        mainButton5.setBackground(new java.awt.Color(102, 102, 102));
         mainButton5.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton5.setForeground(this.colorUnrequestedFloorLabel);
         mainButton5.setText("5");
@@ -486,6 +492,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton5);
 
+        mainButton6.setBackground(new java.awt.Color(102, 102, 102));
         mainButton6.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton6.setForeground(this.colorUnrequestedFloorLabel);
         mainButton6.setText("6");
@@ -504,6 +511,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton6);
 
+        mainButton7.setBackground(new java.awt.Color(102, 102, 102));
         mainButton7.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton7.setForeground(this.colorUnrequestedFloorLabel);
         mainButton7.setText("7");
@@ -522,6 +530,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton7);
 
+        mainButton8.setBackground(new java.awt.Color(102, 102, 102));
         mainButton8.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton8.setForeground(this.colorUnrequestedFloorLabel);
         mainButton8.setText("8");
@@ -540,6 +549,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton8);
 
+        mainButton9.setBackground(new java.awt.Color(102, 102, 102));
         mainButton9.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton9.setForeground(this.colorUnrequestedFloorLabel);
         mainButton9.setText("9");
@@ -558,6 +568,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton9);
 
+        mainButton10.setBackground(new java.awt.Color(102, 102, 102));
         mainButton10.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton10.setForeground(this.colorUnrequestedFloorLabel);
         mainButton10.setText("10");
@@ -576,6 +587,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton10);
 
+        mainButton11.setBackground(new java.awt.Color(102, 102, 102));
         mainButton11.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton11.setForeground(this.colorUnrequestedFloorLabel);
         mainButton11.setText("11");
@@ -594,6 +606,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton11);
 
+        mainButton12.setBackground(new java.awt.Color(102, 102, 102));
         mainButton12.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton12.setForeground(this.colorUnrequestedFloorLabel);
         mainButton12.setText("12");
@@ -612,6 +625,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton12);
 
+        mainButton13.setBackground(new java.awt.Color(102, 102, 102));
         mainButton13.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton13.setForeground(this.colorUnrequestedFloorLabel);
         mainButton13.setText("13");
@@ -630,6 +644,7 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         mainBar.add(mainButton13);
 
+        mainButton14.setBackground(new java.awt.Color(102, 102, 102));
         mainButton14.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton14.setForeground(this.colorUnrequestedFloorLabel);
         mainButton14.setText("14");
