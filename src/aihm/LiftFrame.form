@@ -316,20 +316,22 @@
             <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
               <KeyStroke key="Ctrl+B"/>
             </Property>
-            <Property name="mnemonic" type="int" value="66"/>
-            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="Bruitages"/>
           </Properties>
+          <BindingProperties>
+            <BindingProperty name="selected" source="optionsSoundDing" sourcePath="${selected}" target="popupOptionsSoundDing" targetPath="selected" updateStrategy="0" immediately="false"/>
+          </BindingProperties>
         </MenuItem>
         <MenuItem class="javax.swing.JCheckBoxMenuItem" name="popupOptionsSoundMusic">
           <Properties>
             <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
               <KeyStroke key="Ctrl+M"/>
             </Property>
-            <Property name="mnemonic" type="int" value="77"/>
-            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="Musique"/>
           </Properties>
+          <BindingProperties>
+            <BindingProperty name="selected" source="optionsSoundMusic" sourcePath="${selected}" target="popupOptionsSoundMusic" targetPath="selected" updateStrategy="0" immediately="false"/>
+          </BindingProperties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="optionsSoundMusicActionPerformed"/>
           </Events>
@@ -344,18 +346,20 @@
         </MenuItem>
         <Menu class="javax.swing.JMenu" name="popupOptionsGraphicsLifts">
           <Properties>
-            <Property name="mnemonic" type="int" value="65"/>
             <Property name="text" type="java.lang.String" value="Ascenseur"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JCheckBoxMenuItem" name="popupGraphicsLiftBlue">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="graphicsLiftChoice"/>
+                  <ComponentRef name="popupGraphicsLiftChoice"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="66"/>
                 <Property name="text" type="java.lang.String" value="Classique Bleu"/>
               </Properties>
+              <BindingProperties>
+                <BindingProperty name="selected" source="graphicsLiftBlue" sourcePath="${selected}" target="popupGraphicsLiftBlue" targetPath="selected" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="graphicsLiftBlueActionPerformed"/>
               </Events>
@@ -363,11 +367,14 @@
             <MenuItem class="javax.swing.JCheckBoxMenuItem" name="popupGraphicsLiftClassic">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="graphicsLiftChoice"/>
+                  <ComponentRef name="popupGraphicsLiftChoice"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="77"/>
                 <Property name="text" type="java.lang.String" value="Classique Marron"/>
               </Properties>
+              <BindingProperties>
+                <BindingProperty name="selected" source="graphicsLiftClassic" sourcePath="${selected}" target="popupGraphicsLiftClassic" targetPath="selected" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="graphicsLiftClassicActionPerformed"/>
               </Events>
@@ -375,11 +382,14 @@
             <MenuItem class="javax.swing.JCheckBoxMenuItem" name="popupGraphicsLiftFuture">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="graphicsLiftChoice"/>
+                  <ComponentRef name="popupGraphicsLiftChoice"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="70"/>
                 <Property name="text" type="java.lang.String" value="Futuriste"/>
               </Properties>
+              <BindingProperties>
+                <BindingProperty name="selected" source="graphicsLiftFuture" sourcePath="${selected}" target="popupGraphicsLiftFuture" targetPath="selected" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="graphicsLiftFutureActionPerformed"/>
               </Events>
@@ -387,11 +397,14 @@
             <MenuItem class="javax.swing.JCheckBoxMenuItem" name="popupGraphicsLiftGold">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="graphicsLiftChoice"/>
+                  <ComponentRef name="popupGraphicsLiftChoice"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="76"/>
                 <Property name="text" type="java.lang.String" value="Luxurieux"/>
               </Properties>
+              <BindingProperties>
+                <BindingProperty name="selected" source="graphicsLiftGold" sourcePath="${selected}" target="popupGraphicsLiftGold" targetPath="selected" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="graphicsLiftGoldActionPerformed"/>
               </Events>
@@ -399,11 +412,14 @@
             <MenuItem class="javax.swing.JCheckBoxMenuItem" name="popupGraphicsLiftCheap">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="graphicsLiftChoice"/>
+                  <ComponentRef name="popupGraphicsLiftChoice"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="82"/>
                 <Property name="text" type="java.lang.String" value="Rouill&#xe9;"/>
               </Properties>
+              <BindingProperties>
+                <BindingProperty name="selected" source="graphicsLiftCheap" sourcePath="${selected}" target="popupGraphicsLiftCheap" targetPath="selected" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="graphicsLiftCheapActionPerformed"/>
               </Events>
@@ -412,18 +428,20 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="popupOptionsGraphicsBuilding">
           <Properties>
-            <Property name="mnemonic" type="int" value="73"/>
             <Property name="text" type="java.lang.String" value="Immeuble &amp; Ville"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JCheckBoxMenuItem" name="popupGraphicsBuildingDay">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="graphicsBuildingChoice"/>
+                  <ComponentRef name="popupGraphicsBuildingChoice"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="74"/>
                 <Property name="text" type="java.lang.String" value="Jour"/>
               </Properties>
+              <BindingProperties>
+                <BindingProperty name="selected" source="graphicsBuildingDay" sourcePath="${selected}" target="popupGraphicsBuildingDay" targetPath="selected" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="graphicsBuildingDayActionPerformed"/>
               </Events>
@@ -431,11 +449,14 @@
             <MenuItem class="javax.swing.JCheckBoxMenuItem" name="popupGraphicsBuildingNight">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="graphicsBuildingChoice"/>
+                  <ComponentRef name="popupGraphicsBuildingChoice"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="78"/>
                 <Property name="text" type="java.lang.String" value="Nuit"/>
               </Properties>
+              <BindingProperties>
+                <BindingProperty name="selected" source="graphicsBuildingNight" sourcePath="${selected}" target="popupGraphicsBuildingNight" targetPath="selected" updateStrategy="0" immediately="false"/>
+              </BindingProperties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="graphicsBuildingNightActionPerformed"/>
               </Events>
@@ -444,10 +465,6 @@
         </Menu>
         <MenuItem class="javax.swing.JMenuItem" name="popupOptionsGraphicsFloorsRegen">
           <Properties>
-            <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-              <KeyStroke key="Ctrl+R"/>
-            </Property>
-            <Property name="mnemonic" type="int" value="67"/>
             <Property name="text" type="java.lang.String" value="Changer les &#xe9;tages"/>
           </Properties>
           <Events>
@@ -467,13 +484,18 @@
             <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
               <KeyStroke key="Ctrl+S"/>
             </Property>
-            <Property name="mnemonic" type="int" value="68"/>
-            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="D&#xe9;filement automatique"/>
           </Properties>
+          <BindingProperties>
+            <BindingProperty name="selected" source="optionsGraphicsAutoScroll" sourcePath="${selected}" target="popupOptionsGraphicsAutoScroll" targetPath="selected" updateStrategy="0" immediately="false"/>
+          </BindingProperties>
         </MenuItem>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.ButtonGroup" name="popupGraphicsLiftChoice">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="popupGraphicsBuildingChoice">
+    </Component>
     <Menu class="javax.swing.JMenuBar" name="menu">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="menuFile">

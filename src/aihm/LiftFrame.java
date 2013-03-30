@@ -265,6 +265,8 @@ public class LiftFrame extends javax.swing.JFrame {
         popupOptionsSep2 = new javax.swing.JPopupMenu.Separator();
         popupOptionsOthers = new javax.swing.JMenuItem();
         popupOptionsGraphicsAutoScroll = new javax.swing.JCheckBoxMenuItem();
+        popupGraphicsLiftChoice = new javax.swing.ButtonGroup();
+        popupGraphicsBuildingChoice = new javax.swing.ButtonGroup();
         content = new javax.swing.JPanel();
         mainBar = new javax.swing.JToolBar();
         mainButton0 = new javax.swing.JButton();
@@ -389,15 +391,19 @@ public class LiftFrame extends javax.swing.JFrame {
         popupOptions.add(popupOptionsAudio);
 
         popupOptionsSoundDing.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
-        popupOptionsSoundDing.setMnemonic('B');
-        popupOptionsSoundDing.setSelected(true);
         popupOptionsSoundDing.setText("Bruitages");
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, optionsSoundDing, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupOptionsSoundDing, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         popupOptions.add(popupOptionsSoundDing);
 
         popupOptionsSoundMusic.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
-        popupOptionsSoundMusic.setMnemonic('M');
-        popupOptionsSoundMusic.setSelected(true);
         popupOptionsSoundMusic.setText("Musique");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, optionsSoundMusic, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupOptionsSoundMusic, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         popupOptionsSoundMusic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 optionsSoundMusicActionPerformed(evt);
@@ -410,12 +416,15 @@ public class LiftFrame extends javax.swing.JFrame {
         popupOptionsGraphics.setEnabled(false);
         popupOptions.add(popupOptionsGraphics);
 
-        popupOptionsGraphicsLifts.setMnemonic('A');
         popupOptionsGraphicsLifts.setText("Ascenseur");
 
-        graphicsLiftChoice.add(popupGraphicsLiftBlue);
+        popupGraphicsLiftChoice.add(popupGraphicsLiftBlue);
         popupGraphicsLiftBlue.setMnemonic('B');
         popupGraphicsLiftBlue.setText("Classique Bleu");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, graphicsLiftBlue, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupGraphicsLiftBlue, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         popupGraphicsLiftBlue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 graphicsLiftBlueActionPerformed(evt);
@@ -423,9 +432,13 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         popupOptionsGraphicsLifts.add(popupGraphicsLiftBlue);
 
-        graphicsLiftChoice.add(popupGraphicsLiftClassic);
+        popupGraphicsLiftChoice.add(popupGraphicsLiftClassic);
         popupGraphicsLiftClassic.setMnemonic('M');
         popupGraphicsLiftClassic.setText("Classique Marron");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, graphicsLiftClassic, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupGraphicsLiftClassic, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         popupGraphicsLiftClassic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 graphicsLiftClassicActionPerformed(evt);
@@ -433,9 +446,13 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         popupOptionsGraphicsLifts.add(popupGraphicsLiftClassic);
 
-        graphicsLiftChoice.add(popupGraphicsLiftFuture);
+        popupGraphicsLiftChoice.add(popupGraphicsLiftFuture);
         popupGraphicsLiftFuture.setMnemonic('F');
         popupGraphicsLiftFuture.setText("Futuriste");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, graphicsLiftFuture, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupGraphicsLiftFuture, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         popupGraphicsLiftFuture.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 graphicsLiftFutureActionPerformed(evt);
@@ -443,9 +460,13 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         popupOptionsGraphicsLifts.add(popupGraphicsLiftFuture);
 
-        graphicsLiftChoice.add(popupGraphicsLiftGold);
+        popupGraphicsLiftChoice.add(popupGraphicsLiftGold);
         popupGraphicsLiftGold.setMnemonic('L');
         popupGraphicsLiftGold.setText("Luxurieux");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, graphicsLiftGold, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupGraphicsLiftGold, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         popupGraphicsLiftGold.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 graphicsLiftGoldActionPerformed(evt);
@@ -453,9 +474,13 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         popupOptionsGraphicsLifts.add(popupGraphicsLiftGold);
 
-        graphicsLiftChoice.add(popupGraphicsLiftCheap);
+        popupGraphicsLiftChoice.add(popupGraphicsLiftCheap);
         popupGraphicsLiftCheap.setMnemonic('R');
         popupGraphicsLiftCheap.setText("Rouillé");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, graphicsLiftCheap, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupGraphicsLiftCheap, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         popupGraphicsLiftCheap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 graphicsLiftCheapActionPerformed(evt);
@@ -465,12 +490,15 @@ public class LiftFrame extends javax.swing.JFrame {
 
         popupOptions.add(popupOptionsGraphicsLifts);
 
-        popupOptionsGraphicsBuilding.setMnemonic('I');
         popupOptionsGraphicsBuilding.setText("Immeuble & Ville");
 
-        graphicsBuildingChoice.add(popupGraphicsBuildingDay);
+        popupGraphicsBuildingChoice.add(popupGraphicsBuildingDay);
         popupGraphicsBuildingDay.setMnemonic('J');
         popupGraphicsBuildingDay.setText("Jour");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, graphicsBuildingDay, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupGraphicsBuildingDay, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         popupGraphicsBuildingDay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 graphicsBuildingDayActionPerformed(evt);
@@ -478,9 +506,13 @@ public class LiftFrame extends javax.swing.JFrame {
         });
         popupOptionsGraphicsBuilding.add(popupGraphicsBuildingDay);
 
-        graphicsBuildingChoice.add(popupGraphicsBuildingNight);
+        popupGraphicsBuildingChoice.add(popupGraphicsBuildingNight);
         popupGraphicsBuildingNight.setMnemonic('N');
         popupGraphicsBuildingNight.setText("Nuit");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, graphicsBuildingNight, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupGraphicsBuildingNight, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         popupGraphicsBuildingNight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 graphicsBuildingNightActionPerformed(evt);
@@ -490,8 +522,6 @@ public class LiftFrame extends javax.swing.JFrame {
 
         popupOptions.add(popupOptionsGraphicsBuilding);
 
-        popupOptionsGraphicsFloorsRegen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        popupOptionsGraphicsFloorsRegen.setMnemonic('C');
         popupOptionsGraphicsFloorsRegen.setText("Changer les étages");
         popupOptionsGraphicsFloorsRegen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -506,9 +536,11 @@ public class LiftFrame extends javax.swing.JFrame {
         popupOptions.add(popupOptionsOthers);
 
         popupOptionsGraphicsAutoScroll.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        popupOptionsGraphicsAutoScroll.setMnemonic('D');
-        popupOptionsGraphicsAutoScroll.setSelected(true);
         popupOptionsGraphicsAutoScroll.setText("Défilement automatique");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, optionsGraphicsAutoScroll, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupOptionsGraphicsAutoScroll, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
         popupOptions.add(popupOptionsGraphicsAutoScroll);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -826,7 +858,7 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton1.setOpaque(false);
         liftButton1.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton1, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton1, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton1, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
         bindingGroup.addBinding(binding);
@@ -2076,10 +2108,12 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem optionsSoundMusic;
     private javax.swing.JPanel panelCabBorder;
     private javax.swing.JPanel panelCabButtons;
+    private javax.swing.ButtonGroup popupGraphicsBuildingChoice;
     private javax.swing.JCheckBoxMenuItem popupGraphicsBuildingDay;
     private javax.swing.JCheckBoxMenuItem popupGraphicsBuildingNight;
     private javax.swing.JCheckBoxMenuItem popupGraphicsLiftBlue;
     private javax.swing.JCheckBoxMenuItem popupGraphicsLiftCheap;
+    private javax.swing.ButtonGroup popupGraphicsLiftChoice;
     private javax.swing.JCheckBoxMenuItem popupGraphicsLiftClassic;
     private javax.swing.JCheckBoxMenuItem popupGraphicsLiftFuture;
     private javax.swing.JCheckBoxMenuItem popupGraphicsLiftGold;
