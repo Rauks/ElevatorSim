@@ -38,11 +38,15 @@ public class LiftPanel extends JPanel {
     }
     
     public final static int NB_FLOORS = 15;
-    public final static int MAX_POS_X = NB_FLOORS * 56;
+    public final static int MAX_POSITION = NB_FLOORS * 56;
     public final static int MAX_DOORS_OPENING = 6;
     
-    private int posX;
-    private int doorsOverture;
+    private int position = 0;
+    private int doorsOverture = 0;
+    private final int cabX = 241;
+    private final int minCabY = 80;
+    private final int imageFloorHeight = MAX_POSITION / NB_FLOORS;
+    private final int maxCabY = minCabY + imageFloorHeight * (NB_FLOORS - 1);
     
     BufferedImage imageBackground;
     BufferedImage imageCane;
@@ -57,10 +61,6 @@ public class LiftPanel extends JPanel {
     public LiftPanel() {
         super();
         try {
-            //Lift initialisation
-            this.posX = 0;
-            this.doorsOverture = 0;
-            
             //Building images loading
             URL urlBackground = LiftPanel.class.getResource("res/Background.png");
             this.imageBackground = ImageIO.read(urlBackground);
@@ -111,26 +111,49 @@ public class LiftPanel extends JPanel {
             Logger.getLogger(LiftPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    public int getPosX() {
-        return this.posX;
+    
+    /**
+     * Position of the lift on the lift axe.
+     * 
+     * @return Position from 0 to MAX_POSITION
+     */
+    public int getPosition() {
+        return this.position;
+    }
+    
+    /**
+     * Position on Y axis in pixels of the lift on the panel.
+     * 
+     * @return Position
+     */
+    public int getCabY(){
+        return this.maxCabY - this.position;
+    }
+    
+    /**
+     * Position on X axis in pixels of the lift on the panel.
+     * 
+     * @return Position
+     */
+    public int getCabX(){
+        return this.cabX;
     }
 
-    public void setPosX(int posX) {
-        if (posX > LiftPanel.MAX_POS_X) {
-            posX = LiftPanel.MAX_POS_X;
-        } else if (posX < 0) {
-            posX = 0;
+    public void setPosition(int position) {
+        if (position > LiftPanel.MAX_POSITION) {
+            position = LiftPanel.MAX_POSITION;
+        } else if (position < 0) {
+            position = 0;
         }
-        this.posX = posX;
+        this.position = position;
     }
 
-    public void incrPosX() {
-        this.setPosX(this.getPosX() + 1);
+    public void incrPosition() {
+        this.setPosition(this.getPosition() + 1);
     }
 
-    public void decrPosX() {
-        this.setPosX(this.getPosX() - 1);
+    public void decrPosition() {
+        this.setPosition(this.getPosition() - 1);
     }
 
     public int getDoorsOverture() {
@@ -162,20 +185,15 @@ public class LiftPanel extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
         
         g2d.drawImage(this.imageBackground, 0, 0, null);
-        
-        int imageFloorHeight = MAX_POS_X / NB_FLOORS;
-        for (int i = 0; i < imagesFloors.length; i++) {
-            g2d.drawImage(this.imagesFloors[i], 273, 133 + i * imageFloorHeight, null);
+
+        for (int i = 0; i < this.imagesFloors.length; i++) {
+            g2d.drawImage(this.imagesFloors[i], 273, 133 + i * this.imageFloorHeight, null);
         }
         
-        int cabX = 241;
-        int minCabY = 80;
-        int maxCabY = minCabY + imageFloorHeight * (NB_FLOORS - 1);
-        int cabY = maxCabY - this.posX;
-        g2d.drawImage(this.imageLiftBack, cabX, cabY, null);
-        g2d.drawImage(this.imageLiftLeftDoor, cabX - this.doorsOverture, cabY, null);
-        g2d.drawImage(this.imageLiftRightDoor, cabX + this.doorsOverture, cabY, null);
-        g2d.drawImage(this.imageLiftFront, cabX, cabY, null);
+        g2d.drawImage(this.imageLiftBack, this.getCabX(), this.getCabY(), null);
+        g2d.drawImage(this.imageLiftLeftDoor, this.getCabX() - this.doorsOverture, this.getCabY(), null);
+        g2d.drawImage(this.imageLiftRightDoor, this.getCabX() + this.doorsOverture, this.getCabY(), null);
+        g2d.drawImage(this.imageLiftFront, this.getCabX(), this.getCabY(), null);
         
         g2d.drawImage(this.imageCane, 240, 7, null);
         g2d.drawImage(this.imageBottom, 212, 917, null);

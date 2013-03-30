@@ -12,6 +12,7 @@ import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
+import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -58,7 +59,7 @@ public class LiftFrame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent evt){
                 try {
-                    switch(model.getState()){
+                    switch(model.getState()){ //What is the current lift state ?
                         case OPENED :
                             if(this.openWait > 0){
                                 this.openWait--;
@@ -70,8 +71,8 @@ public class LiftFrame extends javax.swing.JFrame {
                             break;
                         case CLOSED :
                             //Current floor announce
-                            int floorPX = (LiftPanel.MAX_POS_X / LiftPanel.NB_FLOORS);
-                            int liftPosX = lift.getPosX();
+                            int floorPX = (LiftPanel.MAX_POSITION / LiftPanel.NB_FLOORS);
+                            int liftPosX = lift.getPosition();
                             if(liftPosX % floorPX == 0){ //A floor is reached
                                 int floor = liftPosX / floorPX;
                                 
@@ -89,11 +90,11 @@ public class LiftFrame extends javax.swing.JFrame {
                                 setFloorButtonUnselected(floor);
                             }
                             
-                            //Move if doors are closed
+                            //Move animation with differents speeds if doors are still closed (floor was not in requests)
                             if(model.getState() == Lift.States.CLOSED){
                                 int targetFloor = model.getNextFloorStop();
                                 int targetFloorPos = targetFloor * floorPX;
-                                int currentPos = lift.getPosX();
+                                int currentPos = lift.getPosition();
                                 int[] speed = new int[]{10, 30, 50}; //Speed changes positions
                                 int deltaPos;
                                 switch(model.getRequestedMove()){
@@ -102,31 +103,31 @@ public class LiftFrame extends javax.swing.JFrame {
                                     case UP :
                                         deltaPos = targetFloorPos - currentPos;
                                         if(deltaPos < speed[0]){
-                                            lift.setPosX(currentPos + 1);
+                                            lift.setPosition(currentPos + 1);
                                         }
                                         else if(deltaPos >= speed[0] && deltaPos < speed[1]){
-                                            lift.setPosX(currentPos + 2);
+                                            lift.setPosition(currentPos + 2);
                                         }
                                         else if(deltaPos >= speed[1] && deltaPos < speed[2]){
-                                            lift.setPosX(currentPos + 4);
+                                            lift.setPosition(currentPos + 4);
                                         }
                                         else {
-                                            lift.setPosX(currentPos + 8);
+                                            lift.setPosition(currentPos + 8);
                                         }
                                         break;
                                     case DOWN :
                                         deltaPos = currentPos - targetFloorPos;
                                         if(deltaPos < speed[0]){
-                                            lift.setPosX(currentPos - 1);
+                                            lift.setPosition(currentPos - 1);
                                         }
                                         else if(deltaPos >= speed[0] && deltaPos < speed[1]){
-                                            lift.setPosX(currentPos - 2);
+                                            lift.setPosition(currentPos - 2);
                                         }
                                         else if(deltaPos >= speed[1] && deltaPos < speed[2]){
-                                            lift.setPosX(currentPos - 4);
+                                            lift.setPosition(currentPos - 4);
                                         }
                                         else {
-                                            lift.setPosX(currentPos - 8);
+                                            lift.setPosition(currentPos - 8);
                                         }
                                         break;
                                 }
@@ -137,6 +138,7 @@ public class LiftFrame extends javax.swing.JFrame {
                                 
                             break;
                         case OPENING :
+                            //Doors opening animation
                             if(this.openWaitDoor > 0){
                                 this.openWaitDoor--;
                             }
@@ -150,6 +152,7 @@ public class LiftFrame extends javax.swing.JFrame {
                             
                             break;
                         case CLOSING :
+                            //Doors closing animation
                             if(this.openWaitDoor > 0){
                                 this.openWaitDoor--;
                             }
@@ -161,6 +164,25 @@ public class LiftFrame extends javax.swing.JFrame {
                                 }
                             }
                             break;
+                    }
+                            
+                    //Scroll panel movement
+                    int scrollStep = 4; //Scroll increment
+                    int tolerence = 100; //Up & down delta before start scrolling
+                    int scrollHeight = (int)scrollPane.getViewport().getExtentSize().getHeight();
+                    int scrollMaxHeight = scrollPane.getViewport().getView().getHeight();
+                    Point scrollPosPoint = scrollPane.getViewport().getViewPosition();
+                    int scrollPosY = (int)scrollPosPoint.getY();
+                    int currentPosY = lift.getCabY();
+                    if(currentPosY < scrollPosY + scrollHeight / 2 - tolerence){//Lift too height, need to scroll up
+                        int newScrollPosY = scrollPosY - scrollStep;
+                        newScrollPosY = (newScrollPosY < 0) ? 0 : newScrollPosY;
+                        scrollPane.getViewport().setViewPosition(new Point((int)scrollPosPoint.getX(), newScrollPosY));
+                    }
+                    else if(currentPosY - scrollPosY > scrollHeight / 2 + tolerence){
+                        int newScrollPosY = scrollPosY + scrollStep;
+                        newScrollPosY = (newScrollPosY > scrollMaxHeight - scrollHeight) ? scrollPosY : newScrollPosY;
+                        scrollPane.getViewport().setViewPosition(new Point((int)scrollPosPoint.getX(), newScrollPosY));
                     }
                     
                     lift.repaint();
