@@ -287,6 +287,7 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton14 = new javax.swing.JButton();
         liftButton0 = new javax.swing.JButton();
         splitCab = new javax.swing.JPanel();
+        panelCabBorder = new javax.swing.JPanel();
         panelCabButtons = new javax.swing.JPanel();
         cabState = new javax.swing.JLabel();
         cabBell = new javax.swing.JButton();
@@ -369,7 +370,6 @@ public class LiftFrame extends javax.swing.JFrame {
         setTitle("Simulation d'ascenseur");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImage(java.awt.Toolkit.getDefaultToolkit().getImage(getClass().getResource("/aihm/res/Elevator.png")));
-        setPreferredSize(new java.awt.Dimension(875, 750));
 
         content.setBackground(new java.awt.Color(102, 102, 102));
         content.setMaximumSize(new java.awt.Dimension(875, 2147483647));
@@ -377,7 +377,6 @@ public class LiftFrame extends javax.swing.JFrame {
         content.setLayout(new java.awt.BorderLayout());
 
         mainBar.setBorder(null);
-        mainBar.setFloatable(false);
 
         mainButton0.setFont(new java.awt.Font("kroeger 05_55", 1, 22));
         mainButton0.setForeground(this.colorUnrequestedFloorLabel);
@@ -1095,6 +1094,10 @@ public class LiftFrame extends javax.swing.JFrame {
 
         content.add(splitLift, java.awt.BorderLayout.WEST);
 
+        panelCabBorder.setBackground(new java.awt.Color(255, 255, 255));
+        panelCabBorder.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        panelCabButtons.setOpaque(false);
         java.awt.GridBagLayout panelCabButtonsLayout = new java.awt.GridBagLayout();
         panelCabButtonsLayout.columnWidths = new int[] {0, 5, 0, 5, 0};
         panelCabButtonsLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
@@ -1521,20 +1524,38 @@ public class LiftFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         panelCabButtons.add(cabButton14, gridBagConstraints);
 
+        javax.swing.GroupLayout panelCabBorderLayout = new javax.swing.GroupLayout(panelCabBorder);
+        panelCabBorder.setLayout(panelCabBorderLayout);
+        panelCabBorderLayout.setHorizontalGroup(
+            panelCabBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCabBorderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelCabButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        panelCabBorderLayout.setVerticalGroup(
+            panelCabBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCabBorderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelCabButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout splitCabLayout = new javax.swing.GroupLayout(splitCab);
         splitCab.setLayout(splitCabLayout);
         splitCabLayout.setHorizontalGroup(
             splitCabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitCabLayout.createSequentialGroup()
-                .addComponent(panelCabButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(splitCabLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelCabBorder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         splitCabLayout.setVerticalGroup(
             splitCabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(splitCabLayout.createSequentialGroup()
-                .addContainerGap(219, Short.MAX_VALUE)
-                .addComponent(panelCabButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(219, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitCabLayout.createSequentialGroup()
+                .addContainerGap(209, Short.MAX_VALUE)
+                .addComponent(panelCabBorder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(205, Short.MAX_VALUE))
         );
 
         content.add(splitCab, java.awt.BorderLayout.CENTER);
@@ -1871,6 +1892,7 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JMenu menuOptions;
     private javax.swing.JCheckBoxMenuItem optionsSoundDing;
     private javax.swing.JCheckBoxMenuItem optionsSoundMusic;
+    private javax.swing.JPanel panelCabBorder;
     private javax.swing.JPanel panelCabButtons;
     private javax.swing.JScrollPane scrollPane;
     private javax.swing.JPanel splitCab;
