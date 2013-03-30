@@ -355,7 +355,7 @@ public class LiftFrame extends javax.swing.JFrame {
         jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0};
         jPanel1.setLayout(jPanel1Layout);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("kroeger 05_55", 1, 42));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("225kg Max.");
         gridBagConstraints = new java.awt.GridBagConstraints();
