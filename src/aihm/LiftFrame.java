@@ -250,6 +250,7 @@ public class LiftFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         graphicsLiftChoice = new javax.swing.ButtonGroup();
+        graphicsBuildingChoice = new javax.swing.ButtonGroup();
         content = new javax.swing.JPanel();
         mainBar = new javax.swing.JToolBar();
         mainButton0 = new javax.swing.JButton();
@@ -321,6 +322,9 @@ public class LiftFrame extends javax.swing.JFrame {
         graphicsLiftFuture = new javax.swing.JCheckBoxMenuItem();
         graphicsLiftGold = new javax.swing.JCheckBoxMenuItem();
         graphicsLiftCheap = new javax.swing.JCheckBoxMenuItem();
+        graphicsBuilding = new javax.swing.JMenu();
+        graphicsBuildingDay = new javax.swing.JCheckBoxMenuItem();
+        draphicsBuildingNight = new javax.swing.JCheckBoxMenuItem();
         floorsRegen = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -1664,6 +1668,32 @@ public class LiftFrame extends javax.swing.JFrame {
 
         menuOptions.add(graphicsLifts);
 
+        graphicsBuilding.setMnemonic('I');
+        graphicsBuilding.setText("Immeuble & Ville");
+
+        graphicsBuildingChoice.add(graphicsBuildingDay);
+        graphicsBuildingDay.setMnemonic('J');
+        graphicsBuildingDay.setSelected(true);
+        graphicsBuildingDay.setText("Jour");
+        graphicsBuildingDay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphicsBuildingDayActionPerformed(evt);
+            }
+        });
+        graphicsBuilding.add(graphicsBuildingDay);
+
+        graphicsBuildingChoice.add(draphicsBuildingNight);
+        draphicsBuildingNight.setMnemonic('N');
+        draphicsBuildingNight.setText("Nuit");
+        draphicsBuildingNight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                draphicsBuildingNightActionPerformed(evt);
+            }
+        });
+        graphicsBuilding.add(draphicsBuildingNight);
+
+        menuOptions.add(graphicsBuilding);
+
         floorsRegen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
         floorsRegen.setMnemonic('C');
         floorsRegen.setText("Changer les étages");
@@ -1772,6 +1802,14 @@ public class LiftFrame extends javax.swing.JFrame {
         this.lift.loadFloors();
     }//GEN-LAST:event_floorsRegenActionPerformed
 
+    private void graphicsBuildingDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphicsBuildingDayActionPerformed
+        this.lift.loadBuilding(LiftPanel.CityDesign.DAY);
+    }//GEN-LAST:event_graphicsBuildingDayActionPerformed
+
+    private void draphicsBuildingNightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_draphicsBuildingNightActionPerformed
+        this.lift.loadBuilding(LiftPanel.CityDesign.NIGHT);
+    }//GEN-LAST:event_draphicsBuildingNightActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1836,7 +1874,11 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JButton cabButton9;
     private javax.swing.JLabel cabState;
     private javax.swing.JPanel content;
+    private javax.swing.JCheckBoxMenuItem draphicsBuildingNight;
     private javax.swing.JMenuItem floorsRegen;
+    private javax.swing.JMenu graphicsBuilding;
+    private javax.swing.ButtonGroup graphicsBuildingChoice;
+    private javax.swing.JCheckBoxMenuItem graphicsBuildingDay;
     private javax.swing.JCheckBoxMenuItem graphicsLiftBlue;
     private javax.swing.JCheckBoxMenuItem graphicsLiftCheap;
     private javax.swing.ButtonGroup graphicsLiftChoice;
