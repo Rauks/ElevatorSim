@@ -659,6 +659,7 @@ public class LiftFrame extends javax.swing.JFrame {
         scrollPane.setOpaque(false);
 
         lift.setBackground(new java.awt.Color(231, 231, 231));
+        lift.setComponentPopupMenu(this.menuOptions.getPopupMenu());
         lift.setMaximumSize(new java.awt.Dimension(641, 32767));
         lift.setMinimumSize(new java.awt.Dimension(641, 0));
 
