@@ -79,7 +79,7 @@ public class LiftFrame extends javax.swing.JFrame {
                                 //Is current floor in requests ?
                                 if(floor == model.getNextFloorStop() || model.isFloorInRequest(floor)){
                                     model.setCurrentFloor(floor);
-                                    if(optionsSoundDing.isSelected()){
+                                    if(popupOptionsSoundDing.isSelected()){
                                         audioDing.play();
                                     }
                                     model.requestDoorsOpening();
@@ -167,7 +167,7 @@ public class LiftFrame extends javax.swing.JFrame {
                     }
                             
                     //Scroll panel auto movement
-                    if(autoScroll.isSelected()){
+                    if(popupOptionsGraphicsAutoScroll.isSelected()){
                         int scrollStep = 4; //Scroll increment
                         int tolerence = 100; //Up & down delta before start scrolling
                         int scrollHeight = (int)scrollPane.getViewport().getExtentSize().getHeight();
@@ -246,6 +246,27 @@ public class LiftFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         graphicsLiftChoice = new javax.swing.ButtonGroup();
         graphicsBuildingChoice = new javax.swing.ButtonGroup();
+        popupOptions = new javax.swing.JPopupMenu();
+        popupOptionsAudio = new javax.swing.JMenuItem();
+        popupOptionsSoundDing = new javax.swing.JCheckBoxMenuItem();
+        popupOptionsSoundMusic = new javax.swing.JCheckBoxMenuItem();
+        popupOptionsSep1 = new javax.swing.JPopupMenu.Separator();
+        popupOptionsGraphics = new javax.swing.JMenuItem();
+        popupOptionsGraphicsLifts = new javax.swing.JMenu();
+        popupGraphicsLiftBlue = new javax.swing.JCheckBoxMenuItem();
+        popupGraphicsLiftClassic = new javax.swing.JCheckBoxMenuItem();
+        popupGraphicsLiftFuture = new javax.swing.JCheckBoxMenuItem();
+        popupGraphicsLiftGold = new javax.swing.JCheckBoxMenuItem();
+        popupGraphicsLiftCheap = new javax.swing.JCheckBoxMenuItem();
+        popupOptionsGraphicsBuilding = new javax.swing.JMenu();
+        popupGraphicsBuildingDay = new javax.swing.JCheckBoxMenuItem();
+        popupGraphicsBuildingNight = new javax.swing.JCheckBoxMenuItem();
+        popupOptionsGraphicsFloorsRegen = new javax.swing.JMenuItem();
+        popupOptionsSep2 = new javax.swing.JPopupMenu.Separator();
+        popupOptionsOthers = new javax.swing.JMenuItem();
+        popupOptionsGraphicsAutoScroll = new javax.swing.JCheckBoxMenuItem();
+        popupGraphicsLiftChoice = new javax.swing.ButtonGroup();
+        popupGraphicsBuildingChoice = new javax.swing.ButtonGroup();
         content = new javax.swing.JPanel();
         mainBar = new javax.swing.JToolBar();
         mainButton0 = new javax.swing.JButton();
@@ -306,24 +327,24 @@ public class LiftFrame extends javax.swing.JFrame {
         menuFile = new javax.swing.JMenu();
         MenuFileQuit = new javax.swing.JMenuItem();
         menuOptions = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        optionsAudio = new javax.swing.JMenuItem();
         optionsSoundDing = new javax.swing.JCheckBoxMenuItem();
         optionsSoundMusic = new javax.swing.JCheckBoxMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        graphicsLifts = new javax.swing.JMenu();
+        optionsSep1 = new javax.swing.JPopupMenu.Separator();
+        optionsGraphics = new javax.swing.JMenuItem();
+        optionsGraphicsLifts = new javax.swing.JMenu();
         graphicsLiftBlue = new javax.swing.JCheckBoxMenuItem();
         graphicsLiftClassic = new javax.swing.JCheckBoxMenuItem();
         graphicsLiftFuture = new javax.swing.JCheckBoxMenuItem();
         graphicsLiftGold = new javax.swing.JCheckBoxMenuItem();
         graphicsLiftCheap = new javax.swing.JCheckBoxMenuItem();
-        graphicsBuilding = new javax.swing.JMenu();
+        optionsGraphicsBuilding = new javax.swing.JMenu();
         graphicsBuildingDay = new javax.swing.JCheckBoxMenuItem();
-        draphicsBuildingNight = new javax.swing.JCheckBoxMenuItem();
-        floorsRegen = new javax.swing.JMenuItem();
-        jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        autoScroll = new javax.swing.JCheckBoxMenuItem();
+        graphicsBuildingNight = new javax.swing.JCheckBoxMenuItem();
+        optionsGraphicsFloorsRegen = new javax.swing.JMenuItem();
+        optionsSep2 = new javax.swing.JPopupMenu.Separator();
+        optionsOthers = new javax.swing.JMenuItem();
+        optionsGraphicsAutoScroll = new javax.swing.JCheckBoxMenuItem();
 
         aboutDialog.setMinimumSize(new java.awt.Dimension(300, 160));
         aboutDialog.setResizable(false);
@@ -334,7 +355,7 @@ public class LiftFrame extends javax.swing.JFrame {
         jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0};
         jPanel1.setLayout(jPanel1Layout);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("kroeger 05_55", 1, 42));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("225kg Max.");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -365,11 +386,169 @@ public class LiftFrame extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
 
+        popupOptionsAudio.setText("Audio");
+        popupOptionsAudio.setEnabled(false);
+        popupOptions.add(popupOptionsAudio);
+
+        popupOptionsSoundDing.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
+        popupOptionsSoundDing.setText("Bruitages");
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, optionsSoundDing, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupOptionsSoundDing, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        popupOptions.add(popupOptionsSoundDing);
+
+        popupOptionsSoundMusic.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+        popupOptionsSoundMusic.setText("Musique");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, optionsSoundMusic, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupOptionsSoundMusic, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        popupOptionsSoundMusic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optionsSoundMusicActionPerformed(evt);
+            }
+        });
+        popupOptions.add(popupOptionsSoundMusic);
+        popupOptions.add(popupOptionsSep1);
+
+        popupOptionsGraphics.setText("Graphismes");
+        popupOptionsGraphics.setEnabled(false);
+        popupOptions.add(popupOptionsGraphics);
+
+        popupOptionsGraphicsLifts.setText("Ascenseur");
+
+        popupGraphicsLiftChoice.add(popupGraphicsLiftBlue);
+        popupGraphicsLiftBlue.setMnemonic('B');
+        popupGraphicsLiftBlue.setText("Classique Bleu");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, graphicsLiftBlue, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupGraphicsLiftBlue, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        popupGraphicsLiftBlue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphicsLiftBlueActionPerformed(evt);
+            }
+        });
+        popupOptionsGraphicsLifts.add(popupGraphicsLiftBlue);
+
+        popupGraphicsLiftChoice.add(popupGraphicsLiftClassic);
+        popupGraphicsLiftClassic.setMnemonic('M');
+        popupGraphicsLiftClassic.setText("Classique Marron");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, graphicsLiftClassic, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupGraphicsLiftClassic, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        popupGraphicsLiftClassic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphicsLiftClassicActionPerformed(evt);
+            }
+        });
+        popupOptionsGraphicsLifts.add(popupGraphicsLiftClassic);
+
+        popupGraphicsLiftChoice.add(popupGraphicsLiftFuture);
+        popupGraphicsLiftFuture.setMnemonic('F');
+        popupGraphicsLiftFuture.setText("Futuriste");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, graphicsLiftFuture, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupGraphicsLiftFuture, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        popupGraphicsLiftFuture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphicsLiftFutureActionPerformed(evt);
+            }
+        });
+        popupOptionsGraphicsLifts.add(popupGraphicsLiftFuture);
+
+        popupGraphicsLiftChoice.add(popupGraphicsLiftGold);
+        popupGraphicsLiftGold.setMnemonic('L');
+        popupGraphicsLiftGold.setText("Luxurieux");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, graphicsLiftGold, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupGraphicsLiftGold, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        popupGraphicsLiftGold.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphicsLiftGoldActionPerformed(evt);
+            }
+        });
+        popupOptionsGraphicsLifts.add(popupGraphicsLiftGold);
+
+        popupGraphicsLiftChoice.add(popupGraphicsLiftCheap);
+        popupGraphicsLiftCheap.setMnemonic('R');
+        popupGraphicsLiftCheap.setText("Rouillé");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, graphicsLiftCheap, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupGraphicsLiftCheap, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        popupGraphicsLiftCheap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphicsLiftCheapActionPerformed(evt);
+            }
+        });
+        popupOptionsGraphicsLifts.add(popupGraphicsLiftCheap);
+
+        popupOptions.add(popupOptionsGraphicsLifts);
+
+        popupOptionsGraphicsBuilding.setText("Immeuble & Ville");
+
+        popupGraphicsBuildingChoice.add(popupGraphicsBuildingDay);
+        popupGraphicsBuildingDay.setMnemonic('J');
+        popupGraphicsBuildingDay.setText("Jour");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, graphicsBuildingDay, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupGraphicsBuildingDay, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        popupGraphicsBuildingDay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphicsBuildingDayActionPerformed(evt);
+            }
+        });
+        popupOptionsGraphicsBuilding.add(popupGraphicsBuildingDay);
+
+        popupGraphicsBuildingChoice.add(popupGraphicsBuildingNight);
+        popupGraphicsBuildingNight.setMnemonic('N');
+        popupGraphicsBuildingNight.setText("Nuit");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, graphicsBuildingNight, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupGraphicsBuildingNight, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        popupGraphicsBuildingNight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphicsBuildingNightActionPerformed(evt);
+            }
+        });
+        popupOptionsGraphicsBuilding.add(popupGraphicsBuildingNight);
+
+        popupOptions.add(popupOptionsGraphicsBuilding);
+
+        popupOptionsGraphicsFloorsRegen.setText("Changer les étages");
+        popupOptionsGraphicsFloorsRegen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optionsGraphicsFloorsRegenActionPerformed(evt);
+            }
+        });
+        popupOptions.add(popupOptionsGraphicsFloorsRegen);
+        popupOptions.add(popupOptionsSep2);
+
+        popupOptionsOthers.setText("Divers");
+        popupOptionsOthers.setEnabled(false);
+        popupOptions.add(popupOptionsOthers);
+
+        popupOptionsGraphicsAutoScroll.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        popupOptionsGraphicsAutoScroll.setText("Défilement automatique");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, optionsGraphicsAutoScroll, org.jdesktop.beansbinding.ELProperty.create("${selected}"), popupOptionsGraphicsAutoScroll, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        popupOptions.add(popupOptionsGraphicsAutoScroll);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simulation d'ascenseur");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImage(java.awt.Toolkit.getDefaultToolkit().getImage(getClass().getResource("/aihm/res/Elevator.png")));
 
+        content.setComponentPopupMenu(popupOptions);
         content.setMaximumSize(new java.awt.Dimension(875, 2147483647));
         content.setMinimumSize(new java.awt.Dimension(875, 0));
         content.setLayout(new java.awt.BorderLayout());
@@ -648,6 +827,7 @@ public class LiftFrame extends javax.swing.JFrame {
 
         content.add(mainBar, java.awt.BorderLayout.PAGE_START);
 
+        splitLift.setInheritsPopupMenu(true);
         splitLift.setMaximumSize(new java.awt.Dimension(680, 32767));
         splitLift.setMinimumSize(new java.awt.Dimension(680, 0));
 
@@ -656,13 +836,15 @@ public class LiftFrame extends javax.swing.JFrame {
         scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setHorizontalScrollBar(null);
+        scrollPane.setInheritsPopupMenu(true);
         scrollPane.setOpaque(false);
 
         lift.setBackground(new java.awt.Color(231, 231, 231));
-        lift.setComponentPopupMenu(this.menuOptions.getPopupMenu());
+        lift.setInheritsPopupMenu(true);
         lift.setMaximumSize(new java.awt.Dimension(641, 32767));
         lift.setMinimumSize(new java.awt.Dimension(641, 0));
 
+        liftButtons.setInheritsPopupMenu(true);
         liftButtons.setOpaque(false);
 
         liftButton1.setBackground(new java.awt.Color(255, 255, 255));
@@ -676,7 +858,7 @@ public class LiftFrame extends javax.swing.JFrame {
         liftButton1.setOpaque(false);
         liftButton1.setPreferredSize(new java.awt.Dimension(40, 23));
 
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton1, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), liftButton1, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, mainButton1, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), liftButton1, org.jdesktop.beansbinding.BeanProperty.create("foreground"));
         bindingGroup.addBinding(binding);
@@ -1093,9 +1275,13 @@ public class LiftFrame extends javax.swing.JFrame {
 
         content.add(splitLift, java.awt.BorderLayout.WEST);
 
+        splitCab.setInheritsPopupMenu(true);
+
         panelCabBorder.setBackground(new java.awt.Color(255, 255, 255));
         panelCabBorder.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        panelCabBorder.setInheritsPopupMenu(true);
 
+        panelCabButtons.setInheritsPopupMenu(true);
         panelCabButtons.setOpaque(false);
         java.awt.GridBagLayout panelCabButtonsLayout = new java.awt.GridBagLayout();
         panelCabButtonsLayout.columnWidths = new int[] {0, 5, 0, 5, 0};
@@ -1577,19 +1763,14 @@ public class LiftFrame extends javax.swing.JFrame {
         menuOptions.setMnemonic('O');
         menuOptions.setText("Options");
 
-        jMenuItem1.setText("Audio");
-        jMenuItem1.setEnabled(false);
-        menuOptions.add(jMenuItem1);
+        optionsAudio.setText("Audio");
+        optionsAudio.setEnabled(false);
+        menuOptions.add(optionsAudio);
 
         optionsSoundDing.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
         optionsSoundDing.setMnemonic('B');
         optionsSoundDing.setSelected(true);
         optionsSoundDing.setText("Bruitages");
-        optionsSoundDing.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                optionsSoundDingActionPerformed(evt);
-            }
-        });
         menuOptions.add(optionsSoundDing);
 
         optionsSoundMusic.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
@@ -1602,14 +1783,14 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
         menuOptions.add(optionsSoundMusic);
-        menuOptions.add(jSeparator1);
+        menuOptions.add(optionsSep1);
 
-        jMenuItem2.setText("Graphismes");
-        jMenuItem2.setEnabled(false);
-        menuOptions.add(jMenuItem2);
+        optionsGraphics.setText("Graphismes");
+        optionsGraphics.setEnabled(false);
+        menuOptions.add(optionsGraphics);
 
-        graphicsLifts.setMnemonic('A');
-        graphicsLifts.setText("Ascenseur");
+        optionsGraphicsLifts.setMnemonic('A');
+        optionsGraphicsLifts.setText("Ascenseur");
 
         graphicsLiftChoice.add(graphicsLiftBlue);
         graphicsLiftBlue.setMnemonic('B');
@@ -1619,7 +1800,7 @@ public class LiftFrame extends javax.swing.JFrame {
                 graphicsLiftBlueActionPerformed(evt);
             }
         });
-        graphicsLifts.add(graphicsLiftBlue);
+        optionsGraphicsLifts.add(graphicsLiftBlue);
 
         graphicsLiftChoice.add(graphicsLiftClassic);
         graphicsLiftClassic.setMnemonic('M');
@@ -1630,7 +1811,7 @@ public class LiftFrame extends javax.swing.JFrame {
                 graphicsLiftClassicActionPerformed(evt);
             }
         });
-        graphicsLifts.add(graphicsLiftClassic);
+        optionsGraphicsLifts.add(graphicsLiftClassic);
 
         graphicsLiftChoice.add(graphicsLiftFuture);
         graphicsLiftFuture.setMnemonic('F');
@@ -1640,7 +1821,7 @@ public class LiftFrame extends javax.swing.JFrame {
                 graphicsLiftFutureActionPerformed(evt);
             }
         });
-        graphicsLifts.add(graphicsLiftFuture);
+        optionsGraphicsLifts.add(graphicsLiftFuture);
 
         graphicsLiftChoice.add(graphicsLiftGold);
         graphicsLiftGold.setMnemonic('L');
@@ -1650,7 +1831,7 @@ public class LiftFrame extends javax.swing.JFrame {
                 graphicsLiftGoldActionPerformed(evt);
             }
         });
-        graphicsLifts.add(graphicsLiftGold);
+        optionsGraphicsLifts.add(graphicsLiftGold);
 
         graphicsLiftChoice.add(graphicsLiftCheap);
         graphicsLiftCheap.setMnemonic('R');
@@ -1660,12 +1841,12 @@ public class LiftFrame extends javax.swing.JFrame {
                 graphicsLiftCheapActionPerformed(evt);
             }
         });
-        graphicsLifts.add(graphicsLiftCheap);
+        optionsGraphicsLifts.add(graphicsLiftCheap);
 
-        menuOptions.add(graphicsLifts);
+        menuOptions.add(optionsGraphicsLifts);
 
-        graphicsBuilding.setMnemonic('I');
-        graphicsBuilding.setText("Immeuble & Ville");
+        optionsGraphicsBuilding.setMnemonic('I');
+        optionsGraphicsBuilding.setText("Immeuble & Ville");
 
         graphicsBuildingChoice.add(graphicsBuildingDay);
         graphicsBuildingDay.setMnemonic('J');
@@ -1676,40 +1857,40 @@ public class LiftFrame extends javax.swing.JFrame {
                 graphicsBuildingDayActionPerformed(evt);
             }
         });
-        graphicsBuilding.add(graphicsBuildingDay);
+        optionsGraphicsBuilding.add(graphicsBuildingDay);
 
-        graphicsBuildingChoice.add(draphicsBuildingNight);
-        draphicsBuildingNight.setMnemonic('N');
-        draphicsBuildingNight.setText("Nuit");
-        draphicsBuildingNight.addActionListener(new java.awt.event.ActionListener() {
+        graphicsBuildingChoice.add(graphicsBuildingNight);
+        graphicsBuildingNight.setMnemonic('N');
+        graphicsBuildingNight.setText("Nuit");
+        graphicsBuildingNight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                draphicsBuildingNightActionPerformed(evt);
+                graphicsBuildingNightActionPerformed(evt);
             }
         });
-        graphicsBuilding.add(draphicsBuildingNight);
+        optionsGraphicsBuilding.add(graphicsBuildingNight);
 
-        menuOptions.add(graphicsBuilding);
+        menuOptions.add(optionsGraphicsBuilding);
 
-        floorsRegen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        floorsRegen.setMnemonic('C');
-        floorsRegen.setText("Changer les étages");
-        floorsRegen.addActionListener(new java.awt.event.ActionListener() {
+        optionsGraphicsFloorsRegen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        optionsGraphicsFloorsRegen.setMnemonic('C');
+        optionsGraphicsFloorsRegen.setText("Changer les étages");
+        optionsGraphicsFloorsRegen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                floorsRegenActionPerformed(evt);
+                optionsGraphicsFloorsRegenActionPerformed(evt);
             }
         });
-        menuOptions.add(floorsRegen);
-        menuOptions.add(jSeparator2);
+        menuOptions.add(optionsGraphicsFloorsRegen);
+        menuOptions.add(optionsSep2);
 
-        jMenuItem3.setText("Divers");
-        jMenuItem3.setEnabled(false);
-        menuOptions.add(jMenuItem3);
+        optionsOthers.setText("Divers");
+        optionsOthers.setEnabled(false);
+        menuOptions.add(optionsOthers);
 
-        autoScroll.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        autoScroll.setMnemonic('D');
-        autoScroll.setSelected(true);
-        autoScroll.setText("Défilement automatique");
-        menuOptions.add(autoScroll);
+        optionsGraphicsAutoScroll.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        optionsGraphicsAutoScroll.setMnemonic('D');
+        optionsGraphicsAutoScroll.setSelected(true);
+        optionsGraphicsAutoScroll.setText("Défilement automatique");
+        menuOptions.add(optionsGraphicsAutoScroll);
 
         menu.add(menuOptions);
 
@@ -1734,19 +1915,6 @@ public class LiftFrame extends javax.swing.JFrame {
     private void MenuFileQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuFileQuitActionPerformed
         Runtime.getRuntime().exit(0);
     }//GEN-LAST:event_MenuFileQuitActionPerformed
-
-    private void optionsSoundMusicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionsSoundMusicActionPerformed
-        if(optionsSoundMusic.isSelected()){
-            this.audioMusic.playLooped();
-        }
-        else{
-            this.audioMusic.stop();
-        }
-    }//GEN-LAST:event_optionsSoundMusicActionPerformed
-
-    private void optionsSoundDingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionsSoundDingActionPerformed
-
-    }//GEN-LAST:event_optionsSoundDingActionPerformed
 
     private void cabBellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cabBellActionPerformed
         if(!this.aboutDialog.isVisible()){
@@ -1774,6 +1942,15 @@ public class LiftFrame extends javax.swing.JFrame {
         this.requestFloor(floorIndex);
     }//GEN-LAST:event_actionButtonRequestFloorHandler
    
+    private void optionsSoundMusicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionsSoundMusicActionPerformed
+        if(popupOptionsSoundMusic.isSelected()){
+            this.audioMusic.playLooped();
+        }
+        else{
+            this.audioMusic.stop();
+        }
+    }//GEN-LAST:event_optionsSoundMusicActionPerformed
+
     private void graphicsLiftBlueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphicsLiftBlueActionPerformed
         this.lift.loadLift(LiftPanel.LiftDesign.BLUE);
     }//GEN-LAST:event_graphicsLiftBlueActionPerformed
@@ -1794,17 +1971,17 @@ public class LiftFrame extends javax.swing.JFrame {
         this.lift.loadLift(LiftPanel.LiftDesign.CHEAP);
     }//GEN-LAST:event_graphicsLiftCheapActionPerformed
 
-    private void floorsRegenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_floorsRegenActionPerformed
-        this.lift.loadFloors();
-    }//GEN-LAST:event_floorsRegenActionPerformed
-
     private void graphicsBuildingDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphicsBuildingDayActionPerformed
         this.lift.loadBuilding(LiftPanel.CityDesign.DAY);
     }//GEN-LAST:event_graphicsBuildingDayActionPerformed
 
-    private void draphicsBuildingNightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_draphicsBuildingNightActionPerformed
+    private void optionsGraphicsFloorsRegenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionsGraphicsFloorsRegenActionPerformed
+        this.lift.loadFloors();
+    }//GEN-LAST:event_optionsGraphicsFloorsRegenActionPerformed
+
+    private void graphicsBuildingNightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphicsBuildingNightActionPerformed
         this.lift.loadBuilding(LiftPanel.CityDesign.NIGHT);
-    }//GEN-LAST:event_draphicsBuildingNightActionPerformed
+    }//GEN-LAST:event_graphicsBuildingNightActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1851,7 +2028,6 @@ public class LiftFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem MenuFileQuit;
     private javax.swing.JDialog aboutDialog;
-    private javax.swing.JCheckBoxMenuItem autoScroll;
     private javax.swing.JButton cabBell;
     private javax.swing.JButton cabButton0;
     private javax.swing.JButton cabButton1;
@@ -1870,27 +2046,19 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JButton cabButton9;
     private javax.swing.JLabel cabState;
     private javax.swing.JPanel content;
-    private javax.swing.JCheckBoxMenuItem draphicsBuildingNight;
-    private javax.swing.JMenuItem floorsRegen;
-    private javax.swing.JMenu graphicsBuilding;
     private javax.swing.ButtonGroup graphicsBuildingChoice;
     private javax.swing.JCheckBoxMenuItem graphicsBuildingDay;
+    private javax.swing.JCheckBoxMenuItem graphicsBuildingNight;
     private javax.swing.JCheckBoxMenuItem graphicsLiftBlue;
     private javax.swing.JCheckBoxMenuItem graphicsLiftCheap;
     private javax.swing.ButtonGroup graphicsLiftChoice;
     private javax.swing.JCheckBoxMenuItem graphicsLiftClassic;
     private javax.swing.JCheckBoxMenuItem graphicsLiftFuture;
     private javax.swing.JCheckBoxMenuItem graphicsLiftGold;
-    private javax.swing.JMenu graphicsLifts;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JPopupMenu.Separator jSeparator2;
     private aihm.ui.lift.LiftPanel lift;
     private javax.swing.JButton liftButton0;
     private javax.swing.JButton liftButton1;
@@ -1927,10 +2095,40 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar menu;
     private javax.swing.JMenu menuFile;
     private javax.swing.JMenu menuOptions;
+    private javax.swing.JMenuItem optionsAudio;
+    private javax.swing.JMenuItem optionsGraphics;
+    private javax.swing.JCheckBoxMenuItem optionsGraphicsAutoScroll;
+    private javax.swing.JMenu optionsGraphicsBuilding;
+    private javax.swing.JMenuItem optionsGraphicsFloorsRegen;
+    private javax.swing.JMenu optionsGraphicsLifts;
+    private javax.swing.JMenuItem optionsOthers;
+    private javax.swing.JPopupMenu.Separator optionsSep1;
+    private javax.swing.JPopupMenu.Separator optionsSep2;
     private javax.swing.JCheckBoxMenuItem optionsSoundDing;
     private javax.swing.JCheckBoxMenuItem optionsSoundMusic;
     private javax.swing.JPanel panelCabBorder;
     private javax.swing.JPanel panelCabButtons;
+    private javax.swing.ButtonGroup popupGraphicsBuildingChoice;
+    private javax.swing.JCheckBoxMenuItem popupGraphicsBuildingDay;
+    private javax.swing.JCheckBoxMenuItem popupGraphicsBuildingNight;
+    private javax.swing.JCheckBoxMenuItem popupGraphicsLiftBlue;
+    private javax.swing.JCheckBoxMenuItem popupGraphicsLiftCheap;
+    private javax.swing.ButtonGroup popupGraphicsLiftChoice;
+    private javax.swing.JCheckBoxMenuItem popupGraphicsLiftClassic;
+    private javax.swing.JCheckBoxMenuItem popupGraphicsLiftFuture;
+    private javax.swing.JCheckBoxMenuItem popupGraphicsLiftGold;
+    private javax.swing.JPopupMenu popupOptions;
+    private javax.swing.JMenuItem popupOptionsAudio;
+    private javax.swing.JMenuItem popupOptionsGraphics;
+    private javax.swing.JCheckBoxMenuItem popupOptionsGraphicsAutoScroll;
+    private javax.swing.JMenu popupOptionsGraphicsBuilding;
+    private javax.swing.JMenuItem popupOptionsGraphicsFloorsRegen;
+    private javax.swing.JMenu popupOptionsGraphicsLifts;
+    private javax.swing.JMenuItem popupOptionsOthers;
+    private javax.swing.JPopupMenu.Separator popupOptionsSep1;
+    private javax.swing.JPopupMenu.Separator popupOptionsSep2;
+    private javax.swing.JCheckBoxMenuItem popupOptionsSoundDing;
+    private javax.swing.JCheckBoxMenuItem popupOptionsSoundMusic;
     private javax.swing.JScrollPane scrollPane;
     private javax.swing.JPanel splitCab;
     private javax.swing.JPanel splitLift;
