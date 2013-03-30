@@ -166,25 +166,28 @@ public class LiftFrame extends javax.swing.JFrame {
                             break;
                     }
                             
-                    //Scroll panel movement
-                    int scrollStep = 4; //Scroll increment
-                    int tolerence = 100; //Up & down delta before start scrolling
-                    int scrollHeight = (int)scrollPane.getViewport().getExtentSize().getHeight();
-                    int scrollMaxHeight = scrollPane.getViewport().getView().getHeight();
-                    Point scrollPosPoint = scrollPane.getViewport().getViewPosition();
-                    int scrollPosY = (int)scrollPosPoint.getY();
-                    int currentPosY = lift.getCabY();
-                    if(currentPosY < scrollPosY + scrollHeight / 2 - tolerence){//Lift too height, need to scroll up
-                        int newScrollPosY = scrollPosY - scrollStep;
-                        newScrollPosY = (newScrollPosY < 0) ? 0 : newScrollPosY;
-                        scrollPane.getViewport().setViewPosition(new Point((int)scrollPosPoint.getX(), newScrollPosY));
-                    }
-                    else if(currentPosY - scrollPosY > scrollHeight / 2 + tolerence){
-                        int newScrollPosY = scrollPosY + scrollStep;
-                        newScrollPosY = (newScrollPosY > scrollMaxHeight - scrollHeight) ? scrollPosY : newScrollPosY;
-                        scrollPane.getViewport().setViewPosition(new Point((int)scrollPosPoint.getX(), newScrollPosY));
+                    //Scroll panel auto movement
+                    if(autoScroll.isSelected()){
+                        int scrollStep = 4; //Scroll increment
+                        int tolerence = 100; //Up & down delta before start scrolling
+                        int scrollHeight = (int)scrollPane.getViewport().getExtentSize().getHeight();
+                        int scrollMaxHeight = scrollPane.getViewport().getView().getHeight();
+                        Point scrollPosPoint = scrollPane.getViewport().getViewPosition();
+                        int scrollPosY = (int)scrollPosPoint.getY();
+                        int currentPosY = lift.getCabY();
+                        if(currentPosY < scrollPosY + scrollHeight / 2 - tolerence){//Lift too height, need to scroll up
+                            int newScrollPosY = scrollPosY - scrollStep;
+                            newScrollPosY = (newScrollPosY < 0) ? 0 : newScrollPosY;
+                            scrollPane.getViewport().setViewPosition(new Point((int)scrollPosPoint.getX(), newScrollPosY));
+                        }
+                        else if(currentPosY - scrollPosY > scrollHeight / 2 + tolerence){
+                            int newScrollPosY = scrollPosY + scrollStep;
+                            newScrollPosY = (newScrollPosY > scrollMaxHeight - scrollHeight) ? scrollPosY : newScrollPosY;
+                            scrollPane.getViewport().setViewPosition(new Point((int)scrollPosPoint.getX(), newScrollPosY));
+                        }
                     }
                     
+                    //Draw
                     lift.repaint();
                 } catch (LiftException ex) {
                     Logger.getLogger(LiftFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -318,6 +321,9 @@ public class LiftFrame extends javax.swing.JFrame {
         graphicsLiftGold = new javax.swing.JCheckBoxMenuItem();
         graphicsLiftCheap = new javax.swing.JCheckBoxMenuItem();
         floorsRegen = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        autoScroll = new javax.swing.JCheckBoxMenuItem();
 
         aboutDialog.setMinimumSize(new java.awt.Dimension(300, 160));
         aboutDialog.setResizable(false);
@@ -653,6 +659,7 @@ public class LiftFrame extends javax.swing.JFrame {
         scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setHorizontalScrollBar(null);
+        scrollPane.setOpaque(false);
 
         lift.setBackground(new java.awt.Color(231, 231, 231));
         lift.setMaximumSize(new java.awt.Dimension(641, 32767));
@@ -1646,6 +1653,17 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
         menuOptions.add(floorsRegen);
+        menuOptions.add(jSeparator2);
+
+        jMenuItem3.setText("Divers");
+        jMenuItem3.setEnabled(false);
+        menuOptions.add(jMenuItem3);
+
+        autoScroll.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        autoScroll.setMnemonic('D');
+        autoScroll.setSelected(true);
+        autoScroll.setText("Défilement automatique");
+        menuOptions.add(autoScroll);
 
         menu.add(menuOptions);
 
@@ -1779,6 +1797,7 @@ public class LiftFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem MenuFileQuit;
     private javax.swing.JDialog aboutDialog;
+    private javax.swing.JCheckBoxMenuItem autoScroll;
     private javax.swing.JButton cabBell;
     private javax.swing.JButton cabButton0;
     private javax.swing.JButton cabButton1;
@@ -1810,8 +1829,10 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     private aihm.ui.lift.LiftPanel lift;
     private javax.swing.JButton liftButton0;
     private javax.swing.JButton liftButton1;
