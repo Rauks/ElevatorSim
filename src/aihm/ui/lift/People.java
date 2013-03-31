@@ -134,10 +134,20 @@ public class People {
         }
         switch(this.movement){
             case RIGHT:
-                this.pos++;
+                if(this.pos < this.pathLength){
+                    this.pos++;
+                }
+                else{
+                    this.setTarget();
+                }
                 break;
             case LEFT:
-                this.pos--;
+                if(this.pos > 0){
+                    this.pos--;
+                }
+                else{
+                    this.setTarget();
+                }
                 break;
         }
     }

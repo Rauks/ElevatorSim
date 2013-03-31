@@ -187,6 +187,9 @@ public class LiftFrame extends javax.swing.JFrame {
                         }
                     }
                     
+                    //Move the pople in the building.
+                    lift.movePeople();
+                    
                     //Draw
                     lift.repaint();
                 } catch (LiftException ex) {

@@ -10,6 +10,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -61,20 +62,24 @@ public class LiftPanel extends JPanel {
     private final int imageFloorHeight = MAX_POSITION / NB_FLOORS;
     private final int maxCabY = minCabY + imageFloorHeight * (NB_FLOORS - 1);
     
-    BufferedImage imageBackground;
-    BufferedImage imageTower;
-    BufferedImage imageCane;
-    BufferedImage imageBottom;
+    private People[] people;
     
-    BufferedImage[] imagesFloors;
+    private BufferedImage imageBackground;
+    private BufferedImage imageTower;
+    private BufferedImage imageCane;
+    private BufferedImage imageBottom;
     
-    BufferedImage imageLiftFront;
-    BufferedImage imageLiftBack;
-    BufferedImage imageLiftLeftDoor;
-    BufferedImage imageLiftRightDoor;
+    private BufferedImage[] imagesFloors;
+    
+    private BufferedImage imageLiftFront;
+    private BufferedImage imageLiftBack;
+    private BufferedImage imageLiftLeftDoor;
+    private BufferedImage imageLiftRightDoor;
 
     public LiftPanel() {
         super();
+        
+        this.people = new People[NB_FLOORS - 1]; //Nobody in roof
         
         //Building images loading
         this.loadBuilding(CityDesign.DAY);
@@ -85,6 +90,9 @@ public class LiftPanel extends JPanel {
 
         //Lift images loading
         this.loadLift(LiftDesign.CLASSIC);
+        
+        //People
+        this.loadPeople();
 
         //JPanel preferred size is the background image size
         this.setPreferredSize(new Dimension(this.imageBackground.getWidth(), this.imageBackground.getHeight()));
@@ -116,6 +124,7 @@ public class LiftPanel extends JPanel {
      */
     public final void loadFloors(){
         try {
+            //Load the floors
             int floorFileMin = 1;
             int floorFileMax = 52;
             for (int i = 0; i < imagesFloors.length; i++) {
@@ -125,6 +134,16 @@ public class LiftPanel extends JPanel {
             }
         } catch (IOException ex) {
             Logger.getLogger(LiftPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    /**
+     * Load randomly the people for the building.
+     * 
+     */
+    public final void loadPeople(){
+        for (int i = 0; i < this.people.length; i++) {
+            this.people[i] = new People(People.PeopleDesign.randomDesign(), 116);
         }
     }
 
@@ -238,8 +257,15 @@ public class LiftPanel extends JPanel {
     public void decrDoorsOverture() {
         this.setDoorsOverture(this.getDoorsOverture() - 1);
     }
-
-    private People p = new People(200);
+    
+    /**
+     * Request the next move of all of the people in the building.
+     */
+    public void movePeople(){
+        for (int i = 0; i < this.people.length; i++) {
+            this.people[i].move();
+        }
+    }
     
     @Override
     public void paintComponent(Graphics g) {
@@ -252,6 +278,12 @@ public class LiftPanel extends JPanel {
         for (int i = 0; i < this.imagesFloors.length; i++) {
             g2d.drawImage(this.imagesFloors[i], 273, 133 + i * this.imageFloorHeight, null);
         }
+        for (int i = 0; i < this.people.length; i++) {
+            if(this.people[i] != null){
+                People p = this.people[i];
+                p.paintComponent(g2d, 273 + p.getPosition(), 171 + i * this.imageFloorHeight, null);
+            }
+        }
         
         g2d.drawImage(this.imageLiftBack, this.getCabX(), this.getCabY(), null);
         g2d.drawImage(this.imageLiftLeftDoor, this.getCabX() - this.doorsOverture, this.getCabY(), null);
@@ -260,9 +292,6 @@ public class LiftPanel extends JPanel {
         
         g2d.drawImage(this.imageCane, 240, 7, null);
         g2d.drawImage(this.imageBottom, 212, 917, null);
-        
-        p.move();
-        p.paintComponent(g2d, 0 + p.getPosition(), 0, this);
         
         /* 
          * Old horrible graphics, new fancy graphics are more awsome !
