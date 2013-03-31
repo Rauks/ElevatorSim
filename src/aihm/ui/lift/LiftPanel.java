@@ -239,6 +239,8 @@ public class LiftPanel extends JPanel {
         this.setDoorsOverture(this.getDoorsOverture() - 1);
     }
 
+    private People p = new People(200);
+    
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -258,6 +260,9 @@ public class LiftPanel extends JPanel {
         
         g2d.drawImage(this.imageCane, 240, 7, null);
         g2d.drawImage(this.imageBottom, 212, 917, null);
+        
+        p.move();
+        p.paintComponent(g2d, 0 + p.getPosition(), 0, this);
         
         /* 
          * Old horrible graphics, new fancy graphics are more awsome !
