@@ -23,7 +23,7 @@ import javax.imageio.ImageIO;
  */
 public class People {
     public enum PeopleDesign{
-        AGENT("Agent"), ALIGATOR("Aligator"), ARCHITECT("Architect"), ASTRONAUT("Astronaut"), CELEBRITY("Celebrity"),
+        AGENT("Agent"), ALIGATOR("Aligator"), ASTRONAUT("Astronaut"), CELEBRITY("Celebrity"),
         DELIVERY("Delivery"), GLASSES("Glasses"), HARRY("Harry"), WORKER("Worker");
         
         private static final List<PeopleDesign> VALUES = Collections.unmodifiableList(Arrays.asList(values()));

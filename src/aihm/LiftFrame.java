@@ -265,6 +265,7 @@ public class LiftFrame extends javax.swing.JFrame {
         popupGraphicsBuildingDay = new javax.swing.JCheckBoxMenuItem();
         popupGraphicsBuildingNight = new javax.swing.JCheckBoxMenuItem();
         popupOptionsGraphicsFloorsRegen = new javax.swing.JMenuItem();
+        popupOptionsGraphicsPeopleRegen = new javax.swing.JMenuItem();
         popupOptionsSep2 = new javax.swing.JPopupMenu.Separator();
         popupOptionsOthers = new javax.swing.JMenuItem();
         popupOptionsGraphicsAutoScroll = new javax.swing.JCheckBoxMenuItem();
@@ -345,6 +346,7 @@ public class LiftFrame extends javax.swing.JFrame {
         graphicsBuildingDay = new javax.swing.JCheckBoxMenuItem();
         graphicsBuildingNight = new javax.swing.JCheckBoxMenuItem();
         optionsGraphicsFloorsRegen = new javax.swing.JMenuItem();
+        optionsGraphicsPeopleRegen = new javax.swing.JMenuItem();
         optionsSep2 = new javax.swing.JPopupMenu.Separator();
         optionsOthers = new javax.swing.JMenuItem();
         optionsGraphicsAutoScroll = new javax.swing.JCheckBoxMenuItem();
@@ -532,6 +534,14 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
         popupOptions.add(popupOptionsGraphicsFloorsRegen);
+
+        popupOptionsGraphicsPeopleRegen.setText("Changer les habitants");
+        popupOptionsGraphicsPeopleRegen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optionsGraphicsPeopleRegenActionPerformed(evt);
+            }
+        });
+        popupOptions.add(popupOptionsGraphicsPeopleRegen);
         popupOptions.add(popupOptionsSep2);
 
         popupOptionsOthers.setText("Divers");
@@ -1883,6 +1893,16 @@ public class LiftFrame extends javax.swing.JFrame {
             }
         });
         menuOptions.add(optionsGraphicsFloorsRegen);
+
+        optionsGraphicsPeopleRegen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        optionsGraphicsPeopleRegen.setMnemonic('C');
+        optionsGraphicsPeopleRegen.setText("Changer les habitants");
+        optionsGraphicsPeopleRegen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optionsGraphicsPeopleRegenActionPerformed(evt);
+            }
+        });
+        menuOptions.add(optionsGraphicsPeopleRegen);
         menuOptions.add(optionsSep2);
 
         optionsOthers.setText("Divers");
@@ -1985,6 +2005,10 @@ public class LiftFrame extends javax.swing.JFrame {
     private void graphicsBuildingNightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphicsBuildingNightActionPerformed
         this.lift.loadBuilding(LiftPanel.CityDesign.NIGHT);
     }//GEN-LAST:event_graphicsBuildingNightActionPerformed
+
+    private void optionsGraphicsPeopleRegenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionsGraphicsPeopleRegenActionPerformed
+        this.lift.loadPeople();
+    }//GEN-LAST:event_optionsGraphicsPeopleRegenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2104,6 +2128,7 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JMenu optionsGraphicsBuilding;
     private javax.swing.JMenuItem optionsGraphicsFloorsRegen;
     private javax.swing.JMenu optionsGraphicsLifts;
+    private javax.swing.JMenuItem optionsGraphicsPeopleRegen;
     private javax.swing.JMenuItem optionsOthers;
     private javax.swing.JPopupMenu.Separator optionsSep1;
     private javax.swing.JPopupMenu.Separator optionsSep2;
@@ -2127,6 +2152,7 @@ public class LiftFrame extends javax.swing.JFrame {
     private javax.swing.JMenu popupOptionsGraphicsBuilding;
     private javax.swing.JMenuItem popupOptionsGraphicsFloorsRegen;
     private javax.swing.JMenu popupOptionsGraphicsLifts;
+    private javax.swing.JMenuItem popupOptionsGraphicsPeopleRegen;
     private javax.swing.JMenuItem popupOptionsOthers;
     private javax.swing.JPopupMenu.Separator popupOptionsSep1;
     private javax.swing.JPopupMenu.Separator popupOptionsSep2;
