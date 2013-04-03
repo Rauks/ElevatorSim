@@ -53,7 +53,7 @@ public class LiftFrame extends javax.swing.JFrame {
         final int openWaitDef = 50;
         final int openWaitDoorDef = 4;
         
-        Timer timer = new Timer(20, new ActionListener(){
+        Timer timer = new Timer(25, new ActionListener(){
             private int openWait = openWaitDef;
             private int openWaitDoor = openWaitDoorDef;
             @Override

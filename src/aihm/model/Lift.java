@@ -52,7 +52,6 @@ public class Lift {
      * @throws LiftException Throw this exception if the index of out of floors bounds.
      */
     public void requestFloor(int index) throws LiftException{
-        Logger.getLogger(LiftFrame.class.getName()).log(Level.INFO, "Request floor : {0}", index);
         this.checkFloorIndex(index);
         Floor request = new Floor(index);
         if(!this.floorRequests.contains(request)){
